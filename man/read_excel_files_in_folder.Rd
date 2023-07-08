@@ -26,7 +26,7 @@ names if available, otherwise it will use positions.}
 A \link[tibble:tibble-package]{tibble}.
 }
 \description{
-This function reads all Excel workbooks in the \code{"~/data"} directory and returns an appended dataFrame.
+\code{read_excel_files_in_folder()} reads all Excel workbooks in the \code{"~/data"} directory and returns an appended dataframe.
 }
 \examples{
 \donttest{

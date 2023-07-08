@@ -29,17 +29,16 @@ create an output column that identifies each input. The column will use
 names if available, otherwise it will use positions.}
 }
 \value{
-A \link[tibble:tibble]{tibble}. If there are parsing problems, a warning will alert you.
+A \link[tibble:tibble-package]{tibble}. If there are parsing problems, a warning will alert you.
 }
 \description{
-Import data from multiple sheets in a Google Sheets spreadsheet and then append dataframe from each sheet into a single dataframe.
+\code{read_gsheets()} imports data from multiple sheets in a Google Sheets spreadsheet and append the resulting dataframes from each sheet together to create a single dataframe.
 }
 \examples{
-\donttest{
+\dontshow{if (googlesheets4::gs4_has_token()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 sheet_id <- "1izO0mHu3L9AMySQUXGDn9GPs1n-VwGFSEoAKGhqVQh0"
 
 read_gsheets(ss = sheet_id, .id = "sheet.name")
-}
 
 # Column types mismatch error --------------------------------------
 # If the `read_gsheets()` function complains about a data type mismatch,
@@ -47,15 +46,15 @@ read_gsheets(ss = sheet_id, .id = "sheet.name")
 # This will make all the column types in the resulting DataFrame be characters.
 
 # For example,
-\donttest{
+\dontshow{\}) # examplesIf}
+\dontshow{if (googlesheets4::gs4_has_token()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 sheet_id <- "1rrjKAV05POre9lDVtHtZePTa8VROf1onVO47cHnhrTU"
 
 read_gsheets(ss = sheet_id) # error, column types mismatch
 
 read_gsheets(ss = sheet_id, col_types = "c")
-}
-
+\dontshow{\}) # examplesIf}
 }
 \seealso{
-\code{\link[googlesheets4:range_read]{googlesheets4::read_sheet()}} which reads a Google (spread)Sheet into a data frame.
+\code{\link[=read_sheet]{read_sheet()}} which reads a Google (spread)Sheet into a data frame.
 }

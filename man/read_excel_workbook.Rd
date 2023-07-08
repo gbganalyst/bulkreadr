@@ -26,7 +26,7 @@ names if available, otherwise it will use positions.}
 A \link[tibble:tibble-package]{tibble}.
 }
 \description{
-This function will read all the data from the sheets of an Excel workbook and return an appended dataframe.
+\code{read_excel_workbook()} reads all the data from the sheets of an Excel workbook and return an appended dataframe.
 }
 \examples{
 \donttest{
@@ -36,5 +36,5 @@ read_excel_workbook(path = path, .id = "Year")
 }
 }
 \seealso{
-\code{\link[readxl:read_excel]{readxl::read_excel()}}, which reads a Sheet of an Excel file into a data frame, and \code{\link[=read_gsheets]{read_gsheets()}}, which imports data from multiple sheets in a Google Sheets spreadsheet.
+\code{\link[=read_excel]{read_excel()}}, which reads a Sheet of an Excel file into a data frame, and \code{\link[=read_gsheets]{read_gsheets()}}, which imports data from multiple sheets in a Google Sheets.
 }

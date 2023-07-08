@@ -1,6 +1,7 @@
 #' Read Excel Workbooks Data from a Directory
+#'
 #' @description
-#'  This function reads all Excel workbooks in the `"~/data"` directory and returns an appended dataFrame.
+#' `read_excel_files_in_folder()` reads all Excel workbooks in the `"~/data"` directory and returns an appended dataframe.
 #'
 #' @param path Path to the directory containing xls/xlsx files.
 #' @inheritParams readxl::read_xlsx
@@ -11,6 +12,8 @@
 #' @seealso
 
 #' [read_excel_workbook()] which imports data from multiple sheets of an Excel workbook
+#'
+
 #'
 #' @export
 #'
@@ -23,6 +26,6 @@
 
 #'
 read_excel_files_in_folder <- function(path, col_types = NULL, .id = NULL) {
-  dir_ls(path = path, regexp = "xlsx") %>%
-    map_df(read_excel_workbook, col_types = col_types, .id = .id)
+  fs::dir_ls(path = path, regexp = "xlsx") %>%
+    purrr::map_df(read_excel_workbook, col_types = col_types, .id = .id)
 }
