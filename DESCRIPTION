@@ -22,10 +22,13 @@ BugReports: https://github.com/gbganalyst/bulkreadr/issues
 Imports: 
     fs,
     googlesheets4,
+    lubridate,
     magrittr,
+    openxlsx,
     purrr,
     readr,
-    readxl
+    readxl,
+    stringr
 Suggests: 
     dplyr,
     testthat (>= 3.0.0)

@@ -10,7 +10,12 @@
 #' @importFrom magrittr %>%
 #' @importFrom fs dir_ls
 #' @importFrom purrr map_df
+#' @importFrom purrr map_vec
 #' @importFrom readr read_csv
+#' @importFrom lubridate parse_date_time
+#' @importFrom lubridate is.Date
+#' @importFrom stringr str_length
+#' @importFrom openxlsx convertToDate
 ## usethis namespace: end
 NULL
 
