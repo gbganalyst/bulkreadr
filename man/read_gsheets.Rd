@@ -42,8 +42,8 @@ read_gsheets(ss = sheet_id, .id = "sheet.name")
 
 # Column types mismatch error --------------------------------------
 # If the `read_gsheets()` function complains about a data type mismatch,
-# then set the `col_type` argument to `"c"`.
-# This will make all the column types in the resulting DataFrame be characters.
+# then set the `col_types` argument to `"c"`.
+# This will make all the column types in the resulting dataframe be characters.
 
 # For example,
 \dontshow{\}) # examplesIf}

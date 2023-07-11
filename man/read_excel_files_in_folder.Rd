@@ -4,10 +4,10 @@
 \alias{read_excel_files_in_folder}
 \title{Read Excel Workbooks Data from a Directory}
 \usage{
-read_excel_files_in_folder(path, col_types = NULL, .id = NULL)
+read_excel_files_in_folder(folder_path, col_types = NULL, .id = NULL)
 }
 \arguments{
-\item{path}{Path to the directory containing xls/xlsx files.}
+\item{folder_path}{Path to the directory containing the xls/xlsx files.}
 
 \item{col_types}{Either \code{NULL} to guess all from the spreadsheet or a
 character vector containing one entry per column from these options:
@@ -32,8 +32,13 @@ A \link[tibble:tibble-package]{tibble}.
 \donttest{
 directory <- system.file("xlsxfolder",  package = "bulkreadr")
 
-read_excel_files_in_folder(path = directory, .id = "cut")
+read_excel_files_in_folder(folder_path = directory, .id = "cut")
 }
+# Column types mismatch error --------------------------------------
+# If the `read_excel_files_in_folder()` function complains about a data type mismatch,
+# then set the `col_types` argument to `"text"`.
+# This will make all the column types in the resulting dataframe be characters.
+
 
 }
 \seealso{

@@ -34,6 +34,11 @@ path <- system.file("extdata", "Diamonds.xlsx", package = "bulkreadr", mustWork 
 
 read_excel_workbook(path = path, .id = "Year")
 }
+# Column types mismatch error --------------------------------------
+# If the `read_excel_workbook()` function complains about a data type mismatch,
+# then set the `col_types` argument to `"text"`.
+# This will make all the column types in the resulting DataFrame be characters.
+
 }
 \seealso{
 \code{\link[=read_excel]{read_excel()}}, which reads a Sheet of an Excel file into a data frame, and \code{\link[=read_gsheets]{read_gsheets()}}, which imports data from multiple sheets in a Google Sheets.

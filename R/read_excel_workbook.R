@@ -20,6 +20,12 @@
 #' read_excel_workbook(path = path, .id = "Year")
 #'}
 
+#' # Column types mismatch error --------------------------------------
+#'# If the `read_excel_workbook()` function complains about a data type mismatch,
+#'# then set the `col_types` argument to `"text"`.
+#'# This will make all the column types in the resulting DataFrame be characters.
+#'
+
 read_excel_workbook <- function(path, col_types = NULL, .id = NULL) {
   path %>%
     readxl::excel_sheets() %>%
