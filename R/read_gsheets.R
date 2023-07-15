@@ -25,11 +25,10 @@
 #' @examplesIf googlesheets4::gs4_has_token()
 #' sheet_id <- "1rrjKAV05POre9lDVtHtZePTa8VROf1onVO47cHnhrTU"
 #'
-#' read_gsheets(ss = sheet_id) # error, column types mismatch
+#' try(read_gsheets(ss = sheet_id)) # error, column types mismatch
 #'
 #' read_gsheets(ss = sheet_id, col_types = "c")
-
-
+#'
 #'
 read_gsheets <- function(ss, col_types = NULL, .id = NULL) {
   ss %>%

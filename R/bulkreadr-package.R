@@ -1,4 +1,5 @@
 #' @keywords internal
+"_PACKAGE"
 
 ## usethis namespace: start
 #' @importFrom readxl excel_sheets
@@ -7,7 +8,7 @@
 #' @importFrom googlesheets4 sheet_names
 #' @importFrom googlesheets4 read_sheet
 #' @importFrom googlesheets4 gs4_has_token
-#' @importFrom magrittr %>%
+#' @importFrom magrittr "%>%"
 #' @importFrom fs dir_ls
 #' @importFrom purrr map_df
 #' @importFrom purrr map_vec
