@@ -8,13 +8,13 @@
 }
 \examples{
 
-good_choice <- letters |>
+good_choice <- letters \%>\%
   pull_out(c(5, 2, 1, 4))
 
 good_choice
 
-iris |>
-  pull_out(, 1:4) |>
+iris \%>\%
+  pull_out(, 1:4) \%>\%
   head()
 
 }

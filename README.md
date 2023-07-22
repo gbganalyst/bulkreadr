@@ -54,22 +54,19 @@ purposes and are designed to handle importing of data in bulk.
 
 - [`convert_to_date()`](#convert_to_date)
 
+``` r
+# loading bulkreadr package
+
+library(bulkreadr)
+library(dplyr)
+```
+
 ## `read_excel_workbook()`
 
 `read_excel_workbook()` reads all the data from the sheets of an Excel
 workbook and return an appended dataframe.
 
 ``` r
-library(bulkreadr)
-library(dplyr)
-#> 
-#> Attaching package: 'dplyr'
-#> The following objects are masked from 'package:stats':
-#> 
-#>     filter, lag
-#> The following objects are masked from 'package:base':
-#> 
-#>     intersect, setdiff, setequal, union
 
 # path to the xls/xlsx file.
 
@@ -79,19 +76,14 @@ path <- system.file("extdata", "Diamonds.xlsx", package = "bulkreadr", mustWork 
 
 read_excel_workbook(path = path)
 #> # A tibble: 260 × 9
-#>    carat color clarity depth table price     x     y     z
-#>    <dbl> <chr> <chr>   <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
-#>  1  2    I     SI1      65.9    60 13764  7.8   7.73  5.12
-#>  2  0.7  H     SI1      65.2    58  2048  5.49  5.55  3.6 
-#>  3  1.51 E     SI1      58.4    70 11102  7.55  7.39  4.36
-#>  4  0.7  D     SI2      65.5    57  1806  5.56  5.43  3.6 
-#>  5  0.35 F     VVS1     54.6    59  1011  4.85  4.79  2.63
-#>  6  0.5  E     VS2      64.9    56  1397  5.01  4.95  3.23
-#>  7  1    E     SI1      65.1    61  4435  6.15  6.08  3.98
-#>  8  1.09 J     VS2      64.6    58  3443  6.48  6.41  4.16
-#>  9  0.98 H     SI2      67.9    60  2777  6.05  5.97  4.08
-#> 10  0.7  F     SI1      65.3    54  1974  5.58  5.54  3.63
-#> # ℹ 250 more rows
+#>   carat color clarity depth table price     x     y     z
+#>   <dbl> <chr> <chr>   <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
+#> 1  2    I     SI1      65.9    60 13764  7.8   7.73  5.12
+#> 2  0.7  H     SI1      65.2    58  2048  5.49  5.55  3.6 
+#> 3  1.51 E     SI1      58.4    70 11102  7.55  7.39  4.36
+#> 4  0.7  D     SI2      65.5    57  1806  5.56  5.43  3.6 
+#> 5  0.35 F     VVS1     54.6    59  1011  4.85  4.79  2.63
+#> # ℹ 255 more rows
 ```
 
 ## `read_excel_files_from_dir()`
@@ -109,19 +101,14 @@ directory <- system.file("xlsxfolder",  package = "bulkreadr")
 
 read_excel_files_from_dir(dir_path = directory)
 #> # A tibble: 260 × 10
-#>    cut   carat color clarity depth table price     x     y     z
-#>    <chr> <dbl> <chr> <chr>   <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
-#>  1 Fair   2    I     SI1      65.9    60 13764  7.8   7.73  5.12
-#>  2 Fair   0.7  H     SI1      65.2    58  2048  5.49  5.55  3.6 
-#>  3 Fair   1.51 E     SI1      58.4    70 11102  7.55  7.39  4.36
-#>  4 Fair   0.7  D     SI2      65.5    57  1806  5.56  5.43  3.6 
-#>  5 Fair   0.35 F     VVS1     54.6    59  1011  4.85  4.79  2.63
-#>  6 Fair   0.5  E     VS2      64.9    56  1397  5.01  4.95  3.23
-#>  7 Fair   1    E     SI1      65.1    61  4435  6.15  6.08  3.98
-#>  8 Fair   1.09 J     VS2      64.6    58  3443  6.48  6.41  4.16
-#>  9 Fair   0.98 H     SI2      67.9    60  2777  6.05  5.97  4.08
-#> 10 Fair   0.7  F     SI1      65.3    54  1974  5.58  5.54  3.63
-#> # ℹ 250 more rows
+#>   cut   carat color clarity depth table price     x     y     z
+#>   <chr> <dbl> <chr> <chr>   <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
+#> 1 Fair   2    I     SI1      65.9    60 13764  7.8   7.73  5.12
+#> 2 Fair   0.7  H     SI1      65.2    58  2048  5.49  5.55  3.6 
+#> 3 Fair   1.51 E     SI1      58.4    70 11102  7.55  7.39  4.36
+#> 4 Fair   0.7  D     SI2      65.5    57  1806  5.56  5.43  3.6 
+#> 5 Fair   0.35 F     VVS1     54.6    59  1011  4.85  4.79  2.63
+#> # ℹ 255 more rows
 ```
 
 ## `read_csv_files_from_dir()`
@@ -139,19 +126,14 @@ directory <- system.file("csvfolder",  package = "bulkreadr")
 
 read_csv_files_from_dir(dir_path = directory)
 #> # A tibble: 260 × 10
-#>    cut   carat color clarity depth table price     x     y     z
-#>    <chr> <dbl> <chr> <chr>   <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
-#>  1 Fair   2    I     SI1      65.9    60 13764  7.8   7.73  5.12
-#>  2 Fair   0.7  H     SI1      65.2    58  2048  5.49  5.55  3.6 
-#>  3 Fair   1.51 E     SI1      58.4    70 11102  7.55  7.39  4.36
-#>  4 Fair   0.7  D     SI2      65.5    57  1806  5.56  5.43  3.6 
-#>  5 Fair   0.35 F     VVS1     54.6    59  1011  4.85  4.79  2.63
-#>  6 Fair   0.5  E     VS2      64.9    56  1397  5.01  4.95  3.23
-#>  7 Fair   1    E     SI1      65.1    61  4435  6.15  6.08  3.98
-#>  8 Fair   1.09 J     VS2      64.6    58  3443  6.48  6.41  4.16
-#>  9 Fair   0.98 H     SI2      67.9    60  2777  6.05  5.97  4.08
-#> 10 Fair   0.7  F     SI1      65.3    54  1974  5.58  5.54  3.63
-#> # ℹ 250 more rows
+#>   cut   carat color clarity depth table price     x     y     z
+#>   <chr> <dbl> <chr> <chr>   <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
+#> 1 Fair   2    I     SI1      65.9    60 13764  7.8   7.73  5.12
+#> 2 Fair   0.7  H     SI1      65.2    58  2048  5.49  5.55  3.6 
+#> 3 Fair   1.51 E     SI1      58.4    70 11102  7.55  7.39  4.36
+#> 4 Fair   0.7  D     SI2      65.5    57  1806  5.56  5.43  3.6 
+#> 5 Fair   0.35 F     VVS1     54.6    59  1011  4.85  4.79  2.63
+#> # ℹ 255 more rows
 ```
 
 ## `read_gsheets()`
@@ -193,19 +175,14 @@ read_gsheets(ss = sheet_id)
 #> ✔ Reading from "Diamonds".
 #> ✔ Range ''Ideal''.
 #> # A tibble: 260 × 9
-#>    carat color clarity depth table price     x     y     z
-#>    <dbl> <chr> <chr>   <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
-#>  1  2    I     SI1      65.9    60 13764  7.8   7.73  5.12
-#>  2  0.7  H     SI1      65.2    58  2048  5.49  5.55  3.6 
-#>  3  1.51 E     SI1      58.4    70 11102  7.55  7.39  4.36
-#>  4  0.7  D     SI2      65.5    57  1806  5.56  5.43  3.6 
-#>  5  0.35 F     VVS1     54.6    59  1011  4.85  4.79  2.63
-#>  6  0.5  E     VS2      64.9    56  1397  5.01  4.95  3.23
-#>  7  1    E     SI1      65.1    61  4435  6.15  6.08  3.98
-#>  8  1.09 J     VS2      64.6    58  3443  6.48  6.41  4.16
-#>  9  0.98 H     SI2      67.9    60  2777  6.05  5.97  4.08
-#> 10  0.7  F     SI1      65.3    54  1974  5.58  5.54  3.63
-#> # ℹ 250 more rows
+#>   carat color clarity depth table price     x     y     z
+#>   <dbl> <chr> <chr>   <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
+#> 1  2    I     SI1      65.9    60 13764  7.8   7.73  5.12
+#> 2  0.7  H     SI1      65.2    58  2048  5.49  5.55  3.6 
+#> 3  1.51 E     SI1      58.4    70 11102  7.55  7.39  4.36
+#> 4  0.7  D     SI2      65.5    57  1806  5.56  5.43  3.6 
+#> 5  0.35 F     VVS1     54.6    59  1011  4.85  4.79  2.63
+#> # ℹ 255 more rows
 ```
 
 ## `pull_out()`

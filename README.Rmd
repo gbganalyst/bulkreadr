@@ -13,6 +13,8 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
+
+options(tibble.print_min = 5, tibble.print_max = 5)
 ```
 
 # bulkreadr <a><img src='man/figures/logo.png' align="right" height="138.5" /></a>
@@ -57,13 +59,18 @@ This section provides a concise overview of the different functions available in
 - [`convert_to_date()`](#convert_to_date) 
 
 
+```{r setup, message=FALSE, warning=FALSE}
+# loading bulkreadr package
+
+library(bulkreadr)
+library(dplyr)
+```
+
 ## `read_excel_workbook()`
 
 `read_excel_workbook()` reads all the data from the sheets of an Excel workbook and return an appended dataframe.
 
-```{r example1}
-library(bulkreadr)
-library(dplyr)
+```{r example1, message=FALSE, warning=FALSE}
 
 # path to the xls/xlsx file.
 
