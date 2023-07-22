@@ -4,10 +4,13 @@
 \alias{convert_to_date}
 \title{User friendly date-time parsing function}
 \usage{
-convert_to_date(date_num_char)
+convert_to_date(date_num_char, tz = "UTC")
 }
 \arguments{
 \item{date_num_char}{A character or numeric vector of dates}
+
+\item{tz}{Time zone indicator. If \code{NULL} (default), a Date object is
+returned. Otherwise a POSIXct with time zone attribute set to \code{tz}.}
 }
 \value{
 a vector of class POSIXct or Date

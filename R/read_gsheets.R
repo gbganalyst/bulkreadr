@@ -1,7 +1,8 @@
-#' Import data from multiple sheets in a Google Sheets
+#' Import Data from Multiple Sheets in Google Sheets
 #'
 #' @description
-#' `read_gsheets()` imports data from multiple sheets in a Google Sheets spreadsheet and append the resulting dataframes from each sheet together to create a single dataframe.
+#'
+#' The `read_gsheets()` function imports data from multiple sheets in a Google Sheets spreadsheet and appends the resulting dataframes from each sheet together to create a single dataframe. This function is a powerful tool for data analysis, as it allows you to easily combine data from multiple sheets into a single dataset.
 #'
 #' @inheritParams dplyr::bind_rows
 #' @inheritParams googlesheets4::read_sheet

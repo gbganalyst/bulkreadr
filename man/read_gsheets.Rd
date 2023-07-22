@@ -2,7 +2,7 @@
 % Please edit documentation in R/read_gsheets.R
 \name{read_gsheets}
 \alias{read_gsheets}
-\title{Import data from multiple sheets in a Google Sheets}
+\title{Import Data from Multiple Sheets in Google Sheets}
 \usage{
 read_gsheets(ss, col_types = NULL, .id = NULL)
 }
@@ -32,7 +32,7 @@ names if available, otherwise it will use positions.}
 A \link[tibble:tibble-package]{tibble}. If there are parsing problems, a warning will alert you.
 }
 \description{
-\code{read_gsheets()} imports data from multiple sheets in a Google Sheets spreadsheet and append the resulting dataframes from each sheet together to create a single dataframe.
+The \code{read_gsheets()} function imports data from multiple sheets in a Google Sheets spreadsheet and appends the resulting dataframes from each sheet together to create a single dataframe. This function is a powerful tool for data analysis, as it allows you to easily combine data from multiple sheets into a single dataset.
 }
 \examples{
 \dontshow{if (googlesheets4::gs4_has_token()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}

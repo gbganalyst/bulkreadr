@@ -1,5 +1,7 @@
 ---
 output: github_document
+editor_options: 
+  chunk_output_type: console
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -25,7 +27,7 @@ knitr::opts_chunk$set(
 
 ## Installation
 
-You can install the development version of `bulkreadr` from [GitHub](https://github.com/) with
+You can install the development version of `bulkreadr` from [GitHub](https://github.com/) with:
 
 ``` r
 if(!require("devtools")){
@@ -35,12 +37,127 @@ if(!require("devtools")){
 devtools::install_github("gbganalyst/bulkreadr")
 ```
 
-## Example
+## Usage
 
-This is a basic example which shows you how to solve a common problem:
+This section provides a concise overview of the different functions available in the `bulkreadr` package. These functions serve various purposes and are designed to handle importing of data in bulk.
 
-```{r example}
+- [`read_excel_workbook()`](#read_excel_workbook)
+
+- [`read_excel_files_from_dir()`](#read_csv_files_from_dir)
+
+- [`read_csv_files_from_dir()`](#read_csv_files_from_dir)
+
+- [`read_gsheets()`](#read_gsheets)
+
+
+## Other functions in `bulkreadr` package:
+
+- [`pull_out()`](#pull_out)
+
+- [`convert_to_date()`](#convert_to_date) 
+
+
+## `read_excel_workbook()`
+
+`read_excel_workbook()` reads all the data from the sheets of an Excel workbook and return an appended dataframe.
+
+```{r example1}
 library(bulkreadr)
-## basic example code
+library(dplyr)
+
+# path to the xls/xlsx file.
+
+path <- system.file("extdata", "Diamonds.xlsx", package = "bulkreadr", mustWork = TRUE)
+
+# reading the sheets
+
+read_excel_workbook(path = path)
+
+```
+
+## `read_excel_files_from_dir()` 
+
+`read_excel_files_from_dir()` reads all Excel workbooks in the `"~/data"` directory and returns an appended dataframe.
+
+```{r example1a}
+
+# path to the directory containing the xls/xlsx files.
+
+directory <- system.file("xlsxfolder",  package = "bulkreadr")
+
+# importing the workbooks
+
+read_excel_files_from_dir(dir_path = directory)
+
+```
+
+## `read_csv_files_from_dir()` 
+
+`read_csv_files_from_dir()` reads all csv files from the `"~/data"` directory and returns an appended dataframe. The resulting dataframe will be in the same order as the CSV files in the directory.
+
+```{r example2}
+# path to the directory containing the CSV files.
+
+directory <- system.file("csvfolder",  package = "bulkreadr")
+
+# importing the csv files
+
+read_csv_files_from_dir(dir_path = directory)
+
+```
+
+## `read_gsheets()` 
+
+The `read_gsheets()` function imports data from multiple sheets in a Google Sheets spreadsheet and appends the resulting dataframes from each sheet together to create a single dataframe. This function is a powerful tool for data analysis, as it allows you to easily combine data from multiple sheets into a single dataset.
+
+```{r example3}
+
+# Google Sheet ID or the link to the sheet
+
+sheet_id <- "1izO0mHu3L9AMySQUXGDn9GPs1n-VwGFSEoAKGhqVQh0"
+
+# reading all the sheets
+
+read_gsheets(ss = sheet_id)
+```
+
+## `pull_out()` 
+
+`pull_out()` is similar to [. It acts on vectors, matrices, arrays and lists to extract or replace parts. It is pleasant to use with the magrittr (`⁠%>%`⁠) and base(`|>`) operators.
+
+```{r example4}
+
+top_10_richest_nig <- c("Aliko Dangote", "Mike Adenuga", "Femi Otedola", "Arthur Eze", "Abdulsamad Rabiu", "Cletus Ibeto", "Orji Uzor Kalu", "ABC Orjiakor", "Jimoh Ibrahim", "Tony Elumelu")
+
+top_10_richest_nig %>% 
+  pull_out(c(1, 5, 2))
+
+top_10_richest_nig %>% 
+  pull_out(-c(1, 5, 2))
+
+```
+
+## `convert_to_date()` 
+
+`convert_to_date()` parses an input vector into POSIXct date-time object. It is also powerful to convert from excel date number like `42370` into date value like `2016-01-01`.
+
+```{r example 5}
+
+## ** heterogeneous dates **
+
+dates <- c(
+  44869, "22.09.2022", NA, "02/27/92", "01-19-2022",
+  "13-01-  2022", "2023", "2023-2", 41750.2, 41751.99,
+  "11 07 2023", "2023-4"
+  )
+
+# Convert to POSIXct or Date object
+
+convert_to_date(dates)
+
+# It can also convert date time object to date object 
+
+convert_to_date(lubridate::now())
+
 ```
 
