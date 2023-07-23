@@ -36,6 +36,7 @@ The \code{read_gsheets()} function imports data from multiple sheets in a Google
 }
 \examples{
 \dontshow{if (googlesheets4::gs4_has_token()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+
 sheet_id <- "1izO0mHu3L9AMySQUXGDn9GPs1n-VwGFSEoAKGhqVQh0"
 
 read_gsheets(ss = sheet_id, .id = "sheet.name")

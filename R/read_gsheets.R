@@ -13,6 +13,7 @@
 #'
 #' @export
 #' @examplesIf googlesheets4::gs4_has_token()
+#'
 #' sheet_id <- "1izO0mHu3L9AMySQUXGDn9GPs1n-VwGFSEoAKGhqVQh0"
 #'
 #' read_gsheets(ss = sheet_id, .id = "sheet.name")

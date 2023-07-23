@@ -11,15 +11,14 @@
 ## Overview
 
 `bulkreadr` is an R package designed to simplify and streamline the
-process of reading and processing large volumes of data. With a
-collection of functions tailored for bulk data operations, the package
-allows users to efficiently read multiple sheets from Microsoft
-Excel/Google Sheets workbooks and multiple CSV files from a directory.
-It returns the data as organized data frames, making it convenient for
-further analysis and manipulation. Whether dealing with extensive data
-sets or batch processing tasks, “bulkreadr” empowers users to
-effortlessly handle data in bulk, saving time and effort in data
-preparation workflows.
+process of read and processing large volumes of data. With a collection
+of functions tailored for bulk data operations, the package allows users
+to efficiently read multiple sheets from Microsoft Excel/Google Sheets
+workbooks and multiple CSV files from a directory. It returns the data
+as organized data frames, making it convenient for further analysis and
+manipulation. Whether dealing with extensive data sets or batch
+processing tasks, “bulkreadr” empowers users to effortlessly handle data
+in bulk, saving time and effort in data preparation workflows.
 
 ## Installation
 
@@ -55,10 +54,9 @@ purposes and are designed to handle importing of data in bulk.
 - [`convert_to_date()`](#convert_to_date)
 
 ``` r
-# loading bulkreadr package
+# load bulkreadr package
 
 library(bulkreadr)
-library(dplyr)
 ```
 
 ## `read_excel_workbook()`
@@ -72,7 +70,7 @@ workbook and return an appended dataframe.
 
 path <- system.file("extdata", "Diamonds.xlsx", package = "bulkreadr", mustWork = TRUE)
 
-# reading the sheets
+# read the sheets
 
 read_excel_workbook(path = path)
 #> # A tibble: 260 × 9
@@ -97,7 +95,7 @@ read_excel_workbook(path = path)
 
 directory <- system.file("xlsxfolder",  package = "bulkreadr")
 
-# importing the workbooks
+# import the workbooks
 
 read_excel_files_from_dir(dir_path = directory)
 #> # A tibble: 260 × 10
@@ -122,7 +120,7 @@ will be in the same order as the CSV files in the directory.
 
 directory <- system.file("csvfolder",  package = "bulkreadr")
 
-# importing the csv files
+# import the csv files
 
 read_csv_files_from_dir(dir_path = directory)
 #> # A tibble: 260 × 10
@@ -150,30 +148,9 @@ multiple sheets into a single dataset.
 
 sheet_id <- "1izO0mHu3L9AMySQUXGDn9GPs1n-VwGFSEoAKGhqVQh0"
 
-# reading all the sheets
+# read all the sheets
 
 read_gsheets(ss = sheet_id)
-#> ℹ Suitable tokens found in the cache, associated with these emails:
-#> • 'ezekiel.ogundepo@54gene.com'
-#> • 'gbganalyst@gmail.com'
-#>   Defaulting to the first email.
-#> ! Using an auto-discovered, cached token.
-#>   To suppress this message, modify your code or options to clearly consent to
-#>   the use of a cached token.
-#>   See gargle's "Non-interactive auth" vignette for more details:
-#>   <https://gargle.r-lib.org/articles/non-interactive-auth.html>
-#> ℹ The googlesheets4 package is using a cached token for
-#>   'ezekiel.ogundepo@54gene.com'.
-#> ✔ Reading from "Diamonds".
-#> ✔ Range ''Fair''.
-#> ✔ Reading from "Diamonds".
-#> ✔ Range ''Good''.
-#> ✔ Reading from "Diamonds".
-#> ✔ Range ''Very Good''.
-#> ✔ Reading from "Diamonds".
-#> ✔ Range ''Premium''.
-#> ✔ Reading from "Diamonds".
-#> ✔ Range ''Ideal''.
 #> # A tibble: 260 × 9
 #>   carat color clarity depth table price     x     y     z
 #>   <dbl> <chr> <chr>   <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
@@ -198,7 +175,9 @@ top_10_richest_nig <- c("Aliko Dangote", "Mike Adenuga", "Femi Otedola", "Arthur
 top_10_richest_nig %>% 
   pull_out(c(1, 5, 2))
 #> [1] "Aliko Dangote"    "Abdulsamad Rabiu" "Mike Adenuga"
+```
 
+``` r
 top_10_richest_nig %>% 
   pull_out(-c(1, 5, 2))
 #> [1] "Femi Otedola"   "Arthur Eze"     "Cletus Ibeto"   "Orji Uzor Kalu"
@@ -231,5 +210,20 @@ convert_to_date(dates)
 # It can also convert date time object to date object 
 
 convert_to_date(lubridate::now())
-#> [1] "2023-07-22"
+#> [1] "2023-07-23"
 ```
+
+## Context
+
+bulkreadr draws on and complements / emulates other packages such as
+readxl, readr, and googlesheets4 to read bulk data in R.
+
+- [readxl](https://readxl.tidyverse.org) is the tidyverse package for
+  reading Excel files (xls or xlsx) into an R data frame.
+
+- [readr](https://readr.tidyverse.org) is the tidyverse package for
+  reading delimited files (e.g., csv or tsv) into an R data frame.
+
+- [googlesheets4](https://cran.r-project.org/package=googlesheets) is
+  the package to interact with Google Sheets through the Sheets API v4
+  <https://developers.google.com/sheets/api>.

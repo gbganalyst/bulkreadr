@@ -25,7 +25,7 @@ options(tibble.print_min = 5, tibble.print_max = 5)
 
 ## Overview
 
-`bulkreadr` is an R package designed to simplify and streamline the process of reading and processing large volumes of data. With a collection of functions tailored for bulk data operations, the package allows users to efficiently read multiple sheets from Microsoft Excel/Google Sheets workbooks and multiple CSV files from a directory. It returns the data as organized data frames, making it convenient for further analysis and manipulation. Whether dealing with extensive data sets or batch processing tasks, "bulkreadr" empowers users to effortlessly handle data in bulk, saving time and effort in data preparation workflows.
+`bulkreadr` is an R package designed to simplify and streamline the process of read and processing large volumes of data. With a collection of functions tailored for bulk data operations, the package allows users to efficiently read multiple sheets from Microsoft Excel/Google Sheets workbooks and multiple CSV files from a directory. It returns the data as organized data frames, making it convenient for further analysis and manipulation. Whether dealing with extensive data sets or batch processing tasks, "bulkreadr" empowers users to effortlessly handle data in bulk, saving time and effort in data preparation workflows.
 
 ## Installation
 
@@ -60,10 +60,9 @@ This section provides a concise overview of the different functions available in
 
 
 ```{r setup, message=FALSE, warning=FALSE}
-# loading bulkreadr package
+# load bulkreadr package
 
 library(bulkreadr)
-library(dplyr)
 ```
 
 ## `read_excel_workbook()`
@@ -76,7 +75,7 @@ library(dplyr)
 
 path <- system.file("extdata", "Diamonds.xlsx", package = "bulkreadr", mustWork = TRUE)
 
-# reading the sheets
+# read the sheets
 
 read_excel_workbook(path = path)
 
@@ -92,7 +91,7 @@ read_excel_workbook(path = path)
 
 directory <- system.file("xlsxfolder",  package = "bulkreadr")
 
-# importing the workbooks
+# import the workbooks
 
 read_excel_files_from_dir(dir_path = directory)
 
@@ -107,7 +106,7 @@ read_excel_files_from_dir(dir_path = directory)
 
 directory <- system.file("csvfolder",  package = "bulkreadr")
 
-# importing the csv files
+# import the csv files
 
 read_csv_files_from_dir(dir_path = directory)
 
@@ -117,13 +116,13 @@ read_csv_files_from_dir(dir_path = directory)
 
 The `read_gsheets()` function imports data from multiple sheets in a Google Sheets spreadsheet and appends the resulting dataframes from each sheet together to create a single dataframe. This function is a powerful tool for data analysis, as it allows you to easily combine data from multiple sheets into a single dataset.
 
-```{r example3}
+```{r example3, message=FALSE, warning=FALSE}
 
 # Google Sheet ID or the link to the sheet
 
 sheet_id <- "1izO0mHu3L9AMySQUXGDn9GPs1n-VwGFSEoAKGhqVQh0"
 
-# reading all the sheets
+# read all the sheets
 
 read_gsheets(ss = sheet_id)
 ```
@@ -139,10 +138,13 @@ top_10_richest_nig <- c("Aliko Dangote", "Mike Adenuga", "Femi Otedola", "Arthur
 top_10_richest_nig %>% 
   pull_out(c(1, 5, 2))
 
+```
+
+```{r}
 top_10_richest_nig %>% 
   pull_out(-c(1, 5, 2))
-
 ```
+
 
 ## `convert_to_date()` 
 
@@ -168,3 +170,13 @@ convert_to_date(lubridate::now())
 
 ```
 
+
+## Context
+
+bulkreadr draws on and complements / emulates other packages such as readxl, readr, and googlesheets4 to read bulk data in R.
+
+  * [readxl](https://readxl.tidyverse.org) is the tidyverse package for reading Excel files (xls or xlsx) into an R data frame. 
+  
+  * [readr](https://readr.tidyverse.org) is the tidyverse package for reading delimited files (e.g., csv or tsv) into an R data frame. 
+  
+  * [googlesheets4](https://cran.r-project.org/package=googlesheets) is the package to interact with Google Sheets through the Sheets API v4  <https://developers.google.com/sheets/api>.
