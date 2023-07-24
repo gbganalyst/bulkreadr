@@ -210,7 +210,7 @@ convert_to_date(dates)
 # It can also convert date time object to date object 
 
 convert_to_date(lubridate::now())
-#> [1] "2023-07-23"
+#> [1] "2023-07-24"
 ```
 
 ## Context

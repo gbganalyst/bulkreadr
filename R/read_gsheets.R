@@ -33,8 +33,16 @@
 #'
 #'
 read_gsheets <- function(ss, col_types = NULL, .id = NULL) {
-  ss %>%
-    googlesheets4::sheet_names() %>%
-    purrr::set_names() %>%
-    purrr::map_df(read_sheet, ss = ss, col_types = col_types, .id = .id)
+  if (missing(ss)) {
+    stop("argument 'ss' is missing, with no default")
+  }
+  if (!has_internet()) {
+    stop("Please check your internet connection")
+  } else {
+    ss %>%
+      googlesheets4::sheet_names() %>%
+      purrr::set_names() %>%
+      purrr::map_df(read_sheet, ss = ss, col_types = col_types, .id = .id)
+  }
 }
+

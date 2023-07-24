@@ -8,7 +8,7 @@
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-"bulkreadr" is an R package designed to simplify and streamline the process of reading and processing large volumes of data. With a collection of functions tailored for bulk data operations, the package allows users to efficiently read multiple sheets from Microsoft Excel/Google Sheets workbooks and multiple CSV files from a directory. It returns the data as organized data frames, making it convenient for further analysis and manipulation. Whether dealing with extensive data sets or batch processing tasks, "bulkreadr" empowers users to effortlessly handle data in bulk, saving time and effort in data preparation workflows.
+Designed to simplify and streamline the process of reading and processing large volumes of data in R. With a collection of functions tailored for bulk data operations, the package allows users to efficiently read multiple sheets from Microsoft Excel/Google Sheets workbooks and multiple CSV files from a directory. It returns the data as organized data frames, making it convenient for further analysis and manipulation. Whether dealing with extensive data sets or batch processing tasks, "bulkreadr" empowers users to effortlessly handle data in bulk, saving time and effort in data preparation workflows.
 }
 \seealso{
 Useful links:

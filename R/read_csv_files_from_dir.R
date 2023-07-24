@@ -29,7 +29,10 @@
 #'
 
 read_csv_files_from_dir <- function(dir_path = ".", col_types = NULL, .id = NULL) {
-  dir_ls(path = dir_path, regexp = "csv") %>%
+
+  path <- check_file(dir_path)
+
+  dir_ls(path = path, regexp = "csv") %>%
     map_df(read_csv, col_types = col_types, .id = .id, show_col_types = FALSE)
 }
 

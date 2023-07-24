@@ -27,6 +27,9 @@
 #'
 
 read_excel_workbook <- function(path, col_types = NULL, .id = NULL) {
+
+  path <- check_file(path)
+
   path %>%
     readxl::excel_sheets() %>%
     purrr::set_names() %>%

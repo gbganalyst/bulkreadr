@@ -5,3 +5,5 @@ tibble
 xls
 CMD
 xlsx
+bulkreadr
+workflows

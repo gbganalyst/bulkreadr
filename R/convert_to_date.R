@@ -25,12 +25,11 @@
 #' convert_to_date(dates)
 #'
 convert_to_date <- function(date_num_char, tz = "UTC") {
-   map_vec(date_num_char, to_date, tz) %>%
-    lubridate::as_date() %>%
-    suppressWarnings()
+  if (missing(date_num_char)) {
+    stop("argument 'date_num_char' is missing, with no default")
+  } else {
+    map_vec(date_num_char, to_date, tz) %>%
+      lubridate::as_date() %>%
+      suppressWarnings()
+  }
 }
-
-
-
-
-

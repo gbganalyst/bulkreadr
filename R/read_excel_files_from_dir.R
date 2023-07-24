@@ -31,6 +31,10 @@
 #'
 
 read_excel_files_from_dir <- function(dir_path, col_types = NULL, .id = NULL) {
+
+  dir_path = check_file(dir_path)
+
   fs::dir_ls(path = dir_path, regexp = "xlsx") %>%
     purrr::map_df(read_excel_workbook, col_types = col_types, .id = .id)
 }
+

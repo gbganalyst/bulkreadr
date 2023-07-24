@@ -1,0 +1,14 @@
+# What is New in *bulkreadr*?
+
+## 0.1.0 (2023-07-24) new version
+
+This update includes the following new features and improvements:
+
+- Improved error handling by adding meaningful error messages for all functions within the bulkreadr package. This will make it easier for users to identify and troubleshoot issues that may arise during their use of the package.
+
+- Added package-level documentation. The user can now use `?bulkreadr::bulkreadr` for basic package-level documentation.
+
+## 0.0.0.9 (2023-07-03)
+
+The development version of bulkreadr is now on Githhub.
+
