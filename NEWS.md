@@ -4,7 +4,7 @@
 
 This update includes the following new features and improvements:
 
-- Improved error handling by adding meaningful error messages for all functions within the bulkreadr package. This will make it easier for users to identify and troubleshoot issues that may arise during their use of the package.
+- Improved error handling by adding meaningful error messages for all functions within `bulkreadr` package. This will make it easier for users to identify and troubleshoot issues that may arise during their use of the package.
 
 - Added package-level documentation. The user can now use `?bulkreadr::bulkreadr` for basic package-level documentation.
 
