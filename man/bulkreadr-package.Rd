@@ -23,6 +23,7 @@ Useful links:
 
 Other contributors:
 \itemize{
+  \item Golibe Ezeechesi \email{golibe.ezeechesi@gmail.com} [contributor]
   \item Fatimo Adebanjo \email{adebanjofatimo2000@gmail.com} [contributor]
 }
 

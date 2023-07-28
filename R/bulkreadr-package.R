@@ -3,6 +3,7 @@
 
 ## usethis namespace: start
 #' @importFrom curl has_internet
+#' @importFrom dplyr group_by group_split
 #' @importFrom fs dir_ls
 #' @importFrom googlesheets4 gs4_has_token read_sheet sheet_names
 #' @importFrom lubridate as_date is.Date parse_date_time

@@ -280,6 +280,46 @@ result_df_median
 #> # ℹ 2 more rows
 ```
 
+### Impute missing values (NAs) in a grouped data frame
+
+You can use the `fill_missing_values()` in a grouped data frame by using
+other grouping and map functions. Here is an example of how to do this:
+
+``` r
+sample_iris <- tibble(
+Sepal_Length = c(5.2, 5, 5.7, NA, 6.2, 6.7, 5.5),
+Petal_Length = c(1.5, 1.4, 4.2, 1.4, NA, 5.8, 3.7),
+Petal_Width = c(0.3, 0.2, 1.2, 0.2, 1.3, 1.8, NA),
+Species = c("setosa", "setosa", "versicolor", "setosa",
+          "virginica", "virginica", "setosa")
+)
+
+sample_iris
+#> # A tibble: 7 × 4
+#>   Sepal_Length Petal_Length Petal_Width Species   
+#>          <dbl>        <dbl>       <dbl> <chr>     
+#> 1          5.2          1.5         0.3 setosa    
+#> 2          5            1.4         0.2 setosa    
+#> 3          5.7          4.2         1.2 versicolor
+#> 4         NA            1.4         0.2 setosa    
+#> 5          6.2         NA           1.3 virginica 
+#> # ℹ 2 more rows
+
+sample_iris %>%
+  group_by(Species) %>%
+  group_split() %>%
+  map_df(fill_missing_values)
+#> # A tibble: 7 × 4
+#>   Sepal_Length Petal_Length Petal_Width Species   
+#>          <dbl>        <dbl>       <dbl> <chr>     
+#> 1         5.2           1.5       0.3   setosa    
+#> 2         5             1.4       0.2   setosa    
+#> 3         5.23          1.4       0.2   setosa    
+#> 4         5.5           3.7       0.233 setosa    
+#> 5         5.7           4.2       1.2   versicolor
+#> # ℹ 2 more rows
+```
+
 ## Context
 
 bulkreadr draws on and complements / emulates other packages such as

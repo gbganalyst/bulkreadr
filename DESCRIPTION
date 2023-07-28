@@ -4,6 +4,7 @@ Version: 0.1.0
 Authors@R: c(
     person("Ezekiel", "Ogundepo", , "gbganalyst@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0003-3974-2733")),
+    person("Golibe", "Ezeechesi", , "golibe.ezeechesi@gmail.com", role = "ctb"),
     person("Fatimo", "Adebanjo", , "adebanjofatimo2000@gmail.com", role = "ctb")
   )
 Description: Designed to simplify and streamline the process of reading
@@ -20,7 +21,9 @@ License: MIT + file LICENSE
 URL: https://github.com/gbganalyst/bulkreadr
 BugReports: https://github.com/gbganalyst/bulkreadr/issues
 Depends: 
-    tibble
+    tibble,
+    purrr,
+    dplyr
 Imports: 
     curl,
     fs,
@@ -28,13 +31,11 @@ Imports:
     lubridate,
     magrittr,
     openxlsx,
-    purrr,
     readr,
     readxl,
     stats,
     stringr
 Suggests:
-    dplyr,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Encoding: UTF-8

@@ -31,6 +31,30 @@
 #'
 #' result_df_median
 #'
+#' # Impute missing values (NAs) in a grouped data frame
+#' # You can do that by using the following:
+#'
+#' sample_iris <- tibble(
+#' Sepal_Length = c(5.2, 5, 5.7, NA, 6.2, 6.7, 5.5),
+#' Petal_Length = c(1.5, 1.4, 4.2, 1.4, NA, 5.8, 3.7),
+#' Petal_Width = c(0.3, 0.2, 1.2, 0.2, 1.3, 1.8, NA),
+#' Species = c("setosa", "setosa", "versicolor", "setosa",
+#'            "virginica", "virginica", "setosa")
+#' )
+#'
+#' sample_iris %>%
+#' group_by(Species) %>%
+#' group_split() %>%
+#' map_df(fill_missing_values)
+#'
+#'
+#'
+#'
+#'
+#'
+#'
+#'
+#'
 fill_missing_values <- function(df, use_mean = TRUE) {
   if (missing(df)) {
     stop("argument 'df' is missing, with no default")
