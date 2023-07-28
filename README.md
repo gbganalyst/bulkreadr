@@ -54,11 +54,7 @@ purposes and are designed to handle importing of data in bulk.
 
 - [`convert_to_date()`](#convert_to_date)
 
-``` r
-# load bulkreadr package
-
-library(bulkreadr)
-```
+- [`fill_missing_values()`](#fill_missing_values)
 
 ## `read_excel_workbook()`
 
@@ -66,6 +62,10 @@ library(bulkreadr)
 workbook and return an appended dataframe.
 
 ``` r
+
+# load bulkreadr package
+
+library(bulkreadr)
 
 # path to the xls/xlsx file.
 
@@ -211,7 +211,62 @@ convert_to_date(dates)
 # It can also convert date time object to date object 
 
 convert_to_date(lubridate::now())
-#> [1] "2023-07-25"
+#> [1] "2023-07-28"
+```
+
+## `fill_missing_values()`
+
+`fill_missing_values()` in an efficient function that addresses missing
+values in a dataframe. It uses imputation by function, meaning it
+replaces missing data in numeric variables with either the mean or the
+median, and in non-numeric variables with the mode. The function takes a
+column-based imputation approach, ensuring that replacement values are
+derived from the respective columns, resulting in accurate and
+consistent data. This method enhances the integrity of the dataset and
+promotes sound decision-making and analysis in data processing
+workflows.
+
+``` r
+
+df <- tibble(
+  Sepal_Length = c(5.2, 5, 5.7, NA, 6.2, 6.7, 5.5),
+  Sepal.Width = c(4.1, 3.6, 3, 3, 2.9, 2.5, 2.4),
+  Petal_Length = c(1.5, 1.4, 4.2, 1.4, NA, 5.8, 3.7),
+  Petal_Width = c(NA, 0.2, 1.2, 0.2, 1.3, 1.8, NA),
+  Species = c("setosa", NA, "versicolor", "setosa",
+    NA, "virginica", "setosa"
+  )
+)
+
+# Using mean to fill missing values for numeric variables
+
+result_df_mean <- fill_missing_values(df, use_mean = TRUE)
+
+result_df_mean
+#> # A tibble: 7 × 5
+#>   Sepal_Length Sepal.Width Petal_Length Petal_Width Species   
+#>          <dbl>       <dbl>        <dbl>       <dbl> <chr>     
+#> 1         5.2          4.1          1.5        0.94 setosa    
+#> 2         5            3.6          1.4        0.2  setosa    
+#> 3         5.7          3            4.2        1.2  versicolor
+#> 4         5.72         3            1.4        0.2  setosa    
+#> 5         6.2          2.9          3          1.3  setosa    
+#> # ℹ 2 more rows
+
+# Using median to fill missing values for numeric variables
+
+result_df_median <- fill_missing_values(df, use_mean = FALSE)
+
+result_df_median
+#> # A tibble: 7 × 5
+#>   Sepal_Length Sepal.Width Petal_Length Petal_Width Species   
+#>          <dbl>       <dbl>        <dbl>       <dbl> <chr>     
+#> 1          5.2         4.1          1.5         1.2 setosa    
+#> 2          5           3.6          1.4         0.2 setosa    
+#> 3          5.7         3            4.2         1.2 versicolor
+#> 4          5.6         3            1.4         0.2 setosa    
+#> 5          6.2         2.9          2.6         1.3 setosa    
+#> # ℹ 2 more rows
 ```
 
 ## Context

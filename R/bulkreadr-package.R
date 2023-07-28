@@ -11,7 +11,9 @@
 #' @importFrom purrr map_df map_vec
 #' @importFrom readr read_csv
 #' @importFrom readxl excel_sheets read_excel read_xlsx
+#' @importFrom stats median
 #' @importFrom stringr str_length
+#' @importFrom tibble tibble
 ## usethis namespace: end
 NULL
 
