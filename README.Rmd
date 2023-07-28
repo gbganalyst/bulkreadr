@@ -186,6 +186,8 @@ df <- tibble(
   )
 )
 
+df
+
 # Using mean to fill missing values for numeric variables
 
 result_df_mean <- fill_missing_values(df, use_mean = TRUE)

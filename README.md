@@ -238,6 +238,17 @@ df <- tibble(
   )
 )
 
+df
+#> # A tibble: 7 × 5
+#>   Sepal_Length Sepal.Width Petal_Length Petal_Width Species   
+#>          <dbl>       <dbl>        <dbl>       <dbl> <chr>     
+#> 1          5.2         4.1          1.5        NA   setosa    
+#> 2          5           3.6          1.4         0.2 <NA>      
+#> 3          5.7         3            4.2         1.2 versicolor
+#> 4         NA           3            1.4         0.2 setosa    
+#> 5          6.2         2.9         NA           1.3 <NA>      
+#> # ℹ 2 more rows
+
 # Using mean to fill missing values for numeric variables
 
 result_df_mean <- fill_missing_values(df, use_mean = TRUE)
