@@ -15,7 +15,7 @@
 #' @param df A data frame
 #'
 #' @return
-#' A tibble summarising the count and percentage of columnwise missingness for a data frame.
+#' A tibble summarizing the count and percentage of columnwise missingness for a data frame.
 #'
 #' @export
 #'
