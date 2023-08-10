@@ -4,6 +4,7 @@ Version: 0.1.0
 Authors@R: c(
     person("Ezekiel", "Ogundepo", , "gbganalyst@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0003-3974-2733")),
+    person("Ernest", "Fokoue", , "epfeqa@rit.edu", role = "ctb"),
     person("Golibe", "Ezeechesi", , "golibe.ezeechesi@gmail.com", role = "ctb"),
     person("Fatimo", "Adebanjo", , "adebanjofatimo2000@gmail.com", role = "ctb")
   )
@@ -28,6 +29,7 @@ Imports:
     curl,
     fs,
     googlesheets4,
+    inspectdf,
     lubridate,
     magrittr,
     openxlsx,

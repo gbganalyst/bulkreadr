@@ -37,7 +37,7 @@ read_gsheets <- function(ss, col_types = NULL, .id = NULL) {
     stop("argument 'ss' is missing, with no default")
   }
   if (!has_internet()) {
-    stop("Please check your internet connection")
+    stop("No internet! Please check your internet connection")
   } else {
     ss %>%
       googlesheets4::sheet_names() %>%

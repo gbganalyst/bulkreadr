@@ -7,11 +7,14 @@ editor_options:
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 ```{r, include = FALSE}
+can_decrypt <- gargle::secret_has_key("GOOGLESHEETS4_KEY")
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   fig.path = "man/figures/README-",
-  out.width = "100%"
+  out.width = "100%",
+  purl = can_decrypt,
+  eval = can_decrypt
 )
 
 options(tibble.print_min = 5, tibble.print_max = 5)
@@ -57,6 +60,8 @@ This section provides a concise overview of the different functions available in
 - [`pull_out()`](#pull_out)
 
 - [`convert_to_date()`](#convert_to_date)
+
+- [`inspect_na()`](#inspect_na)
 
 - [`fill_missing_values()`](#fill_missing_values)
 
@@ -137,7 +142,6 @@ top_10_richest_nig <- c("Aliko Dangote", "Mike Adenuga", "Femi Otedola", "Arthur
 
 top_10_richest_nig %>% 
   pull_out(c(1, 5, 2))
-
 ```
 
 ```{r}
@@ -167,6 +171,24 @@ convert_to_date(dates)
 # It can also convert date time object to date object 
 
 convert_to_date(lubridate::now())
+
+```
+
+## `inspect_na()` 
+
+`inspect_na()` summarizes the rate of missingness in each column of a data frame. For a grouped data frame, the rate of missingness is summarized separately for each group.
+
+```{r example 6a}
+
+# dataframe summary
+
+inspect_na(airquality)
+
+# grouped dataframe summary
+
+airquality %>% 
+  group_by(Month) %>% 
+  inspect_na()
 
 ```
 
