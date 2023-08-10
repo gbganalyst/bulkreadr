@@ -6,16 +6,12 @@ editor_options:
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r, include = FALSE}
-can_decrypt <- gargle::secret_has_key("GOOGLESHEETS4_KEY")
+```{r setup, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   fig.path = "man/figures/README-",
-  out.width = "100%",
-  purl = can_decrypt,
-  eval = can_decrypt
-)
+  out.width = "100%")
 
 options(tibble.print_min = 5, tibble.print_max = 5)
 ```

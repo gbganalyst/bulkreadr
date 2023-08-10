@@ -76,6 +76,15 @@ path <- system.file("extdata", "Diamonds.xlsx", package = "bulkreadr", mustWork 
 # read the sheets
 
 read_excel_workbook(path = path)
+#> # A tibble: 260 × 9
+#>   carat color clarity depth table price     x     y     z
+#>   <dbl> <chr> <chr>   <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
+#> 1  2    I     SI1      65.9    60 13764  7.8   7.73  5.12
+#> 2  0.7  H     SI1      65.2    58  2048  5.49  5.55  3.6 
+#> 3  1.51 E     SI1      58.4    70 11102  7.55  7.39  4.36
+#> 4  0.7  D     SI2      65.5    57  1806  5.56  5.43  3.6 
+#> 5  0.35 F     VVS1     54.6    59  1011  4.85  4.79  2.63
+#> # ℹ 255 more rows
 ```
 
 ## `read_excel_files_from_dir()`
@@ -92,6 +101,15 @@ directory <- system.file("xlsxfolder",  package = "bulkreadr")
 # import the workbooks
 
 read_excel_files_from_dir(dir_path = directory)
+#> # A tibble: 260 × 10
+#>   cut   carat color clarity depth table price     x     y     z
+#>   <chr> <dbl> <chr> <chr>   <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
+#> 1 Fair   2    I     SI1      65.9    60 13764  7.8   7.73  5.12
+#> 2 Fair   0.7  H     SI1      65.2    58  2048  5.49  5.55  3.6 
+#> 3 Fair   1.51 E     SI1      58.4    70 11102  7.55  7.39  4.36
+#> 4 Fair   0.7  D     SI2      65.5    57  1806  5.56  5.43  3.6 
+#> 5 Fair   0.35 F     VVS1     54.6    59  1011  4.85  4.79  2.63
+#> # ℹ 255 more rows
 ```
 
 ## `read_csv_files_from_dir()`
@@ -108,6 +126,15 @@ directory <- system.file("csvfolder",  package = "bulkreadr")
 # import the csv files
 
 read_csv_files_from_dir(dir_path = directory)
+#> # A tibble: 260 × 10
+#>   cut   carat color clarity depth table price     x     y     z
+#>   <chr> <dbl> <chr> <chr>   <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
+#> 1 Fair   2    I     SI1      65.9    60 13764  7.8   7.73  5.12
+#> 2 Fair   0.7  H     SI1      65.2    58  2048  5.49  5.55  3.6 
+#> 3 Fair   1.51 E     SI1      58.4    70 11102  7.55  7.39  4.36
+#> 4 Fair   0.7  D     SI2      65.5    57  1806  5.56  5.43  3.6 
+#> 5 Fair   0.35 F     VVS1     54.6    59  1011  4.85  4.79  2.63
+#> # ℹ 255 more rows
 ```
 
 ## `read_gsheets()`
@@ -127,6 +154,15 @@ sheet_id <- "1izO0mHu3L9AMySQUXGDn9GPs1n-VwGFSEoAKGhqVQh0"
 # read all the sheets
 
 read_gsheets(ss = sheet_id)
+#> # A tibble: 260 × 9
+#>   carat color clarity depth table price     x     y     z
+#>   <dbl> <chr> <chr>   <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
+#> 1  2    I     SI1      65.9    60 13764  7.8   7.73  5.12
+#> 2  0.7  H     SI1      65.2    58  2048  5.49  5.55  3.6 
+#> 3  1.51 E     SI1      58.4    70 11102  7.55  7.39  4.36
+#> 4  0.7  D     SI2      65.5    57  1806  5.56  5.43  3.6 
+#> 5  0.35 F     VVS1     54.6    59  1011  4.85  4.79  2.63
+#> # ℹ 255 more rows
 ```
 
 ## `pull_out()`
@@ -141,11 +177,14 @@ top_10_richest_nig <- c("Aliko Dangote", "Mike Adenuga", "Femi Otedola", "Arthur
 
 top_10_richest_nig %>% 
   pull_out(c(1, 5, 2))
+#> [1] "Aliko Dangote"    "Abdulsamad Rabiu" "Mike Adenuga"
 ```
 
 ``` r
 top_10_richest_nig %>% 
   pull_out(-c(1, 5, 2))
+#> [1] "Femi Otedola"   "Arthur Eze"     "Cletus Ibeto"   "Orji Uzor Kalu"
+#> [5] "ABC Orjiakor"   "Jimoh Ibrahim"  "Tony Elumelu"
 ```
 
 ## `convert_to_date()`
@@ -167,10 +206,14 @@ dates <- c(
 # Convert to POSIXct or Date object
 
 convert_to_date(dates)
+#>  [1] "2022-11-04" "2022-09-22" NA           "1992-02-27" "2022-01-19"
+#>  [6] "2022-01-13" "2023-01-01" "2023-02-01" "2014-04-21" "2014-04-22"
+#> [11] "2023-07-11" "2023-04-01"
 
 # It can also convert date time object to date object 
 
 convert_to_date(lubridate::now())
+#> [1] "2023-08-10"
 ```
 
 ## `inspect_na()`
@@ -184,12 +227,31 @@ summarized separately for each group.
 # dataframe summary
 
 inspect_na(airquality)
+#> # A tibble: 6 × 3
+#>   col_name   cnt  pcnt
+#>   <chr>    <int> <dbl>
+#> 1 Ozone       37 24.2 
+#> 2 Solar.R      7  4.58
+#> 3 Wind         0  0   
+#> 4 Temp         0  0   
+#> 5 Month        0  0   
+#> # ℹ 1 more row
 
 # grouped dataframe summary
 
 airquality %>% 
   group_by(Month) %>% 
   inspect_na()
+#> # A tibble: 25 × 4
+#> # Groups:   Month [5]
+#>   Month col_name   cnt  pcnt
+#>   <int> <chr>    <int> <dbl>
+#> 1     5 Ozone        5  16.1
+#> 2     5 Solar.R      4  12.9
+#> 3     5 Wind         0   0  
+#> 4     5 Temp         0   0  
+#> 5     5 Day          0   0  
+#> # ℹ 20 more rows
 ```
 
 ## `fill_missing_values()`
@@ -217,18 +279,45 @@ df <- tibble(
 )
 
 df
+#> # A tibble: 7 × 5
+#>   Sepal_Length Sepal.Width Petal_Length Petal_Width Species   
+#>          <dbl>       <dbl>        <dbl>       <dbl> <chr>     
+#> 1          5.2         4.1          1.5        NA   setosa    
+#> 2          5           3.6          1.4         0.2 <NA>      
+#> 3          5.7         3            4.2         1.2 versicolor
+#> 4         NA           3            1.4         0.2 setosa    
+#> 5          6.2         2.9         NA           1.3 <NA>      
+#> # ℹ 2 more rows
 
 # Using mean to fill missing values for numeric variables
 
 result_df_mean <- fill_missing_values(df, use_mean = TRUE)
 
 result_df_mean
+#> # A tibble: 7 × 5
+#>   Sepal_Length Sepal.Width Petal_Length Petal_Width Species   
+#>          <dbl>       <dbl>        <dbl>       <dbl> <chr>     
+#> 1         5.2          4.1          1.5        0.94 setosa    
+#> 2         5            3.6          1.4        0.2  setosa    
+#> 3         5.7          3            4.2        1.2  versicolor
+#> 4         5.72         3            1.4        0.2  setosa    
+#> 5         6.2          2.9          3          1.3  setosa    
+#> # ℹ 2 more rows
 
 # Using median to fill missing values for numeric variables
 
 result_df_median <- fill_missing_values(df, use_mean = FALSE)
 
 result_df_median
+#> # A tibble: 7 × 5
+#>   Sepal_Length Sepal.Width Petal_Length Petal_Width Species   
+#>          <dbl>       <dbl>        <dbl>       <dbl> <chr>     
+#> 1          5.2         4.1          1.5         1.2 setosa    
+#> 2          5           3.6          1.4         0.2 setosa    
+#> 3          5.7         3            4.2         1.2 versicolor
+#> 4          5.6         3            1.4         0.2 setosa    
+#> 5          6.2         2.9          2.6         1.3 setosa    
+#> # ℹ 2 more rows
 ```
 
 ### Impute missing values (NAs) in a grouped data frame
@@ -246,11 +335,29 @@ Species = c("setosa", "setosa", "versicolor", "setosa",
 )
 
 sample_iris
+#> # A tibble: 7 × 4
+#>   Sepal_Length Petal_Length Petal_Width Species   
+#>          <dbl>        <dbl>       <dbl> <chr>     
+#> 1          5.2          1.5         0.3 setosa    
+#> 2          5            1.4         0.2 setosa    
+#> 3          5.7          4.2         1.2 versicolor
+#> 4         NA            1.4         0.2 setosa    
+#> 5          6.2         NA           1.3 virginica 
+#> # ℹ 2 more rows
 
 sample_iris %>%
   group_by(Species) %>%
   group_split() %>%
   map_df(fill_missing_values)
+#> # A tibble: 7 × 4
+#>   Sepal_Length Petal_Length Petal_Width Species   
+#>          <dbl>        <dbl>       <dbl> <chr>     
+#> 1         5.2           1.5       0.3   setosa    
+#> 2         5             1.4       0.2   setosa    
+#> 3         5.23          1.4       0.2   setosa    
+#> 4         5.5           3.7       0.233 setosa    
+#> 5         5.7           4.2       1.2   versicolor
+#> # ℹ 2 more rows
 ```
 
 ## Context
