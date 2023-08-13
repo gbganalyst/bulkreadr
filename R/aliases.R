@@ -6,6 +6,7 @@
 #' @export
 #' @rdname aliases
 #' @name pull_out
+#' @return `pull_out()` will return an object of the same class as the input object.
 #' @examples
 #'
 #' good_choice <- letters %>%

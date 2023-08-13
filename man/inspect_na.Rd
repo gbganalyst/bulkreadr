@@ -10,7 +10,7 @@ inspect_na(df)
 \item{df}{A data frame}
 }
 \value{
-A tibble summarising the count and percentage of columnwise missingness for a data frame.
+A tibble summarizing the count and percentage of columnwise missingness for a data frame.
 }
 \description{
 \code{inspect_na()} summarizes the rate of missingness in each column of a data frame. For a grouped data frame, the rate of missingness is summarized separately for each group.

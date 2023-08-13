@@ -23,7 +23,7 @@ create an output column that identifies each input. The column will use
 names if available, otherwise it will use positions.}
 }
 \value{
-A \link[tibble:tibble-package]{tibble}.
+A \link[tibble:tibble-package]{tibble}. If there is any column type mismatch during data frames row binding, an error will occur. This is because R cannot combine columns of different types. For example, you cannot combine a column of integers with a column of characters.
 }
 \description{
 \code{read_excel_workbook()} reads all the data from the sheets of an Excel workbook and return an appended dataframe.

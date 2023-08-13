@@ -29,7 +29,7 @@ create an output column that identifies each input. The column will use
 names if available, otherwise it will use positions.}
 }
 \value{
-A \link[tibble:tibble-package]{tibble}. If there are parsing problems, a warning will alert you.
+A \link[tibble:tibble-package]{tibble}. If there is any column type mismatch during data frames row binding, an error will occur. This is because R cannot combine columns of different types. For example, you cannot combine a column of integers with a column of characters.
 }
 \description{
 The \code{read_gsheets()} function imports data from multiple sheets in a Google Sheets spreadsheet and appends the resulting dataframes from each sheet together to create a single dataframe. This function is a powerful tool for data analysis, as it allows you to easily combine data from multiple sheets into a single dataset.

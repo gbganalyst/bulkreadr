@@ -47,7 +47,7 @@ paths, such as the data collection date. If \code{NULL} (the default) no extra
 column is created.}
 }
 \value{
-A \link[tibble:tibble-package]{tibble}.
+A \link[tibble:tibble-package]{tibble}. If there is any column type mismatch during data frames row binding, an error will occur. This is because R cannot combine columns of different types. For example, you cannot combine a column of integers with a column of characters.
 }
 \description{
 \code{read_csv_files_from_dir} reads all csv files from the \code{"~/data"} directory and returns an appended dataframe. The resulting dataframe will be in the same order as the CSV files in the directory.

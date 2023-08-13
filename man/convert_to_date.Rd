@@ -13,7 +13,7 @@ convert_to_date(date_num_char, tz = "UTC")
 returned. Otherwise a POSIXct with time zone attribute set to \code{tz}.}
 }
 \value{
-a vector of class POSIXct or Date
+a vector of class Date
 }
 \description{
 \code{convert_to_date()} parses an input vector into POSIXct date-time object. It is also powerful to convert from excel date number like \code{42370} into date value like \code{2016-01-01}.

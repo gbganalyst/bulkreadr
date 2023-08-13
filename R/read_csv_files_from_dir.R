@@ -8,7 +8,7 @@
 #' @inheritParams dplyr::bind_rows
 #'
 #' @return
-#' A [tibble][tibble::tibble-package].
+#' A [tibble][tibble::tibble-package]. If there is any column type mismatch during data frames row binding, an error will occur. This is because R cannot combine columns of different types. For example, you cannot combine a column of integers with a column of characters.
 #'
 #' @seealso
 #' [read_excel_files_from_dir()] which reads Excel workbooks data from a directory.

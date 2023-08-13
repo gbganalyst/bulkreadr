@@ -6,9 +6,8 @@
 #' @param date_num_char A character or numeric vector of dates
 #' @inheritParams lubridate::ymd
 #'
-#'
 #' @return
-#' a vector of class POSIXct or Date
+#' a vector of class Date
 #'
 #' @export
 #'

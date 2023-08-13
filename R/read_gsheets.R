@@ -7,7 +7,8 @@
 #' @inheritParams dplyr::bind_rows
 #' @inheritParams googlesheets4::read_sheet
 #' @return
-#' A [tibble][tibble::tibble-package]. If there are parsing problems, a warning will alert you.
+#' A [tibble][tibble::tibble-package]. If there is any column type mismatch during data frames row binding, an error will occur. This is because R cannot combine columns of different types. For example, you cannot combine a column of integers with a column of characters.
+#'
 #' @seealso
 #' [read_sheet()] which reads a Google (spread)Sheet into a data frame.
 #'
