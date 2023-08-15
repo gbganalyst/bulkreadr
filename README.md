@@ -6,6 +6,9 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/gbganalyst/bulkreadr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/gbganalyst/bulkreadr/actions/workflows/R-CMD-check.yaml)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/bulkreadr)](https://cran.r-project.org/package=bulkreadr)
+[![metacran
+downloads](https://cranlogs.r-pkg.org/badges/grand-total/forstringr)](https://cran.r-project.org/package=bulkreadr)
 <!-- badges: end -->
 
 ## Overview
@@ -23,8 +26,14 @@ preparation workflows.
 
 ## Installation
 
-You can install the development version of `bulkreadr` from
-[GitHub](https://github.com/) with:
+You can install `bulkreadr` package from
+[CRAN](https://cran.r-project.org/) with:
+
+``` r
+install.packages("bulkreadr")
+```
+
+or the development version from [GitHub](https://github.com/) with
 
 ``` r
 if(!require("devtools")){
@@ -213,7 +222,7 @@ convert_to_date(dates)
 # It can also convert date time object to date object 
 
 convert_to_date(lubridate::now())
-#> [1] "2023-08-10"
+#> [1] "2023-08-15"
 ```
 
 ## `inspect_na()`

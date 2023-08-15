@@ -20,6 +20,8 @@ options(tibble.print_min = 5, tibble.print_max = 5)
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/gbganalyst/bulkreadr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/gbganalyst/bulkreadr/actions/workflows/R-CMD-check.yaml)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/bulkreadr)](https://cran.r-project.org/package=bulkreadr)
+[![metacran downloads](https://cranlogs.r-pkg.org/badges/grand-total/forstringr)](https://cran.r-project.org/package=bulkreadr)
 <!-- badges: end -->
 
 ## Overview
@@ -28,7 +30,14 @@ options(tibble.print_min = 5, tibble.print_max = 5)
 
 ## Installation
 
-You can install the development version of `bulkreadr` from [GitHub](https://github.com/) with:
+You can install `bulkreadr` package from [CRAN](https://cran.r-project.org/) with:
+
+```{r eval=FALSE}
+install.packages("bulkreadr")
+
+```
+
+or the development version from [GitHub](https://github.com/) with
 
 ``` r
 if(!require("devtools")){
@@ -37,6 +46,9 @@ if(!require("devtools")){
 
 devtools::install_github("gbganalyst/bulkreadr")
 ```
+
+
+
 
 ## Usage
 
@@ -116,6 +128,10 @@ read_csv_files_from_dir(dir_path = directory)
 ## `read_gsheets()` 
 
 The `read_gsheets()` function imports data from multiple sheets in a Google Sheets spreadsheet and appends the resulting dataframes from each sheet together to create a single dataframe. This function is a powerful tool for data analysis, as it allows you to easily combine data from multiple sheets into a single dataset.
+
+```{r, include=FALSE}
+googlesheets4::gs4_deauth()
+```
 
 ```{r example3, message=FALSE, warning=FALSE}
 
