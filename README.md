@@ -8,7 +8,7 @@
 [![R-CMD-check](https://github.com/gbganalyst/bulkreadr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/gbganalyst/bulkreadr/actions/workflows/R-CMD-check.yaml)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/bulkreadr)](https://cran.r-project.org/package=bulkreadr)
 [![metacran
-downloads](https://cranlogs.r-pkg.org/badges/grand-total/forstringr)](https://cran.r-project.org/package=bulkreadr)
+downloads](https://cranlogs.r-pkg.org/badges/grand-total/bulkreadr)](https://cran.r-project.org/package=bulkreadr)
 <!-- badges: end -->
 
 ## Overview
