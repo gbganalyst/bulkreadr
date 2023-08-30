@@ -9,6 +9,8 @@
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/bulkreadr)](https://cran.r-project.org/package=bulkreadr)
 [![metacran
 downloads](https://cranlogs.r-pkg.org/badges/grand-total/bulkreadr)](https://cran.r-project.org/package=bulkreadr)
+[![Codecov test
+coverage](https://codecov.io/gh/gbganalyst/bulkreadr/branch/main/graph/badge.svg)](https://app.codecov.io/gh/gbganalyst/bulkreadr?branch=main)
 <!-- badges: end -->
 
 ## Overview
@@ -222,7 +224,7 @@ convert_to_date(dates)
 # It can also convert date time object to date object 
 
 convert_to_date(lubridate::now())
-#> [1] "2023-08-15"
+#> [1] "2023-08-30"
 ```
 
 ## `inspect_na()`
