@@ -1,5 +1,13 @@
 # What is New in *bulkreadr*?
 
+## 0.2.0 (2023-09-11) new version
+
+This update includes the following new features and improvements:
+
+- Developed bulkreadr vignette.
+
+- Added more unit tests
+
 ## 0.1.0 (2023-07-24) new version
 
 This update includes the following new features and improvements:
