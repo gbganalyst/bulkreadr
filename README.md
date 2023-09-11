@@ -45,7 +45,7 @@ if(!require("devtools")){
 devtools::install_github("gbganalyst/bulkreadr")
 ```
 
-## Usage
+## Functions in bulkreadr package
 
 This section provides a concise overview of the different functions
 available in the `bulkreadr` package. These functions serve various
@@ -68,6 +68,15 @@ purposes and are designed to handle importing of data in bulk.
 - [`inspect_na()`](#inspect_na)
 
 - [`fill_missing_values()`](#fill_missing_values)
+
+**Note:**
+
+For the majority of functions within this package, we will utilize data
+stored in the system file by the `bulkreadr`, which can be accessed
+using the `system.file()` function. If you wish to utilize your own data
+stored in your local directory, please ensure that you have set the
+appropriate file path prior to using any functions provided by the
+bulkreadr package.
 
 ## `read_excel_workbook()`
 
@@ -224,7 +233,7 @@ convert_to_date(dates)
 # It can also convert date time object to date object 
 
 convert_to_date(lubridate::now())
-#> [1] "2023-08-30"
+#> [1] "2023-09-11"
 ```
 
 ## `inspect_na()`

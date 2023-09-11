@@ -1,7 +1,7 @@
 #' User friendly date-time parsing function
 #'
 #' @description
-#' `convert_to_date()` parses an input vector into POSIXct date-time object. It is also powerful to convert from excel date number like `42370` into date value like `2016-01-01`.
+#' `convert_to_date()` parses an input vector into POSIXct date object. It is also powerful to convert from excel date number like `42370` into date value like `2016-01-01`.
 #'
 #' @param date_num_char A character or numeric vector of dates
 #' @inheritParams lubridate::ymd
