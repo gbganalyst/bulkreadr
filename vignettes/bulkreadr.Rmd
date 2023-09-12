@@ -1,7 +1,7 @@
 ---
 title: "Introduction to bulkreadr package"
 output: rmarkdown::html_vignette
-author: "Ezekiel Ogundepo"
+author: "Ezekiel Ogundepo and Ernest Fokoué"
 vignette: >
   %\VignetteIndexEntry{bulkreadr}
   %\VignetteEngine{knitr::rmarkdown}
@@ -69,7 +69,7 @@ This section provides a concise overview of the different functions available in
 - [`read_gsheets()`](#read_gsheets)
 
 
-## Other functions in `bulkreadr` package:
+## Other functions in bulkreadr package:
 
 - [`pull_out()`](#pull_out)
 
