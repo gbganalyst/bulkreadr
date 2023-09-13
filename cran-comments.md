@@ -1,9 +1,11 @@
-In this resubmission I have:
+## New version
 
-- used undirected single quotation marks in the description e.g. "bulreadr" --> 'bulkreadr' and Microsoft Excel --> 'Microsoft Excel'
+This is a new version submission. In this version we:
 
-- added \value to .Rd files and explained the functions results in the documentation for aliases.Rd and pipe.Rd.
+- Developed bulkreadr vignette.
+
+- Added more unit tests
 
 ## R CMD check results
-
 0 errors | 0 warnings | 0 notes
+

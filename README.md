@@ -3,6 +3,8 @@
 
 # bulkreadr <a><img src='man/figures/logo.png' align="right" height="138.5" /></a>
 
+\< The Ultimate Tool for Reading Data in Bulk
+
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/gbganalyst/bulkreadr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/gbganalyst/bulkreadr/actions/workflows/R-CMD-check.yaml)
@@ -71,12 +73,12 @@ purposes and are designed to handle importing of data in bulk.
 
 **Note:**
 
-For the majority of functions within this package, we will utilize data
-stored in the system file by the `bulkreadr`, which can be accessed
-using the `system.file()` function. If you wish to utilize your own data
-stored in your local directory, please ensure that you have set the
-appropriate file path prior to using any functions provided by the
-bulkreadr package.
+> For the majority of functions within this package, we will utilize
+> data stored in the system file by the `bulkreadr`, which can be
+> accessed using the `system.file()` function. If you wish to utilize
+> your own data stored in your local directory, please ensure that you
+> have set the appropriate file path prior to using any functions
+> provided by the bulkreadr package.
 
 ## `read_excel_workbook()`
 
@@ -233,7 +235,7 @@ convert_to_date(dates)
 # It can also convert date time object to date object 
 
 convert_to_date(lubridate::now())
-#> [1] "2023-09-11"
+#> [1] "2023-09-12"
 ```
 
 ## `inspect_na()`

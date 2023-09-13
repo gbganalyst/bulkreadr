@@ -18,6 +18,8 @@ options(tibble.print_min = 5, tibble.print_max = 5)
 
 # bulkreadr <a><img src='man/figures/logo.png' align="right" height="138.5" /></a>
 
+< The Ultimate Tool for Reading Data in Bulk
+
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/gbganalyst/bulkreadr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/gbganalyst/bulkreadr/actions/workflows/R-CMD-check.yaml)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/bulkreadr)](https://cran.r-project.org/package=bulkreadr)
@@ -74,7 +76,7 @@ This section provides a concise overview of the different functions available in
 
 **Note:**
 
-For the majority of functions within this package, we will utilize data stored in the system file by the `bulkreadr`, which can be accessed using the `system.file()` function. If you wish to utilize your own data stored in your local directory, please ensure that you have set the appropriate file path prior to using any functions provided by the bulkreadr package.
+> For the majority of functions within this package, we will utilize data stored in the system file by the `bulkreadr`, which can be accessed using the `system.file()` function. If you wish to utilize your own data stored in your local directory, please ensure that you have set the appropriate file path prior to using any functions provided by the bulkreadr package.
 
 
 ## `read_excel_workbook()`
