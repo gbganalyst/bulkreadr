@@ -1,4 +1,4 @@
-#' User friendly date-time parsing function
+#' User friendly date parsing function
 #'
 #' @description
 #' `convert_to_date()` parses an input vector into POSIXct date object. It is also powerful to convert from excel date number like `42370` into date value like `2016-01-01`.

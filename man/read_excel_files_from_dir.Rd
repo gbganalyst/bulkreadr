@@ -2,7 +2,7 @@
 % Please edit documentation in R/read_excel_files_from_dir.R
 \name{read_excel_files_from_dir}
 \alias{read_excel_files_from_dir}
-\title{Read Excel Workbooks Data from a Directory}
+\title{Read Excel Workbooks data from a directory}
 \usage{
 read_excel_files_from_dir(dir_path, col_types = NULL, .id = NULL)
 }
@@ -29,11 +29,11 @@ A \link[tibble:tibble-package]{tibble}. If there is any column type mismatch dur
 \code{read_excel_files_from_dir()} reads all Excel workbooks in the \code{"~/data"} directory and returns an appended dataframe.
 }
 \examples{
-\donttest{
+
 directory <- system.file("xlsxfolder",  package = "bulkreadr")
 
 read_excel_files_from_dir(dir_path = directory, .id = "cut")
-}
+
 # Column types mismatch error --------------------------------------
 # If the `read_excel_files_from_dir()` function complains about a data type mismatch,
 # then set the `col_types` argument to `"text"`.

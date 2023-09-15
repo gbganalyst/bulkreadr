@@ -1,4 +1,4 @@
-#' Read Excel Workbooks Data from a Directory
+#' Read Excel Workbooks data from a directory
 #'
 #' @description
 #' `read_excel_files_from_dir()` reads all Excel workbooks in the `"~/data"` directory and returns an appended dataframe.
@@ -17,11 +17,11 @@
 #' @export
 #'
 #' @examples
-#' \donttest{
+#'
 #' directory <- system.file("xlsxfolder",  package = "bulkreadr")
 #'
 #' read_excel_files_from_dir(dir_path = directory, .id = "cut")
-#'}
+#'
 
 #' # Column types mismatch error --------------------------------------
 #'# If the `read_excel_files_from_dir()` function complains about a data type mismatch,

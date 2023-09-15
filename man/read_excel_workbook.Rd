@@ -29,11 +29,12 @@ A \link[tibble:tibble-package]{tibble}. If there is any column type mismatch dur
 \code{read_excel_workbook()} reads all the data from the sheets of an Excel workbook and return an appended dataframe.
 }
 \examples{
-\donttest{
+
 path <- system.file("extdata", "Diamonds.xlsx", package = "bulkreadr", mustWork = TRUE)
 
 read_excel_workbook(path = path, .id = "Year")
-}
+
+
 # Column types mismatch error --------------------------------------
 # If the `read_excel_workbook()` function complains about a data type mismatch,
 # then set the `col_types` argument to `"text"`.

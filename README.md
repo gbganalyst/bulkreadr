@@ -3,7 +3,7 @@
 
 # bulkreadr <a><img src='man/figures/logo.png' align="right" height="138.5" /></a>
 
-\< The Ultimate Tool for Reading Data in Bulk
+> The Ultimate Tool for Reading Data in Bulk
 
 <!-- badges: start -->
 
@@ -60,6 +60,8 @@ purposes and are designed to handle importing of data in bulk.
 - [`read_csv_files_from_dir()`](#read_csv_files_from_dir)
 
 - [`read_gsheets()`](#read_gsheets)
+
+- [`read_spss_data`()\`](#read_spss_data)
 
 ## Other functions in `bulkreadr` package:
 
@@ -187,6 +189,54 @@ read_gsheets(ss = sheet_id)
 #> # ℹ 255 more rows
 ```
 
+## `read_spss_data`()\`
+
+`read_spss_data()` is designed to seamlessly import data from an SPSS
+data (`.sav` or `.zsav`) files. It converts labelled variables into
+factors, a crucial step that enhances the ease of data manipulation and
+analysis within the R programming environment.
+
+``` r
+
+# Read an SPSS data file without converting variable labels as column names
+
+file_path <- system.file("extdata", "Wages.sav", package = "bulkreadr")
+
+data <- read_spss_data(file = file_path)
+
+data
+#> # A tibble: 400 × 9
+#>      id  educ south                  sex   exper  wage occup marr        ed     
+#>   <dbl> <dbl> <fct>                  <fct> <dbl> <dbl> <fct> <fct>       <fct>  
+#> 1     3    12 does not live in South Male     17  7.5  Other Married     High s…
+#> 2     4    13 does not live in South Male      9 13.1  Other Not married Some c…
+#> 3     5    10 lives in South         Male     27  4.45 Other Not married Less t…
+#> 4    12     9 lives in South         Male     30  6.25 Other Not married Less t…
+#> 5    13     9 lives in South         Male     29 20.0  Other Married     Less t…
+#> # ℹ 395 more rows
+```
+
+``` r
+
+# Read an SPSS data file and convert variable labels as column names
+
+data <- read_spss_data(file = file_path, label = TRUE)
+
+data
+#> # A tibble: 400 × 9
+#>   `Worker ID` `Number of years of education` `Live in south`        Gender
+#>         <dbl>                          <dbl> <fct>                  <fct> 
+#> 1           3                             12 does not live in South Male  
+#> 2           4                             13 does not live in South Male  
+#> 3           5                             10 lives in South         Male  
+#> 4          12                              9 lives in South         Male  
+#> 5          13                              9 lives in South         Male  
+#> # ℹ 395 more rows
+#> # ℹ 5 more variables: `Number of years of work experience` <dbl>,
+#> #   `Wage (dollars per hour)` <dbl>, Occupation <fct>, `Marital status` <fct>,
+#> #   `Highest education level` <fct>
+```
+
 ## `pull_out()`
 
 `pull_out()` is similar to \[. It acts on vectors, matrices, arrays and
@@ -235,7 +285,7 @@ convert_to_date(dates)
 # It can also convert date time object to date object 
 
 convert_to_date(lubridate::now())
-#> [1] "2023-09-12"
+#> [1] "2023-09-15"
 ```
 
 ## `inspect_na()`

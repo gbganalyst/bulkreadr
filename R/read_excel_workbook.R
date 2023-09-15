@@ -14,12 +14,12 @@
 #' @export
 #'
 #' @examples
-#' \donttest{
+#'
 #' path <- system.file("extdata", "Diamonds.xlsx", package = "bulkreadr", mustWork = TRUE)
 #'
 #' read_excel_workbook(path = path, .id = "Year")
-#'}
-
+#'
+#'
 #' # Column types mismatch error --------------------------------------
 #'# If the `read_excel_workbook()` function complains about a data type mismatch,
 #'# then set the `col_types` argument to `"text"`.

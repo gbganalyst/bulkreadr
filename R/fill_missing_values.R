@@ -6,7 +6,7 @@
 #' @param use_mean Logical. If `TRUE`, missing values in numeric columns will be replaced with the mean.
 #'  If `FALSE`, missing values in numeric columns will be replaced with the median.
 #'
-#' @return The dataframe with missing values filled.
+#' @return A dataframe with missing values filled.
 #' @export
 #' @examples
 #' # Assuming 'df' is the dataframe you want to process

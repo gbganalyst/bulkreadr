@@ -2,7 +2,7 @@
 % Please edit documentation in R/convert_to_date.R
 \name{convert_to_date}
 \alias{convert_to_date}
-\title{User friendly date-time parsing function}
+\title{User friendly date parsing function}
 \usage{
 convert_to_date(date_num_char, tz = "UTC")
 }
