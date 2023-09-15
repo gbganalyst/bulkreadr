@@ -4,7 +4,9 @@
 
 This update includes the following new features and improvements:
 
-- Developed bulkreadr vignette.
+- Developed bulkreadr vignette
+
+- Developed `read_spss_data()` to seamlessly import data from an SPSS data (`.sav` or  `.zsav`) files and converting labelled variables into factors, a crucial step that enhances the ease of data manipulation and analysis within the R programming environment.
 
 - Added more unit tests
 

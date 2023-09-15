@@ -13,7 +13,7 @@ fill_missing_values(df, use_mean = TRUE)
 If \code{FALSE}, missing values in numeric columns will be replaced with the median.}
 }
 \value{
-The dataframe with missing values filled.
+A dataframe with missing values filled.
 }
 \description{
 \code{fill_missing_values()} is an efficient function that addresses missing values in a dataframe. It uses imputation by function, also known as column-based imputation, to fill numeric variables with the mean or median, and non-numeric variables with the mode. This approach ensures accurate and consistent replacements derived from individual columns, resulting in a complete and reliable dataset for improved analysis and decision-making.

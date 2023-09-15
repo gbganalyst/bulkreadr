@@ -1,4 +1,4 @@
-#' Import Data from Multiple Sheets in Google Sheets
+#' Import data from multiple sheets in Google Sheets
 #'
 #' @description
 #'

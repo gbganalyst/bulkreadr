@@ -2,7 +2,7 @@
 % Please edit documentation in R/read_gsheets.R
 \name{read_gsheets}
 \alias{read_gsheets}
-\title{Import Data from Multiple Sheets in Google Sheets}
+\title{Import data from multiple sheets in Google Sheets}
 \usage{
 read_gsheets(ss, col_types = NULL, .id = NULL)
 }

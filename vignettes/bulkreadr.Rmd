@@ -12,6 +12,9 @@ vignette: >
 ```{r setup, include = FALSE, comment= FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
+  message = FALSE, 
+  warning = FALSE,
+  tidy = "styler",
   comment = "#>",
   fig.path = "man/figures/",
   out.width = "100%")
@@ -51,7 +54,7 @@ devtools::install_github("gbganalyst/bulkreadr")
 
 Now that you have installed `bulkreadr` package, you can simply load it by using:
 
-```{r, message=FALSE}
+```{r pkgload}
 library(bulkreadr)
 
 ```
@@ -67,6 +70,8 @@ This section provides a concise overview of the different functions available in
 - [`read_csv_files_from_dir()`](#read_csv_files_from_dir)
 
 - [`read_gsheets()`](#read_gsheets)
+
+- [`read_spss_data()`](#read_spss_data)
 
 
 ## Other functions in bulkreadr package:
@@ -89,7 +94,7 @@ For the majority of functions within this package, we will utilize data stored i
 `read_excel_workbook()` reads all the data from the sheets of an Excel workbook and return an appended dataframe.
 
 
-```{r example1, message=FALSE, warning=FALSE}
+```{r example1}
 
 # path to the xls/xlsx file.
 
@@ -149,6 +154,33 @@ sheet_id <- "1izO0mHu3L9AMySQUXGDn9GPs1n-VwGFSEoAKGhqVQh0"
 # read all the sheets
 
 read_gsheets(ss = sheet_id)
+```
+
+## read_spss_data() 
+
+`read_spss_data()` is designed to seamlessly import data from an SPSS data (`.sav` or `.zsav`) files. It converts labelled variables into factors, a crucial step that enhances the ease of data manipulation and analysis within the R programming environment.
+
+**Read an SPSS data file without converting variable labels as column names**
+
+```{r, spssdata1}
+
+file_path <- system.file("extdata", "Wages.sav", package = "bulkreadr")
+
+data <- read_spss_data(file = file_path)
+
+data
+
+```
+
+
+**Read an SPSS data file and convert variable labels as column names**
+
+```{r spssdata2}
+
+data <- read_spss_data(file = file_path, label = TRUE)
+
+data
+
 ```
 
 ## pull_out()
