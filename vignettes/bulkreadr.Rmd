@@ -9,12 +9,11 @@ vignette: >
 ---
 
 
-```{r setup, include = FALSE, comment= FALSE}
+```{r setup, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   message = FALSE, 
   warning = FALSE,
-  tidy = "styler",
   comment = "#>",
   fig.path = "man/figures/",
   out.width = "100%")
