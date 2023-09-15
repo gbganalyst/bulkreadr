@@ -23,9 +23,10 @@ Useful links:
 
 Other contributors:
 \itemize{
-  \item Ernest Fokoue \email{epfeqa@rit.edu} [contributor]
+  \item Ernest Fokoue \email{epfeqa@rit.edu} (\href{https://orcid.org/0000-0002-0748-9166}{ORCID}) [contributor]
   \item Golibe Ezeechesi \email{golibe.ezeechesi@gmail.com} [contributor]
   \item Fatimo Adebanjo \email{adebanjofatimo2000@gmail.com} [contributor]
+  \item Isaac Ajao \email{isaacoluwaseyiajao@gmail.com} [contributor]
 }
 
 }
