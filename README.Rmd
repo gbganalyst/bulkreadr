@@ -64,7 +64,7 @@ This section provides a concise overview of the different functions available in
 
 - [`read_gsheets()`](#read_gsheets)
 
-- [`read_spss_data`()`](#read_spss_data)
+- [`read_spss_data()`](#read_spss_data)
 
 
 ## Other functions in `bulkreadr` package:
@@ -153,7 +153,7 @@ sheet_id <- "1izO0mHu3L9AMySQUXGDn9GPs1n-VwGFSEoAKGhqVQh0"
 read_gsheets(ss = sheet_id)
 ```
 
-## `read_spss_data`()` 
+## `read_spss_data()` 
 
 `read_spss_data()` is designed to seamlessly import data from an SPSS data (`.sav` or `.zsav`) files. It converts labelled variables into factors, a crucial step that enhances the ease of data manipulation and analysis within the R programming environment.
 
