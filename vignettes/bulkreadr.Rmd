@@ -4,8 +4,10 @@ output: rmarkdown::html_vignette
 author: "Ezekiel Ogundepo and Ernest Fokoué"
 vignette: >
   %\VignetteIndexEntry{bulkreadr}
-  %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
 ---
 
 
@@ -55,7 +57,7 @@ Now that you have installed `bulkreadr` package, you can simply load it by using
 
 ```{r pkgload}
 library(bulkreadr)
-
+library(dplyr)
 ```
 
 ## Functions in bulkreadr package
@@ -72,6 +74,7 @@ This section provides a concise overview of the different functions available in
 
 - [`read_spss_data()`](#read_spss_data)
 
+- [`read_stata_data()`](#read_stata_data)
 
 ## Other functions in bulkreadr package:
 
@@ -91,7 +94,6 @@ For the majority of functions within this package, we will utilize data stored i
 ## read_excel_workbook()
 
 `read_excel_workbook()` reads all the data from the sheets of an Excel workbook and return an appended dataframe.
-
 
 ```{r example1}
 
@@ -159,9 +161,9 @@ read_gsheets(ss = sheet_id)
 
 `read_spss_data()` is designed to seamlessly import data from an SPSS data (`.sav` or `.zsav`) files. It converts labelled variables into factors, a crucial step that enhances the ease of data manipulation and analysis within the R programming environment.
 
-**Read an SPSS data file without converting variable labels as column names**
+**Read the SPSS data file without converting variable labels as column names**
 
-```{r, spssdata1}
+```{r spssdata1}
 
 file_path <- system.file("extdata", "Wages.sav", package = "bulkreadr")
 
@@ -172,11 +174,38 @@ data
 ```
 
 
-**Read an SPSS data file and convert variable labels as column names**
+**Read the SPSS data file and convert variable labels as column names**
 
 ```{r spssdata2}
 
 data <- read_spss_data(file = file_path, label = TRUE)
+
+data
+
+```
+
+
+## read_stata_data() 
+
+`read_stata_data()` reads Stata data file (`.dta`) into an R data frame, converting labeled variables into factors.
+
+**Read the Stata data file without converting variable labels as column names**
+
+```{r statadata1}
+
+file_path <- system.file("extdata", "Wages.dta", package = "bulkreadr")
+
+data <- read_stata_data(file = file_path)
+
+data
+
+```
+
+**Read the Stata data file and convert variable labels as column names**
+
+```{r statadata2}
+
+data <- read_stata_data(file = file_path, label = TRUE)
 
 data
 
@@ -235,7 +264,6 @@ convert_to_date(lubridate::now())
 inspect_na(airquality)
 ```
 
-
 **Grouped dataframe summary**
 
 ```{r}
@@ -250,7 +278,7 @@ airquality %>%
 
 ```{r example 6}
 
-df <- tibble(
+df <- tibble::tibble(
   Sepal_Length = c(5.2, 5, 5.7, NA, 6.2, 6.7, 5.5),
   Sepal.Width = c(4.1, 3.6, 3, 3, 2.9, 2.5, 2.4),
   Petal_Length = c(1.5, 1.4, 4.2, 1.4, NA, 5.8, 3.7),
@@ -293,7 +321,7 @@ result_df_median
 You can use the `fill_missing_values()` in a grouped data frame by using other grouping and map functions. Here is an example of how to do this:
 
 ```{r}
-sample_iris <- tibble(
+sample_iris <- tibble::tibble(
 Sepal_Length = c(5.2, 5, 5.7, NA, 6.2, 6.7, 5.5),
 Petal_Length = c(1.5, 1.4, 4.2, 1.4, NA, 5.8, 3.7),
 Petal_Width = c(0.3, 0.2, 1.2, 0.2, 1.3, 1.8, NA),
@@ -323,7 +351,6 @@ bulkreadr draws on and complements / emulates other packages such as `readxl`, `
   * [readr](https://readr.tidyverse.org) is the tidyverse package for reading delimited files (e.g., csv or tsv) into an R data frame. 
   
   * [googlesheets4](https://cran.r-project.org/package=googlesheets) is the package to interact with Google Sheets through the Sheets API v4  <https://developers.google.com/sheets/api>.
-
 
 
 

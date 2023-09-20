@@ -19,9 +19,12 @@ A dataframe with missing values filled.
 \code{fill_missing_values()} is an efficient function that addresses missing values in a dataframe. It uses imputation by function, also known as column-based imputation, to fill numeric variables with the mean or median, and non-numeric variables with the mode. This approach ensures accurate and consistent replacements derived from individual columns, resulting in a complete and reliable dataset for improved analysis and decision-making.
 }
 \examples{
+
+library(dplyr)
+
 # Assuming 'df' is the dataframe you want to process
 
-df <- tibble(
+df <- tibble::tibble(
 Sepal_Length = c(5.2, 5, 5.7, NA, 6.2, 6.7, 5.5),
 Petal_Length = c(1.5, 1.4, 4.2, 1.4, NA, 5.8, 3.7),
 Petal_Width = c(NA, 0.2, 1.2, 0.2, 1.3, 1.8, NA),
@@ -44,7 +47,7 @@ result_df_median
 # Impute missing values (NAs) in a grouped data frame
 # You can do that by using the following:
 
-sample_iris <- tibble(
+sample_iris <- tibble::tibble(
 Sepal_Length = c(5.2, 5, 5.7, NA, 6.2, 6.7, 5.5),
 Petal_Length = c(1.5, 1.4, 4.2, 1.4, NA, 5.8, 3.7),
 Petal_Width = c(0.3, 0.2, 1.2, 0.2, 1.3, 1.8, NA),
@@ -56,13 +59,6 @@ sample_iris \%>\%
 group_by(Species) \%>\%
 group_split() \%>\%
 map_df(fill_missing_values)
-
-
-
-
-
-
-
 
 
 }

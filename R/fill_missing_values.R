@@ -9,9 +9,12 @@
 #' @return A dataframe with missing values filled.
 #' @export
 #' @examples
+#'
+#' library(dplyr)
+#'
 #' # Assuming 'df' is the dataframe you want to process
 #'
-#' df <- tibble(
+#' df <- tibble::tibble(
 #' Sepal_Length = c(5.2, 5, 5.7, NA, 6.2, 6.7, 5.5),
 #' Petal_Length = c(1.5, 1.4, 4.2, 1.4, NA, 5.8, 3.7),
 #' Petal_Width = c(NA, 0.2, 1.2, 0.2, 1.3, 1.8, NA),
@@ -34,7 +37,7 @@
 #' # Impute missing values (NAs) in a grouped data frame
 #' # You can do that by using the following:
 #'
-#' sample_iris <- tibble(
+#' sample_iris <- tibble::tibble(
 #' Sepal_Length = c(5.2, 5, 5.7, NA, 6.2, 6.7, 5.5),
 #' Petal_Length = c(1.5, 1.4, 4.2, 1.4, NA, 5.8, 3.7),
 #' Petal_Width = c(0.3, 0.2, 1.2, 0.2, 1.3, 1.8, NA),
@@ -46,13 +49,6 @@
 #' group_by(Species) %>%
 #' group_split() %>%
 #' map_df(fill_missing_values)
-#'
-#'
-#'
-#'
-#'
-#'
-#'
 #'
 #'
 fill_missing_values <- function(df, use_mean = TRUE) {

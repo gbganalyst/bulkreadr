@@ -61,7 +61,7 @@ purposes and are designed to handle importing of data in bulk.
 
 - [`read_gsheets()`](#read_gsheets)
 
-- [`read_spss_data`()\`](#read_spss_data)
+- [`read_spss_data()`](#read_spss_data)
 
 ## Other functions in `bulkreadr` package:
 
@@ -189,7 +189,7 @@ read_gsheets(ss = sheet_id)
 #> # ℹ 255 more rows
 ```
 
-## `read_spss_data`()\`
+## `read_spss_data()`
 
 `read_spss_data()` is designed to seamlessly import data from an SPSS
 data (`.sav` or `.zsav`) files. It converts labelled variables into
@@ -285,7 +285,7 @@ convert_to_date(dates)
 # It can also convert date time object to date object 
 
 convert_to_date(lubridate::now())
-#> [1] "2023-09-15"
+#> [1] "2023-09-18"
 ```
 
 ## `inspect_na()`

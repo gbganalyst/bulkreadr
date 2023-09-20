@@ -23,11 +23,10 @@ Description: Designed to simplify and streamline the process of reading
 License: MIT + file LICENSE
 URL: https://github.com/gbganalyst/bulkreadr
 BugReports: https://github.com/gbganalyst/bulkreadr/issues
-Depends: 
-    dplyr,
-    purrr,
-    tibble
+Depends:
+    purrr
 Imports: 
+    dplyr,
     curl,
     fs,
     googlesheets4,
@@ -40,7 +39,8 @@ Imports:
     readxl,
     sjlabelled,
     stats,
-    stringr
+    stringr,
+    tibble
 Suggests:
     knitr,
     rmarkdown,

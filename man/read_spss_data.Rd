@@ -24,11 +24,15 @@ file_path <- system.file("extdata", "Wages.sav", package = "bulkreadr")
 
 data <- read_spss_data(file = file_path)
 
+data
+
 # Read an SPSS data file and convert variable labels as column names
 
 data <- read_spss_data(file = file_path, label = TRUE)
 
+data
+
 }
 \seealso{
-\code{\link[=read_sav]{read_sav()}} which reads spss data file without converting labelled variables into factors.
+\code{\link[=read_stata_data]{read_stata_data()}} which reads Stata data file and converts labelled variables into factors.
 }

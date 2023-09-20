@@ -25,6 +25,8 @@ The tibble returned contains the columns:
 }
 \examples{
 
+library(dplyr)
+
 # dataframe summary
 
 inspect_na(airquality)
