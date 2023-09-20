@@ -1,5 +1,14 @@
 # What is New in *bulkreadr*?
 
+## bulkreadr 1.0.0 (2023-09-20)
+
+This update includes the following new features and improvements:
+
+- Developed `read_stata_data()` to import Stata data file (`.dta`) into an R data frame, converting labeled variables into factors.
+
+- Reduced dependency packages to optimize efficiency.
+
+
 ## 0.2.0 (2023-09-11) 
 
 This update includes the following new features and improvements:
