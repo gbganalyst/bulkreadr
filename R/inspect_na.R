@@ -21,6 +21,8 @@
 #'
 #' @examples
 #'
+#' library(dplyr)
+#'
 #' # dataframe summary
 #'
 #' inspect_na(airquality)

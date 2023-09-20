@@ -16,15 +16,22 @@
 #'
 #' data <- read_spss_data(file = file_path)
 #'
+#' data
+#'
 #' # Read an SPSS data file and convert variable labels as column names
 #'
 #' data <- read_spss_data(file = file_path, label = TRUE)
 #'
+#' data
+#'
 #' @export
-#' @seealso [read_sav()] which reads spss data file without converting labelled variables into factors.
+#' @seealso [read_stata_data()] which reads Stata data file and converts labelled variables into factors.
 #'
 #'
 read_spss_data <- function(file, label = FALSE) {
+
+  file = check_file(file)
+
   if (label) {
     data <- read_sav(file = file)
     data %>%
