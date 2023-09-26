@@ -15,7 +15,7 @@ downloads](https://cranlogs.r-pkg.org/badges/grand-total/bulkreadr)](https://cra
 coverage](https://codecov.io/gh/gbganalyst/bulkreadr/branch/main/graph/badge.svg)](https://app.codecov.io/gh/gbganalyst/bulkreadr?branch=main)
 <!-- badges: end -->
 
-## Overview
+## About the package
 
 `bulkreadr` is an R package designed to simplify and streamline the
 process of reading and processing large volumes of data. With a
@@ -47,6 +47,16 @@ if(!require("devtools")){
 devtools::install_github("gbganalyst/bulkreadr")
 ```
 
+## How to load the package
+
+Now that you have installed `bulkreadr` package, you can simply load it
+by using:
+
+``` r
+library(bulkreadr)
+library(dplyr)
+```
+
 ## Functions in bulkreadr package
 
 This section provides a concise overview of the different functions
@@ -62,6 +72,8 @@ purposes and are designed to handle importing of data in bulk.
 - [`read_gsheets()`](#read_gsheets)
 
 - [`read_spss_data()`](#read_spss_data)
+
+- [`read_stata_data()`](#read_stata_data)
 
 ## Other functions in `bulkreadr` package:
 
@@ -88,10 +100,6 @@ purposes and are designed to handle importing of data in bulk.
 workbook and return an appended dataframe.
 
 ``` r
-
-# load bulkreadr package
-
-library(bulkreadr)
 
 # path to the xls/xlsx file.
 
@@ -237,9 +245,56 @@ data
 #> #   `Highest education level` <fct>
 ```
 
+## read_stata_data()
+
+`read_stata_data()` reads Stata data file (`.dta`) into an R data frame,
+converting labeled variables into factors.
+
+**Read the Stata data file without converting variable labels as column
+names**
+
+``` r
+
+file_path <- system.file("extdata", "Wages.dta", package = "bulkreadr")
+
+data <- read_stata_data(file = file_path)
+
+data
+#> # A tibble: 400 × 9
+#>      id  educ south                  sex   exper  wage occup marr        ed     
+#>   <dbl> <dbl> <fct>                  <fct> <dbl> <dbl> <fct> <fct>       <fct>  
+#> 1     3    12 does not live in South Male     17  7.5  Other Married     High s…
+#> 2     4    13 does not live in South Male      9 13.1  Other Not married Some c…
+#> 3     5    10 lives in South         Male     27  4.45 Other Not married Less t…
+#> 4    12     9 lives in South         Male     30  6.25 Other Not married Less t…
+#> 5    13     9 lives in South         Male     29 20.0  Other Married     Less t…
+#> # ℹ 395 more rows
+```
+
+**Read the Stata data file and convert variable labels as column names**
+
+``` r
+
+data <- read_stata_data(file = file_path, label = TRUE)
+
+data
+#> # A tibble: 400 × 9
+#>   `Worker ID` `Number of years of education` `Live in south`        Gender
+#>         <dbl>                          <dbl> <fct>                  <fct> 
+#> 1           3                             12 does not live in South Male  
+#> 2           4                             13 does not live in South Male  
+#> 3           5                             10 lives in South         Male  
+#> 4          12                              9 lives in South         Male  
+#> 5          13                              9 lives in South         Male  
+#> # ℹ 395 more rows
+#> # ℹ 5 more variables: `Number of years of work experience` <dbl>,
+#> #   `Wage (dollars per hour)` <dbl>, Occupation <fct>, `Marital status` <fct>,
+#> #   `Highest education level` <fct>
+```
+
 ## `pull_out()`
 
-`pull_out()` is similar to \[. It acts on vectors, matrices, arrays and
+`pull_out()` is similar to `[`. It acts on vectors, matrices, arrays and
 lists to extract or replace parts. It is pleasant to use with the
 magrittr (`⁠%>%`⁠) and base(`|>`) operators.
 
@@ -285,7 +340,7 @@ convert_to_date(dates)
 # It can also convert date time object to date object 
 
 convert_to_date(lubridate::now())
-#> [1] "2023-09-18"
+#> [1] "2023-09-20"
 ```
 
 ## `inspect_na()`
@@ -340,7 +395,7 @@ workflows.
 
 ``` r
 
-df <- tibble(
+df <- tibble::tibble(
   Sepal_Length = c(5.2, 5, 5.7, NA, 6.2, 6.7, 5.5),
   Sepal.Width = c(4.1, 3.6, 3, 3, 2.9, 2.5, 2.4),
   Petal_Length = c(1.5, 1.4, 4.2, 1.4, NA, 5.8, 3.7),
@@ -398,7 +453,7 @@ You can use the `fill_missing_values()` in a grouped data frame by using
 other grouping and map functions. Here is an example of how to do this:
 
 ``` r
-sample_iris <- tibble(
+sample_iris <- tibble::tibble(
 Sepal_Length = c(5.2, 5, 5.7, NA, 6.2, 6.7, 5.5),
 Petal_Length = c(1.5, 1.4, 4.2, 1.4, NA, 5.8, 3.7),
 Petal_Width = c(0.3, 0.2, 1.2, 0.2, 1.3, 1.8, NA),
