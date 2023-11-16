@@ -1,4 +1,4 @@
-#' Read Stata data File
+#' Read Stata data file
 #'
 #` read_stata_data()` reads Stata data file (`.dta`) into an R data frame, converting labeled variables into factors.
 

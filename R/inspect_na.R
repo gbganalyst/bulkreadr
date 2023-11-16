@@ -34,6 +34,10 @@
 #'  inspect_na()
 #'
 inspect_na <- function(df) {
-  inspectdf::inspect_na(df)
+  if (missing(df)) {
+    stop("argument 'df' is missing, with no default")
+  } else {
+    inspectdf::inspect_na(df)
+  }
 }
 

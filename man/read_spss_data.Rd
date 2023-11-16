@@ -2,7 +2,7 @@
 % Please edit documentation in R/read_spss_data.R
 \name{read_spss_data}
 \alias{read_spss_data}
-\title{Read SPSS data File}
+\title{Read SPSS data file}
 \usage{
 read_spss_data(file, label = FALSE)
 }

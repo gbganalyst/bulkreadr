@@ -2,7 +2,7 @@
 % Please edit documentation in R/read_stata_data.R
 \name{read_stata_data}
 \alias{read_stata_data}
-\title{Read Stata data File}
+\title{Read Stata data file}
 \usage{
 read_stata_data(file, label = FALSE)
 }
@@ -15,7 +15,7 @@ read_stata_data(file, label = FALSE)
 A data frame containing the Stata data, with labeled variables converted to factors.
 }
 \description{
-Read Stata data File
+Read Stata data file
 }
 \examples{
 # Read Stata data file without converting variable labels as column names

@@ -7,4 +7,3 @@ test_that("generate_dictionary creates a data dictionary from a data frame", {
   expect_equal(names(generate_dictionary(train_data)) , c("position", "variable", "description", "column type", "missing", "levels"))
 
 })
-

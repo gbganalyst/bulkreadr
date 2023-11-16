@@ -2,7 +2,7 @@
 % Please edit documentation in R/generate_dictionary.R
 \name{generate_dictionary}
 \alias{generate_dictionary}
-\title{Create a Data Dictionary from a Data Frame}
+\title{Create a data dictionary from labelled data}
 \usage{
 generate_dictionary(data)
 }
@@ -28,9 +28,6 @@ The function returns a tibble (a modern version of R's data frame) with the foll
 \item \strong{missing}: An integer vector indicating the count of missing values for each variable.
 \item \strong{levels}: A list vector containing the levels for categorical variables, if applicable.
 }
-
-The function enhances the output of \code{labelled::generate_dictionary} by renaming certain columns
-and selecting specific attributes for a more user-friendly format.
 }
 \examples{
 
@@ -42,7 +39,5 @@ wage_data <- read_spss_data(file = file_path)
 
 generate_dictionary(wage_data)
 
-}
-\seealso{
-\code{\link[labelled:look_for]{labelled::generate_dictionary()}} for the base function used in this implementation.
+
 }

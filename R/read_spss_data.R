@@ -1,4 +1,4 @@
-#' Read SPSS data File
+#' Read SPSS data file
 #'
 #' `read_spss_data()` is designed to seamlessly import data from an SPSS data (`.sav` or  `.zsav`) files. It converts labelled variables into factors, a crucial step that enhances the ease of data manipulation and analysis within the R programming environment.
 #'
