@@ -78,6 +78,10 @@ This section provides a concise overview of the different functions available in
 
 ## Other functions in bulkreadr package:
 
+- [`generate_dictionary`](#generate_dictionary)
+
+- [`look_for`](#look_for)
+
 - [`pull_out()`](#pull_out)
 
 - [`convert_to_date()`](#convert_to_date)
@@ -209,6 +213,37 @@ data <- read_stata_data(file = file_path, label = TRUE)
 
 data
 
+```
+
+
+## generate_dictionary()
+
+`generate_dictionary()` creates a data dictionary from a specified data frame. This function is particularly useful for understanding and documenting the structure of your dataset, similar to data dictionaries in Stata or SPSS.
+
+```{r}
+
+# Creating a data dictionary from an SPSS file
+
+file_path <- system.file("extdata", "Wages.sav", package = "bulkreadr")
+
+wage_data <- read_spss_data(file = file_path)
+
+generate_dictionary(wage_data)
+```
+
+
+## look_for()
+
+The `look_for()` function is designed to emulate the functionality of the Stata `lookfor` command in R. It provides a powerful tool for searching through large datasets, specifically targeting variable names, variable label descriptions, factor levels, and value labels. This function is handy for users working with extensive and complex datasets, enabling them to quickly and efficiently locate the variables of interest.
+
+
+```{r}
+
+# Look for a single keyword.
+
+look_for(wage_data, "south")
+
+look_for(wage_data, "e")
 ```
 
 ## pull_out()
