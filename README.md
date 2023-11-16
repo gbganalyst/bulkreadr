@@ -77,9 +77,9 @@ purposes and are designed to handle importing of data in bulk.
 
 ## Other functions in `bulkreadr` package:
 
-- [`generate_dictionary`](#generate_dictionary)
+- [`generate_dictionary()`](#generate_dictionary)
 
-- [`look_for`](#look_for)
+- [`look_for()`](#look_for)
 
 - [`pull_out()`](#pull_out)
 
