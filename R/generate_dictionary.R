@@ -1,4 +1,4 @@
-#' Create a Data Dictionary from a Data Frame
+#' Create a data dictionary from labelled data
 #'
 #' @description
 #' `generate_dictionary()` creates a data dictionary from a specified data frame.
@@ -20,8 +20,6 @@
 #'
 #' - **levels**: A list vector containing the levels for categorical variables, if applicable.
 #'
-#' The function enhances the output of `labelled::generate_dictionary` by renaming certain columns
-#' and selecting specific attributes for a more user-friendly format.
 #'
 #' @inheritParams labelled::generate_dictionary
 #'
@@ -41,18 +39,19 @@
 #'
 #' generate_dictionary(wage_data)
 #'
-#' @seealso
-#'
-#' [labelled::generate_dictionary()] for the base function used in this implementation.
 #'
 generate_dictionary <- function(data) {
-  output <- labelled::generate_dictionary(data)
+  if (missing(data)) {
+    stop("argument 'data' is missing, with no default")
+  } else {
+    output <- labelled::generate_dictionary(data)
 
-  output %>%
-    rename(
-      position = "pos",
-      description = "label",
-      `column type` = "col_type"
-    ) %>%
-    select(-"value_labels")
+    output %>%
+      rename(
+        position = "pos",
+        description = "label",
+        `column type` = "col_type"
+      ) %>%
+      select(-"value_labels")
+  }
 }
