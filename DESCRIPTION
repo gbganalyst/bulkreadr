@@ -40,7 +40,8 @@ Imports:
     sjlabelled,
     stats,
     stringr,
-    tibble
+    tibble,
+    labelled
 Suggests:
     knitr,
     rmarkdown,
