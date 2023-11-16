@@ -1,5 +1,15 @@
 # What is New in *bulkreadr*?
 
+## bulkreadr 1.1.0 (2023-11-13)
+
+This update includes the following new features:
+
+- `generate_dictionary()`: This function is designed to automatically create a comprehensive data dictionary from labelled datasets. The generated dictionary provides detailed insights into each variable, aiding in better data understanding and management.
+
+- `look_for()`: This enhances the capability to efficiently search within labelled datasets. It allows users to quickly find variable names and their descriptions by searching for specific keywords. This feature streamlines data exploration and analysis, particularly in large datasets with extensive variables.
+
+These enhancements aim to improve the user experience in data management and exploration within `bulkreadr`. We hope these new features will assist our users in more effectively navigating and understanding their labelled datasets.
+
 ## bulkreadr 1.0.0 (2023-09-20)
 
 This update includes the following new features and improvements:
