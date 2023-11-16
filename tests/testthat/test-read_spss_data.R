@@ -6,7 +6,7 @@ test_that("read_spss_data imports data from SPSS file", {
 
   test_data <- haven::read_sav(path_train)
 
-  expect_equal(dim(test_data) , dim(test_data))
+  expect_equal(dim(train_data) , dim(test_data))
 
 })
 
