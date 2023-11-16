@@ -77,6 +77,10 @@ purposes and are designed to handle importing of data in bulk.
 
 ## Other functions in `bulkreadr` package:
 
+- [`generate_dictionary`](#generate_dictionary)
+
+- [`look_for`](#look_for)
+
 - [`pull_out()`](#pull_out)
 
 - [`convert_to_date()`](#convert_to_date)
@@ -292,6 +296,99 @@ data
 #> #   `Highest education level` <fct>
 ```
 
+## `generate_dictionary()`
+
+`generate_dictionary()` creates a data dictionary from a specified data
+frame. This function is particularly useful for understanding and
+documenting the structure of your dataset, similar to data dictionaries
+in Stata or SPSS.
+
+``` r
+
+# Creating a data dictionary from an SPSS file
+
+file_path <- system.file("extdata", "Wages.sav", package = "bulkreadr")
+
+wage_data <- read_spss_data(file = file_path)
+
+generate_dictionary(wage_data)
+#> # A tibble: 9 × 6
+#>   position variable description                     `column type` missing levels
+#>      <int> <chr>    <chr>                           <chr>           <int> <name>
+#> 1        1 id       Worker ID                       dbl                 0 <NULL>
+#> 2        2 educ     Number of years of education    dbl                 0 <NULL>
+#> 3        3 south    Live in south                   fct                 0 <chr> 
+#> 4        4 sex      Gender                          fct                 0 <chr> 
+#> 5        5 exper    Number of years of work experi… dbl                 0 <NULL>
+#> # ℹ 4 more rows
+```
+
+## `look_for()`
+
+The `look_for()` function is designed to emulate the functionality of
+the Stata `lookfor` command in R. It provides a powerful tool for
+searching through large datasets, specifically targeting variable names,
+variable label descriptions, factor levels, and value labels. This
+function is handy for users working with extensive and complex datasets,
+enabling them to quickly and efficiently locate the variables of
+interest.
+
+``` r
+
+# Look for a single keyword.
+
+look_for(wage_data, "south")
+#>  pos variable label         col_type missing values                
+#>  3   south    Live in south fct      0       does not live in South
+#>                                              lives in South
+
+look_for(wage_data, "e")
+#>  pos variable label                              col_type missing
+#>  1   id       Worker ID                          dbl      0      
+#>  2   educ     Number of years of education       dbl      0      
+#>  3   south    Live in south                      fct      0      
+#>                                                                  
+#>  4   sex      Gender                             fct      0      
+#>                                                                  
+#>  5   exper    Number of years of work experience dbl      0      
+#>  6   wage     Wage (dollars per hour)            dbl      0      
+#>  7   occup    Occupation                         fct      0      
+#>                                                                  
+#>                                                                  
+#>                                                                  
+#>                                                                  
+#>                                                                  
+#>  8   marr     Marital status                     fct      0      
+#>                                                                  
+#>  9   ed       Highest education level            fct      0      
+#>                                                                  
+#>                                                                  
+#>                                                                  
+#>                                                                  
+#>  values                
+#>                        
+#>                        
+#>  does not live in South
+#>  lives in South        
+#>  Male                  
+#>  Female                
+#>                        
+#>                        
+#>  Management            
+#>  Sales                 
+#>  Clerical              
+#>  Service               
+#>  Professional          
+#>  Other                 
+#>  Not married           
+#>  Married               
+#>  Less than h.s. degree 
+#>  High school degree    
+#>  Some college          
+#>  College degree        
+#>  Graduate school
+```
+
 ## `pull_out()`
 
 `pull_out()` is similar to `[`. It acts on vectors, matrices, arrays and
@@ -340,7 +437,7 @@ convert_to_date(dates)
 # It can also convert date time object to date object 
 
 convert_to_date(lubridate::now())
-#> [1] "2023-09-20"
+#> [1] "2023-11-16"
 ```
 
 ## `inspect_na()`
