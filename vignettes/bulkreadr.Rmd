@@ -78,9 +78,9 @@ This section provides a concise overview of the different functions available in
 
 ## Other functions in bulkreadr package:
 
-- [`generate_dictionary`](#generate_dictionary)
+- [`generate_dictionary()`](#generate_dictionary)
 
-- [`look_for`](#look_for)
+- [`look_for()`](#look_for)
 
 - [`pull_out()`](#pull_out)
 
