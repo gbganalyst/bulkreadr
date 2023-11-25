@@ -37,6 +37,10 @@ session is available
 and the webinar resources
 [here](https://github.com/gbganalyst/bulkreadr-webinar).
 
+## The Concept Map
+
+![](man/figures/concept-map.png)
+
 ## Installation
 
 You can install `bulkreadr` package from
