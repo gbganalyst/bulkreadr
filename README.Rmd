@@ -35,10 +35,7 @@ options(tibble.print_min = 5, tibble.print_max = 5)
 
 Whether dealing with extensive data sets or batch processing tasks, "bulkreadr" empowers users to effortlessly handle data in bulk, saving time and effort in data preparation workflows.
 
-Additionally, the package seamlessly works with labelled data from SPSS and Stata.
-
-
-For a quick video tutorial, I gave a talk at the International Association of Statistical Computing webinar. The recorded session is available [here](https://isi-web.org/webinar/iasc-bulkreadr-ultimate-tool-reading-data-bulk) and the webinar resources [here](https://github.com/gbganalyst/bulkreadr-webinar). 
+Additionally, the package seamlessly works with labelled data from SPSS and Stata. For a quick video tutorial, I gave a talk at the International Association of Statistical Computing webinar. The recorded session is available [here](https://isi-web.org/webinar/iasc-bulkreadr-ultimate-tool-reading-data-bulk) and the webinar resources [here](https://github.com/gbganalyst/bulkreadr-webinar). 
 
 
 ## Installation
