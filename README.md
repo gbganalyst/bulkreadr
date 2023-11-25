@@ -37,7 +37,7 @@ Association of Statistical Computing webinar. The recorded session is
 available
 [here](https://isi-web.org/webinar/iasc-bulkreadr-ultimate-tool-reading-data-bulk)
 and the webinar resources
-[here](https://gbganalyst.github.io/bulkreadr-webinar/bulkreadr-practical-session.html).
+[here](https://github.com/gbganalyst/bulkreadr-webinar).
 
 ## Installation
 
