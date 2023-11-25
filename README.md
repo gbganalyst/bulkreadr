@@ -30,11 +30,9 @@ Whether dealing with extensive data sets or batch processing tasks,
 time and effort in data preparation workflows.
 
 Additionally, the package seamlessly works with labelled data from SPSS
-and Stata.
-
-For a quick video tutorial, I gave a talk at the International
-Association of Statistical Computing webinar. The recorded session is
-available
+and Stata. For a quick video tutorial, I gave a talk at the
+International Association of Statistical Computing webinar. The recorded
+session is available
 [here](https://isi-web.org/webinar/iasc-bulkreadr-ultimate-tool-reading-data-bulk)
 and the webinar resources
 [here](https://github.com/gbganalyst/bulkreadr-webinar).
