@@ -76,31 +76,14 @@ This section provides a concise overview of the different functions
 available in the `bulkreadr` package. These functions serve various
 purposes and are designed to handle importing of data in bulk.
 
-- [`read_excel_workbook()`](#read_excel_workbook)
-
-- [`read_excel_files_from_dir()`](#read_csv_files_from_dir)
-
-- [`read_csv_files_from_dir()`](#read_csv_files_from_dir)
-
-- [`read_gsheets()`](#read_gsheets)
-
-- [`read_spss_data()`](#read_spss_data)
-
-- [`read_stata_data()`](#read_stata_data)
-
-## Other functions in `bulkreadr` package:
-
-- [`generate_dictionary()`](#generate_dictionary)
-
-- [`look_for()`](#look_for)
-
-- [`pull_out()`](#pull_out)
-
-- [`convert_to_date()`](#convert_to_date)
-
-- [`inspect_na()`](#inspect_na)
-
-- [`fill_missing_values()`](#fill_missing_values)
+| Functions to Import Data                                  | Other Functions                                 |
+|-----------------------------------------------------------|-------------------------------------------------|
+| [`read_excel_workbook()`](#read_excel_workbook)           | [`generate_dictionary()`](#generate_dictionary) |
+| [`read_excel_files_from_dir()`](#read_csv_files_from_dir) | [`look_for()`](#look_for)                       |
+| [`read_csv_files_from_dir()`](#read_csv_files_from_dir)   | [`pull_out()`](#pull_out)                       |
+| [`read_gsheets()`](#read_gsheets)                         | [`convert_to_date()`](#convert_to_date)         |
+| [`read_spss_data()`](#read_spss_data)                     | [`inspect_na()`](#inspect_na)                   |
+| [`read_stata_data()`](#read_stata_data)                   | [`fill_missing_values()`](#fill_missing_values) |
 
 **Note:**
 
