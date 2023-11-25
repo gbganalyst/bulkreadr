@@ -31,7 +31,15 @@ options(tibble.print_min = 5, tibble.print_max = 5)
 
 ## About the package
 
-`bulkreadr` is an R package designed to simplify and streamline the process of reading and processing large volumes of data. With a collection of functions tailored for bulk data operations, the package allows users to efficiently read multiple sheets from Microsoft Excel/Google Sheets workbooks and multiple CSV files from a directory. It returns the data as organized data frames, making it convenient for further analysis and manipulation. Whether dealing with extensive data sets or batch processing tasks, "bulkreadr" empowers users to effortlessly handle data in bulk, saving time and effort in data preparation workflows.
+`bulkreadr` is an R package designed to simplify and streamline the process of reading and processing large volumes of data. With a collection of functions tailored for bulk data operations, the package allows users to efficiently read multiple sheets from Microsoft Excel/Google Sheets workbooks and multiple CSV files from a directory. It returns the data as organized data frames, making it convenient for further analysis and manipulation. 
+
+Whether dealing with extensive data sets or batch processing tasks, "bulkreadr" empowers users to effortlessly handle data in bulk, saving time and effort in data preparation workflows.
+
+Additionally, the package seamlessly works with labelled data from SPSS and Stata.
+
+
+For a quick video tutorial, I gave a talk at the International Association of Statistical Computing webinar. The recorded session is available [here](https://isi-web.org/webinar/iasc-bulkreadr-ultimate-tool-reading-data-bulk) and the webinar resources [here](https://gbganalyst.github.io/bulkreadr-webinar/bulkreadr-practical-session.html). 
+
 
 ## Installation
 
@@ -244,8 +252,6 @@ The `look_for()` function is designed to emulate the functionality of the Stata 
 # Look for a single keyword.
 
 look_for(wage_data, "south")
-
-look_for(wage_data, "e")
 ```
 
 
@@ -290,6 +296,27 @@ convert_to_date(dates)
 convert_to_date(lubridate::now())
 
 ```
+
+
+```{r example5}
+# With dataframe
+
+file_path <- system.file("extdata", "OGD.xlsx", package = "bulkreadr")
+
+ogd_data <- read_excel_workbook(path = file_path)
+
+
+ogd_data %>% head()
+
+# Convert to POSIXct or Date object
+
+modified_ogd_data <- ogd_data  %>% 
+  mutate(Date_format = convert_to_date(Date))
+
+modified_ogd_data %>% head()
+
+```
+
 
 ## `inspect_na()` 
 

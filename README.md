@@ -23,10 +23,21 @@ collection of functions tailored for bulk data operations, the package
 allows users to efficiently read multiple sheets from Microsoft
 Excel/Google Sheets workbooks and multiple CSV files from a directory.
 It returns the data as organized data frames, making it convenient for
-further analysis and manipulation. Whether dealing with extensive data
-sets or batch processing tasks, “bulkreadr” empowers users to
-effortlessly handle data in bulk, saving time and effort in data
-preparation workflows.
+further analysis and manipulation.
+
+Whether dealing with extensive data sets or batch processing tasks,
+“bulkreadr” empowers users to effortlessly handle data in bulk, saving
+time and effort in data preparation workflows.
+
+Additionally, the package seamlessly works with labelled data from SPSS
+and Stata.
+
+For a quick video tutorial, I gave a talk at the International
+Association of Statistical Computing webinar. The recorded session is
+available
+[here](https://isi-web.org/webinar/iasc-bulkreadr-ultimate-tool-reading-data-bulk)
+and the webinar resources
+[here](https://gbganalyst.github.io/bulkreadr-webinar/bulkreadr-practical-session.html).
 
 ## Installation
 
@@ -341,52 +352,6 @@ look_for(wage_data, "south")
 #>  pos variable label         col_type missing values                
 #>  3   south    Live in south fct      0       does not live in South
 #>                                              lives in South
-
-look_for(wage_data, "e")
-#>  pos variable label                              col_type missing
-#>  1   id       Worker ID                          dbl      0      
-#>  2   educ     Number of years of education       dbl      0      
-#>  3   south    Live in south                      fct      0      
-#>                                                                  
-#>  4   sex      Gender                             fct      0      
-#>                                                                  
-#>  5   exper    Number of years of work experience dbl      0      
-#>  6   wage     Wage (dollars per hour)            dbl      0      
-#>  7   occup    Occupation                         fct      0      
-#>                                                                  
-#>                                                                  
-#>                                                                  
-#>                                                                  
-#>                                                                  
-#>  8   marr     Marital status                     fct      0      
-#>                                                                  
-#>  9   ed       Highest education level            fct      0      
-#>                                                                  
-#>                                                                  
-#>                                                                  
-#>                                                                  
-#>  values                
-#>                        
-#>                        
-#>  does not live in South
-#>  lives in South        
-#>  Male                  
-#>  Female                
-#>                        
-#>                        
-#>  Management            
-#>  Sales                 
-#>  Clerical              
-#>  Service               
-#>  Professional          
-#>  Other                 
-#>  Not married           
-#>  Married               
-#>  Less than h.s. degree 
-#>  High school degree    
-#>  Some college          
-#>  College degree        
-#>  Graduate school
 ```
 
 ## `pull_out()`
@@ -437,7 +402,43 @@ convert_to_date(dates)
 # It can also convert date time object to date object 
 
 convert_to_date(lubridate::now())
-#> [1] "2023-11-16"
+#> [1] "2023-11-25"
+```
+
+``` r
+# With dataframe
+
+file_path <- system.file("extdata", "OGD.xlsx", package = "bulkreadr")
+
+ogd_data <- read_excel_workbook(path = file_path)
+
+
+ogd_data %>% head()
+#> # A tibble: 6 × 2
+#>   PID         Date      
+#>   <chr>       <chr>     
+#> 1 NIG-CON-002 22.09.2022
+#> 2 NIG-CON-004 44569     
+#> 3 NIG-CON-007 44569     
+#> 4 NIG-CON-009 44569     
+#> 5 NIG-CON-010 44569     
+#> # ℹ 1 more row
+
+# Convert to POSIXct or Date object
+
+modified_ogd_data <- ogd_data  %>% 
+  mutate(Date_format = convert_to_date(Date))
+
+modified_ogd_data %>% head()
+#> # A tibble: 6 × 3
+#>   PID         Date       Date_format
+#>   <chr>       <chr>      <date>     
+#> 1 NIG-CON-002 22.09.2022 2022-09-22 
+#> 2 NIG-CON-004 44569      2022-01-08 
+#> 3 NIG-CON-007 44569      2022-01-08 
+#> 4 NIG-CON-009 44569      2022-01-08 
+#> 5 NIG-CON-010 44569      2022-01-08 
+#> # ℹ 1 more row
 ```
 
 ## `inspect_na()`
