@@ -22,7 +22,7 @@ Description: Designed to simplify and streamline the process of reading
     workflows. Additionally, the package seamlessly works with labelled
     data from SPSS and Stata.
 License: MIT + file LICENSE
-URL: https://github.com/gbganalyst/bulkreadr
+URL: https://github.com/gbganalyst/bulkreadr, https://gbganalyst.github.io/bulkreadr/
 BugReports: https://github.com/gbganalyst/bulkreadr/issues
 Depends:
     purrr
