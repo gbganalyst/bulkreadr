@@ -2,3 +2,28 @@ url: https://gbganalyst.github.io/bulkreadr/
 template:
   bootstrap: 5
 
+navbar:
+  title: "bayesplot"
+  left:
+    - icon: fa-home fa-lg
+      href: index.html
+    - text: "Vignettes"
+      href: articles/index.html
+    - text: "Functions"
+      href: reference/index.html
+    - text: "News"
+      href: news/index.html
+    - text: "Other Packages"
+      menu:
+        - text: "forstringr"
+          href: https://github.com/gbganalyst/forstringr
+        - text: "ralger"
+          href: https://github.com/feddelegrand7/ralger
+  right:
+   - icon: fa-twitter
+     href: https://twitter.com/gbganalyst
+   - icon: fa-github
+     href: https://github.com/gbganalyst/bulkreadr
+   - icon: fa-globe
+     href: https://bit.ly/gbganalyst
+
