@@ -1,9 +1,16 @@
 ---
-title: "Introduction to bulkreadr package"
+title: "Introduction to bulkreadr"
 output: rmarkdown::html_vignette
+description: >
+  Start here if this is your first time using bulkreadr. You'll learn how to     
+  use functions like `read_excel_workbook()` and `read_excel_files_from_dir()`   
+  for importing data from Excel and `read_gsheets()` for Google Sheets,         
+  allowing for data importation from multiple sheets. For handling CSV    
+  files, `read_csv_files_from_dir()` reads all CSV files from a specified 
+  directory. 
 author: "Ezekiel Ogundepo and Ernest Fokoué"
 vignette: >
-  %\VignetteIndexEntry{bulkreadr}
+  %\VignetteIndexEntry{Introduction to bulkreadr package}
   %\VignetteEncoding{UTF-8}
   %\VignetteEngine{knitr::rmarkdown}
 editor_options: 
@@ -243,7 +250,7 @@ The `look_for()` function is designed to emulate the functionality of the Stata 
 
 look_for(wage_data, "south")
 
-look_for(wage_data, "e")
+look_for(wage_data, "s")
 ```
 
 ## pull_out()
@@ -376,16 +383,4 @@ sample_iris %>%
   group_split() %>%
   map_df(fill_missing_values)
 ```
-
-## Inspiration
-
-bulkreadr draws on and complements / emulates other packages such as `readxl`, `readr`, and `googlesheets4` to read bulk data in R.
-
-  * [readxl](https://readxl.tidyverse.org) is the tidyverse package for reading Excel files (xls or xlsx) into an R data frame. 
-  
-  * [readr](https://readr.tidyverse.org) is the tidyverse package for reading delimited files (e.g., csv or tsv) into an R data frame. 
-  
-  * [googlesheets4](https://cran.r-project.org/package=googlesheets) is the package to interact with Google Sheets through the Sheets API v4  <https://developers.google.com/sheets/api>.
-
-
 

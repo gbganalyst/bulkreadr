@@ -14,6 +14,7 @@ Designed to simplify and streamline the process of reading and processing large 
 Useful links:
 \itemize{
   \item \url{https://github.com/gbganalyst/bulkreadr}
+  \item \url{https://gbganalyst.github.io/bulkreadr/}
   \item Report bugs at \url{https://github.com/gbganalyst/bulkreadr/issues}
 }
 

@@ -2,15 +2,69 @@ url: https://gbganalyst.github.io/bulkreadr/
 template:
   bootstrap: 5
 
+reference:
+
+- title: Spreadsheets
+  desc: >
+    Functions that operate on spreasheets
+  contents:
+  - read_excel_workbook
+  - read_excel_files_from_dir
+
+- title: Google Sheets
+  desc: >
+    A function that operates on Google Sheets
+  contents:
+  - read_gsheets
+
+- title: Flat files
+  desc: >
+    A function that operates on csv files
+  contents:
+  - read_csv_files_from_dir
+
+- title: Labelled data
+  desc: >
+    Functions that read labelled data and make it easier to work with.
+  contents:
+  - read_spss_data
+  - read_stata_data
+
+- title: Data dictionary
+  desc: >
+    Functions that provide descriptions of the labelled data
+  contents:
+  - generate_dictionary
+  - look_for
+
+- title: Other functions in bulkreadr
+  desc: >
+    Unlike other functions in bulkreadr, these functions operate on individual
+    vectors, not on data frames, with the exceptions of `inspect_na()` and
+    `fill_missing_values()`.
+  contents:
+  - pull_out
+  - convert_to_date
+  - fill_missing_values
+  - inspect_na
+
+
+articles:
+- title: Get started
+  navbar: ~
+  contents:
+  - bulkreadr
+
 navbar:
-  title: "bayesplot"
+  title: "bulkreadr"
   left:
-    - icon: fa-home fa-lg
+    - text: Home
+      icon: fa-home
       href: index.html
-    - text: "Vignettes"
-      href: articles/index.html
     - text: "Functions"
       href: reference/index.html
+    - text: "Vignettes"
+      href: articles/index.html
     - text: "News"
       href: news/index.html
     - text: "Other Packages"
