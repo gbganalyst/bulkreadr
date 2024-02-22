@@ -20,15 +20,16 @@
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"><li class="nav-item">
   <a class="nav-link" href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fa fa-home"></span>
      
+    Home
   </a>
-</li>
-<li class="nav-item">
-  <a class="nav-link" href="../articles/index.html">Vignettes</a>
 </li>
 <li class="active nav-item">
   <a class="nav-link" href="../reference/index.html">Functions</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="../articles/index.html">Vignettes</a>
 </li>
 <li class="nav-item">
   <a class="nav-link" href="../news/index.html">News</a>
@@ -72,9 +73,104 @@
     </div>
 
     <div class="section level2">
-      <h2 id="all-functions">All functions<a class="anchor" aria-label="anchor" href="#all-functions"></a></h2>
+      <h2 id="spreadsheets">Spreadsheets<a class="anchor" aria-label="anchor" href="#spreadsheets"></a></h2>
+      
+      <p class="section-desc"></p><p>Functions that operate on spreasheets</p>
+
+      
+    </div><div id="" class="section level2">
       
       
+      
+
+      <dl><dt>
+          
+          <code><a href="read_excel_workbook.html">read_excel_workbook()</a></code> 
+        </dt>
+        <dd>Import data from multiple sheets of an Excel workbook</dd>
+      </dl><dl><dt>
+          
+          <code><a href="read_excel_files_from_dir.html">read_excel_files_from_dir()</a></code> 
+        </dt>
+        <dd>Read Excel Workbooks data from a directory</dd>
+      </dl></div><div class="section level2">
+      <h2 id="google-sheets">Google Sheets<a class="anchor" aria-label="anchor" href="#google-sheets"></a></h2>
+      
+      <p class="section-desc"></p><p>A function that operates on Google Sheets</p>
+
+      
+    </div><div id="" class="section level2">
+      
+      
+      
+
+      <dl><dt>
+          
+          <code><a href="read_gsheets.html">read_gsheets()</a></code> 
+        </dt>
+        <dd>Import data from multiple sheets in Google Sheets</dd>
+      </dl></div><div class="section level2">
+      <h2 id="flat-files">Flat files<a class="anchor" aria-label="anchor" href="#flat-files"></a></h2>
+      
+      <p class="section-desc"></p><p>A function that operates on csv files</p>
+
+      
+    </div><div id="" class="section level2">
+      
+      
+      
+
+      <dl><dt>
+          
+          <code><a href="read_csv_files_from_dir.html">read_csv_files_from_dir()</a></code> 
+        </dt>
+        <dd>Reads all CSV files from a directory</dd>
+      </dl></div><div class="section level2">
+      <h2 id="labelled-data">Labelled data<a class="anchor" aria-label="anchor" href="#labelled-data"></a></h2>
+      
+      <p class="section-desc"></p><p>Functions that read labelled data and make it easier to work with.</p>
+
+      
+    </div><div id="" class="section level2">
+      
+      
+      
+
+      <dl><dt>
+          
+          <code><a href="read_spss_data.html">read_spss_data()</a></code> 
+        </dt>
+        <dd>Read SPSS data file</dd>
+      </dl><dl><dt>
+          
+          <code><a href="read_stata_data.html">read_stata_data()</a></code> 
+        </dt>
+        <dd>Read Stata data file</dd>
+      </dl></div><div class="section level2">
+      <h2 id="data-dictionary">Data dictionary<a class="anchor" aria-label="anchor" href="#data-dictionary"></a></h2>
+      
+      <p class="section-desc"></p><p>Functions that provide descriptions of the labelled data</p>
+
+      
+    </div><div id="" class="section level2">
+      
+      
+      
+
+      <dl><dt>
+          
+          <code><a href="generate_dictionary.html">generate_dictionary()</a></code> 
+        </dt>
+        <dd>Create a data dictionary from labelled data</dd>
+      </dl><dl><dt>
+          
+          <code><a href="look_for.html">look_for()</a></code> 
+        </dt>
+        <dd>Look for keywords variable names and descriptions in labelled data</dd>
+      </dl></div><div class="section level2">
+      <h2 id="other-functions-in-bulkreadr">Other functions in bulkreadr<a class="anchor" aria-label="anchor" href="#other-functions-in-bulkreadr"></a></h2>
+      
+      <p class="section-desc"></p><p>Unlike other functions in bulkreadr, these functions operate on individual vectors, not on data frames, with the exceptions of <code><a href="../reference/inspect_na.html">inspect_na()</a></code> and <code><a href="../reference/fill_missing_values.html">fill_missing_values()</a></code>.</p>
 
       
     </div><div id="" class="section level2">
@@ -99,51 +195,12 @@
         <dd>Fill missing values in a dataframe</dd>
       </dl><dl><dt>
           
-          <code><a href="generate_dictionary.html">generate_dictionary()</a></code> 
-        </dt>
-        <dd>Create a data dictionary from labelled data</dd>
-      </dl><dl><dt>
-          
           <code><a href="inspect_na.html">inspect_na()</a></code> 
         </dt>
         <dd>Summarize missingness in data frame columns</dd>
-      </dl><dl><dt>
-          
-          <code><a href="look_for.html">look_for()</a></code> 
-        </dt>
-        <dd>Look for keywords variable names and descriptions in labelled data</dd>
-      </dl><dl><dt>
-          
-          <code><a href="read_csv_files_from_dir.html">read_csv_files_from_dir()</a></code> 
-        </dt>
-        <dd>Reads all CSV files from a directory</dd>
-      </dl><dl><dt>
-          
-          <code><a href="read_excel_files_from_dir.html">read_excel_files_from_dir()</a></code> 
-        </dt>
-        <dd>Read Excel Workbooks data from a directory</dd>
-      </dl><dl><dt>
-          
-          <code><a href="read_excel_workbook.html">read_excel_workbook()</a></code> 
-        </dt>
-        <dd>Import data from multiple sheets of an Excel workbook</dd>
-      </dl><dl><dt>
-          
-          <code><a href="read_gsheets.html">read_gsheets()</a></code> 
-        </dt>
-        <dd>Import data from multiple sheets in Google Sheets</dd>
-      </dl><dl><dt>
-          
-          <code><a href="read_spss_data.html">read_spss_data()</a></code> 
-        </dt>
-        <dd>Read SPSS data file</dd>
-      </dl><dl><dt>
-          
-          <code><a href="read_stata_data.html">read_stata_data()</a></code> 
-        </dt>
-        <dd>Read Stata data file</dd>
       </dl></div>
-  </main></div>
+  </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
+    </nav></aside></div>
 
 
     <footer><div class="pkgdown-footer-left">
