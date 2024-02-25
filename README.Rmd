@@ -41,11 +41,7 @@ Additionally, the package seamlessly works with labelled data from SPSS and Stat
 
 ## The Concept Map
 
-
-
 ![](man/figures/concept-map.png)
-
-
 
 ## Installation
 
@@ -72,13 +68,11 @@ Now that you have installed `bulkreadr` package, you can simply load it by using
 
 ```{r pkgload}
 library(bulkreadr)
-library(dplyr)
 ```
-
 
 ## Context
 
-bulkreadr draws on and complements / emulates other packages such as readxl, readr, and googlesheets4 to read bulk data in R.
+bulkreadr is designed to integrate with and augment the capabilities of established packages such as `readxl`, `readr`, and `googlesheets4`, offering enhanced functionality for reading bulk data within the R programming environment.
 
   * [readxl](https://readxl.tidyverse.org) is the tidyverse package for reading Excel files (xls or xlsx) into an R data frame. 
   
