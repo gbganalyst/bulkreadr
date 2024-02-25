@@ -1,0 +1,128 @@
+---
+title: "Introduction to labelled data"
+output: rmarkdown::html_vignette
+author: "Ezekiel Ogundepo and Ernest Fokoué"
+vignette: >
+  %\VignetteIndexEntry{Introduction to labelled data}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+description: >
+  The R ecosystem, through packages like `foreign` and `haven`,      facilitates the importation of labelled data from software like    SPSS and Stata, ensuring a smooth transition into R. This vignette introduces you to other functions in bulkreadr, such as `read_spss_data()`, which extends this functionality by leveraging `haven` to streamline the process further.
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  message = FALSE, 
+  warning = FALSE,
+  comment = "#>",
+  fig.path = "man/figures/",
+  out.width = "100%")
+
+options(tibble.print_min = 5, tibble.print_max = 5)
+
+options(rmarkdown.html_vignette.check_title = FALSE)
+```
+
+# What is labelled data in R?
+
+Labelled data in SPSS and Stata refers to datasets where each variable (or column) and its values are assigned meaningful labels. These labels provide context, such as descriptions or categories, making the data easier to understand and analyze. For instance, a variable representing gender might have numerical codes (1, 2) with labels ("Male", "Female"). This feature enhances data analysis by allowing researchers to work with descriptive labels instead of deciphering codes or numeric values, facilitating clearer interpretation and communication of statistical results.
+
+The R ecosystem, through packages like `foreign` and `haven`, facilitates the importation of labelled data from software like SPSS and Stata, ensuring a smooth transition into R. The `bulkreadr` package extends this functionality by leveraging `haven` to further streamline the process. It automatically converts labelled data into R's factor data type, eliminating the need for manual recoding. This enhancement significantly improves the efficiency of the data analysis workflow within the R environment.
+
+
+## Note
+
+> For the majority of functions within this package, we will utilize data stored in the system file by the `bulkreadr`, which can be accessed using the `system.file()` function. If you wish to utilize your own data stored in your local directory, please ensure that you have set the appropriate file path prior to using any functions provided by the bulkreadr package.
+
+## read_spss_data() 
+
+`read_spss_data()` is designed to seamlessly import data from an SPSS data (`.sav` or `.zsav`) files. It converts labelled variables into factors, a crucial step that enhances the ease of data manipulation and analysis within the R programming environment.
+
+**Read the SPSS data file without converting variable labels as column names**
+
+```{r spssdata1}
+
+library(bulkreadr)
+
+file_path <- system.file("extdata", "Wages.sav", package = "bulkreadr")
+
+data <- read_spss_data(file = file_path)
+
+data
+
+```
+
+
+**Read the SPSS data file and convert variable labels as column names**
+
+```{r spssdata2}
+
+data <- read_spss_data(file = file_path, label = TRUE)
+
+data
+
+```
+
+
+## read_stata_data() 
+
+`read_stata_data()` reads Stata data file (`.dta`) into an R data frame, converting labeled variables into factors.
+
+**Read the Stata data file without converting variable labels as column names**
+
+```{r statadata1}
+
+file_path <- system.file("extdata", "Wages.dta", package = "bulkreadr")
+
+data <- read_stata_data(file = file_path)
+
+data
+
+```
+
+**Read the Stata data file and convert variable labels as column names**
+
+```{r statadata2}
+
+data <- read_stata_data(file = file_path, label = TRUE)
+
+data
+
+```
+
+
+## generate_dictionary()
+
+`generate_dictionary()` creates a data dictionary from a specified data frame. This function is particularly useful for understanding and documenting the structure of your dataset, similar to data dictionaries in Stata or SPSS.
+
+```{r}
+
+# Creating a data dictionary from an SPSS file
+
+file_path <- system.file("extdata", "Wages.sav", package = "bulkreadr")
+
+wage_data <- read_spss_data(file = file_path)
+
+generate_dictionary(wage_data)
+```
+
+
+## look_for()
+
+The `look_for()` function is designed to emulate the functionality of the Stata `lookfor` command in R. It provides a powerful tool for searching through large datasets, specifically targeting variable names, variable label descriptions, factor levels, and value labels. This function is handy for users working with extensive and complex datasets, enabling them to quickly and efficiently locate the variables of interest.
+
+
+```{r}
+
+# Look for a single keyword.
+
+look_for(wage_data, "south")
+
+look_for(wage_data, "^s")
+```
+
+
+

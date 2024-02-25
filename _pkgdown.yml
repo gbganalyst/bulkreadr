@@ -54,6 +54,8 @@ articles:
   navbar: ~
   contents:
   - bulkreadr
+  - labelled-data
+  - other-functions
 
 navbar:
   title: "bulkreadr"
