@@ -2,7 +2,9 @@
 
 We are pleased to announce the release of `bulkreadr` version 1.1.1. This version introduces significant enhancements and features aimed at improving the functionality and user experience of the package.
 
-* **Enhanced `fill_missing_values()` Functionality**: The `fill_missing_values()` function has been significantly improved to support various imputation methods, empowering users to handle missing data with greater precision and flexibility. In addition to the previously supported "mean" imputation method, the function now accommodates the following strategies:
+* **Enhanced `fill_missing_values()` Functionality**: 
+
+The `fill_missing_values()` function has been significantly improved to support various imputation methods, empowering users to handle missing data with greater precision and flexibility. In addition to the previously supported "mean" imputation method, the function now accommodates the following strategies:
 
 `Minimum Value (Min)`: Imputes missing entries with the minimum value observed within each respective column.
 
@@ -18,7 +20,9 @@ Mean: Continues to offer the average value imputation, replacing missing values 
 These enhancements are designed to provide users with a comprehensive toolkit for data imputation, ensuring that `fill_missing_values()` can be effectively tailored to meet the unique demands of diverse datasets and analysis requirements.
 
 
-* **Package Website Launch:** To better serve our users and provide detailed documentation, we have launched the official `bulkreadr` package website. The website offers comprehensive guides, function references, and examples to help users maximize the package's potential. Visit us at [https://gbganalyst.github.io/bulkreadr](https://gbganalyst.github.io/bulkreadr) for more information.
+* **Package Website Launch:** 
+
+To better serve our users and provide detailed documentation, we have launched the official `bulkreadr` package website. The website offers comprehensive guides, function references, and examples to help users maximize the package's potential. Visit us at [https://gbganalyst.github.io/bulkreadr](https://gbganalyst.github.io/bulkreadr) for more information.
 
 We believe these updates will significantly enhance your data analysis workflows and look forward to your feedback.
 
@@ -41,7 +45,7 @@ This update includes the following new features and improvements:
 * Reduced dependency packages to optimize efficiency.
 
 
-# 0.2.0 (2023-09-11) 
+# bulkreadr 0.2.0 (2023-09-11) 
 
 This update includes the following new features and improvements:
 
@@ -51,7 +55,7 @@ This update includes the following new features and improvements:
 
 * Added more unit tests
 
-# 0.1.0 (2023-07-24) 
+# bulkreadr 0.1.0 (2023-07-24) 
 
 This update includes the following new features and improvements:
 
