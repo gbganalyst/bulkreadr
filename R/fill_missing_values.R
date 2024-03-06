@@ -72,6 +72,11 @@
 #'
 #'
 fill_missing_values <- function(df, selected_variables = NULL, method = "mean") {
+
+  if (missing(df)) {
+    stop("argument 'df' is missing, with no default")
+  }
+
   # Validate method input for continuous variables
   valid_methods <- c("min", "max", "mean", "median", "harmonic", "geometric")
   if (!(method %in% valid_methods)) {
