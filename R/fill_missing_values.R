@@ -1,13 +1,30 @@
-#' Fill missing values in a dataframe
+#' Fill missing values in a data frame
 #'
-#' `fill_missing_values()` is an efficient function that addresses missing values in a dataframe. It uses imputation by function, also known as column-based imputation, to fill numeric variables with the mean or median, and non-numeric variables with the mode. This approach ensures accurate and consistent replacements derived from individual columns, resulting in a complete and reliable dataset for improved analysis and decision-making.
+#' `fill_missing_values()` is an efficient function that addresses missing
+#' values in a data frame. It uses imputation by function, also known as
+#' column-based imputation, to impute the missing values. For continuous
+#' variables, it supports various methods of imputation, including minimum,
+#' maximum, mean, median, harmonic mean, and geometric mean. For categorical
+#' variables, missing values are replaced with the mode of the column. This
+#' approach ensures accurate and consistent replacements derived from individual
+#' columns, resulting in a complete and reliable dataset for improved analysis
+#' and decision-making.
 #'
-#' @param df The input dataframe to be processed.
-#' @param use_mean Logical. If `TRUE`, missing values in numeric columns will be replaced with the mean.
-#'  If `FALSE`, missing values in numeric columns will be replaced with the median.
+#' @param df A dataframe to process for missing value imputation.
 #'
-#' @return A dataframe with missing values filled.
+#' @param selected_variables An optional vector of variable names within `df` for
+#'   which missing values should be imputed. If `NULL` (default), imputation is
+#'   applied to all variables in the data frame.
+#'
+#' @param method A character string specifying the imputation method for continuous
+#'   variables. Supported methods are "min", "max", "mean", "median", "harmonic",
+#'   and "geometric". The default method is "mean". For categorical variables, the
+#'   mode is always used.
+#'
+#' @return  A data frame with missing values imputed according to the specified `method`.
+#'
 #' @export
+#'
 #' @examples
 #'
 #' library(dplyr)
@@ -22,19 +39,22 @@
 #'            NA, "virginica", "setosa")
 #' )
 #'
-#' # Using mean to fill missing values for numeric variables
+#' # Impute using the mean method for continuous variables
 #'
-#' result_df_mean <- fill_missing_values(df, use_mean = TRUE)
+#' result_df_mean <- fill_missing_values(df, method = "mean")
 #'
 #' result_df_mean
 #'
-#' # Using median to fill missing values for numeric variables
+#' # Impute using the geometric mean for continuous variables and specify
+#' # variables `Petal_Length` and `Petal_Width`.
 #'
-#' result_df_median <- fill_missing_values(df, use_mean = FALSE)
+#' result_df_geomean <- fill_missing_values(df, selected_variables = c
+#' ("Petal_Length", "Petal_Width"), method = "geometric")
 #'
-#' result_df_median
+#' result_df_geomean
 #'
 #' # Impute missing values (NAs) in a grouped data frame
+#'
 #' # You can do that by using the following:
 #'
 #' sample_iris <- tibble::tibble(
@@ -48,28 +68,55 @@
 #' sample_iris %>%
 #' group_by(Species) %>%
 #' group_split() %>%
-#' map_df(fill_missing_values)
+#' map_df(fill_missing_values, method = "median")
 #'
 #'
-fill_missing_values <- function(df, use_mean = TRUE) {
+fill_missing_values <- function(df, selected_variables = NULL, method = "mean") {
+
   if (missing(df)) {
     stop("argument 'df' is missing, with no default")
-  } else {
-    # Loop over each column in the dataframe
-    for (col in names(df)) {
-      if (is.numeric(df[[col]])) { # Check if column is numeric
-        # Fill missing values with mean or median based on the flag 'use_mean'
-        if (use_mean) {
-          df[[col]][is.na(df[[col]])] <- mean(df[[col]], na.rm = TRUE)
-        } else {
-          df[[col]][is.na(df[[col]])] <- median(df[[col]], na.rm = TRUE)
-        }
-      } else {
-        # Fill missing values with mode
-        df[[col]][is.na(df[[col]])] <- names(which.max(table(df[[col]])))
-      }
-    }
-    return(df)
   }
-}
 
+  # Validate method input for continuous variables
+  valid_methods <- c("min", "max", "mean", "median", "harmonic", "geometric")
+  if (!(method %in% valid_methods)) {
+    stop("Invalid method. Choose from 'min', 'max', 'mean', 'median', 'harmonic', 'geometric'")
+  }
+
+  # Calculate the replacement value based on the specified method
+
+  impute_continuous <- function(x, method) {
+    if (!is.numeric(x)) {
+      return(x)
+    } # Skip non-numeric columns
+
+    replacement_value <- switch(method,
+      min = min(x, na.rm = TRUE),
+      max = max(x, na.rm = TRUE),
+      mean = mean(x, na.rm = TRUE),
+      median = median(x, na.rm = TRUE),
+      harmonic = harmonic_mean(x),
+      geometric = geometric_mean(x),
+      x
+    ) # Default to return x as is
+
+
+    # Explicitly cast the replacement value to the same type as x
+
+    replacement_value_casted <- as(replacement_value, class(x[!is.na(x)][1]))
+
+    # Use the casted replacement value for NA replacement
+
+    replace_na(x, replacement_value_casted)
+  }
+
+
+  df %>%
+    mutate(across(
+      .cols = {{ selected_variables }} %||% everything(),
+      .fns = ~ case_when(
+        is.numeric(.) ~ impute_continuous(., method),
+        TRUE ~ replace_na(., get_mode(.))
+      )
+    ))
+}

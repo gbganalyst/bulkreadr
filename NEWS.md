@@ -1,3 +1,27 @@
+# bulkreadr 1.1.1 (2024-03-01)
+
+We are pleased to announce the release of `bulkreadr` version 1.1.1. This version introduces significant enhancements and features aimed at improving the functionality and user experience of the package.
+
+* **Enhanced `fill_missing_values()` Functionality**: The `fill_missing_values()` function has been significantly improved to support various imputation methods, empowering users to handle missing data with greater precision and flexibility. In addition to the previously supported "mean" imputation method, the function now accommodates the following strategies:
+
+`Minimum Value (Min)`: Imputes missing entries with the minimum value observed within each respective column.
+
+`Maximum Value (Max)`: Fills missing data points with the maximum value found in each column.
+Mean: Continues to offer the average value imputation, replacing missing values with the mean of the available data in each column.
+
+`Median`: Imputes missing entries by employing the median value of each column, providing a robust alternative to mean imputation, especially in the presence of outliers.
+
+`Harmonic Mean`: Offers a sophisticated option for imputing missing values using the harmonic mean, ideal for data distributions where this approach is more representative.
+
+`Geometric Mean`: Completes our enhanced range of imputation methods by allowing for the replacement of missing values with the geometric mean, suited for datasets where the product of values is of interest.
+
+These enhancements are designed to provide users with a comprehensive toolkit for data imputation, ensuring that `fill_missing_values()` can be effectively tailored to meet the unique demands of diverse datasets and analysis requirements.
+
+
+* **Package Website Launch:** To better serve our users and provide detailed documentation, we have launched the official `bulkreadr` package website. The website offers comprehensive guides, function references, and examples to help users maximize the package's potential. Visit us at [https://gbganalyst.github.io/bulkreadr](https://gbganalyst.github.io/bulkreadr) for more information.
+
+We believe these updates will significantly enhance your data analysis workflows and look forward to your feedback.
+
 # bulkreadr 1.1.0 (2023-11-13)
 
 This update includes the following new features:

@@ -6,20 +6,20 @@ reference:
 
 - title: Spreadsheets
   desc: >
-    Functions that operate on spreasheets
+    Functions for reading bulk data in spreadsheets
   contents:
   - read_excel_workbook
   - read_excel_files_from_dir
 
 - title: Google Sheets
   desc: >
-    A function that operates on Google Sheets
+    A function for reading and appending data across multiple sheets within Google Sheets.
   contents:
   - read_gsheets
 
 - title: Flat files
   desc: >
-    A function that operates on csv files
+    A function designed to read and consolidate multiple CSV files within a specified directory.
   contents:
   - read_csv_files_from_dir
 
@@ -48,7 +48,6 @@ reference:
   - fill_missing_values
   - inspect_na
 
-
 articles:
 - title: Get started
   navbar: ~
@@ -65,7 +64,7 @@ navbar:
       href: index.html
     - text: "Functions"
       href: reference/index.html
-    - text: "Vignettes"
+    - text: "Articles"
       href: articles/index.html
     - text: "News"
       href: news/index.html

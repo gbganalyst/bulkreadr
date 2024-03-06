@@ -2,7 +2,7 @@
 title: "Introduction to bulkreadr"
 output: rmarkdown::html_vignette
 description: >
-  Start here if this is your first time using bulkreadr. You'll learn how to     
+  Start here if this is your first time using `bulkreadr`. You'll learn how to     
   use functions like `read_excel_workbook()` and `read_excel_files_from_dir()`   
   for importing data from Excel and `read_gsheets()` for Google Sheets,         
   allowing for data importation from multiple sheets. For handling CSV    
