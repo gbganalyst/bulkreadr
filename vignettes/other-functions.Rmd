@@ -94,7 +94,8 @@ airquality %>%
 
 ## fill_missing_values() 
 
-`fill_missing_values()` in an efficient function that addresses missing values in a dataframe. It uses imputation by function, meaning it replaces missing data in numeric variables with either the mean or the median, and in non-numeric variables with the mode. The function takes a column-based imputation approach, ensuring that replacement values are derived from the respective columns, resulting in accurate and consistent data. This method enhances the integrity of the dataset and promotes sound decision-making and analysis in data processing workflows.
+`fill_missing_values()` is an efficient function that addresses missing values in a data frame. It uses imputation by function, also known as column-based imputation, to impute the missing values. It supports various imputation methods for continuous variables, including minimum, maximum, mean, median, harmonic mean, and geometric mean. For categorical variables, missing values are replaced with the mode of the column. This approach ensures accurate and consistent replacements derived from individual columns, resulting in a complete and reliable dataset for improved analysis and decision-making.
+
 
 ```{r example 6}
 
@@ -115,30 +116,42 @@ df
 ```
 
 
-**Using mean to fill missing values for numeric variables**
+**Impute using the mean method for continuous variables**
 
 
 ```{r}
 
-result_df_mean <- fill_missing_values(df, use_mean = TRUE)
+#' df <- tibble::tibble(
+#' Sepal_Length = c(5.2, 5, 5.7, NA, 6.2, 6.7, 5.5),
+#' Petal_Length = c(1.5, 1.4, 4.2, 1.4, NA, 5.8, 3.7),
+#' Petal_Width = c(NA, 0.2, 1.2, 0.2, 1.3, 1.8, NA),
+#' Species = c("setosa", NA, "versicolor", "setosa",
+#'            NA, "virginica", "setosa")
+#' )
+
+```
+
+
+```{r}
+result_df_mean <- fill_missing_values(df, method = "mean")
 
 result_df_mean
-
 ```
 
-
-**Using median to fill missing values for numeric variables**
+**Impute using the geometric mean for continuous variables and specify variables `Petal_Length` and `Petal_Width`**
 
 ```{r}
-result_df_median <- fill_missing_values(df, use_mean = FALSE)
 
-result_df_median
+result_df_geomean <- fill_missing_values(df, selected_variables = c
+("Petal_Length", "Petal_Width"), method = "geometric")
+
+result_df_geomean
 ```
-
 
 ### Impute missing values (NAs) in a grouped data frame
 
-You can use the `fill_missing_values()` in a grouped data frame by using other grouping and map functions. Here is an example of how to do this:
+You can use the `fill_missing_values()` in a grouped data frame by using other 
+grouping and map functions. Here is an example of how to do this:
 
 ```{r}
 sample_iris <- tibble::tibble(
@@ -159,6 +172,5 @@ sample_iris
 sample_iris %>%
   group_by(Species) %>%
   group_split() %>%
-  map_df(fill_missing_values)
+  map_df(fill_missing_values, method = "median")
 ```
-

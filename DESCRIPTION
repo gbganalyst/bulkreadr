@@ -36,13 +36,16 @@ Imports:
     labelled,
     lubridate,
     magrittr,
+    methods,
     openxlsx,
     readr,
     readxl,
+    rlang,
     sjlabelled,
     stats,
     stringr,
-    tibble
+    tibble,
+    tidyr
 Suggests:
     knitr,
     rmarkdown,

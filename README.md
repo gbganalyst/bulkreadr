@@ -62,7 +62,7 @@ if(!require("devtools")){
 devtools::install_github("gbganalyst/bulkreadr")
 ```
 
-## How to load the package
+## Usage
 
 Now that you have installed `bulkreadr` package, you can simply load it
 by using:
@@ -70,6 +70,9 @@ by using:
 ``` r
 library(bulkreadr)
 ```
+
+To get started with `bulkreadr`, see the
+[articles](https://gbganalyst.github.io/bulkreadr/articles/index.html).
 
 ## Context
 
