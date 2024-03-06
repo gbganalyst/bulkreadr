@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">bulkreadr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.1.1</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,7 +29,7 @@
   <a class="nav-link" href="../reference/index.html">Functions</a>
 </li>
 <li class="nav-item">
-  <a class="nav-link" href="../articles/index.html">Vignettes</a>
+  <a class="nav-link" href="../articles/index.html">Articles</a>
 </li>
 <li class="active nav-item">
   <a class="nav-link" href="../news/index.html">News</a>
@@ -73,6 +73,21 @@
       <small>Source: <a href="https://github.com/gbganalyst/bulkreadr/blob/HEAD/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="1.1.1" id="bulkreadr-111-2024-03-01">bulkreadr 1.1.1 (2024-03-01)<a class="anchor" aria-label="anchor" href="#bulkreadr-111-2024-03-01"></a></h2>
+<p>We are pleased to announce the release of <code>bulkreadr</code> version 1.1.1. This version introduces significant enhancements and features aimed at improving the functionality and user experience of the package.</p>
+<ul><li>
+<strong>Enhanced <code><a href="../reference/fill_missing_values.html">fill_missing_values()</a></code> Functionality</strong>: The <code><a href="../reference/fill_missing_values.html">fill_missing_values()</a></code> function has been significantly improved to support various imputation methods, empowering users to handle missing data with greater precision and flexibility. In addition to the previously supported “mean” imputation method, the function now accommodates the following strategies:</li>
+</ul><p><code>Minimum Value (Min)</code>: Imputes missing entries with the minimum value observed within each respective column.</p>
+<p><code>Maximum Value (Max)</code>: Fills missing data points with the maximum value found in each column. Mean: Continues to offer the average value imputation, replacing missing values with the mean of the available data in each column.</p>
+<p><code>Median</code>: Imputes missing entries by employing the median value of each column, providing a robust alternative to mean imputation, especially in the presence of outliers.</p>
+<p><code>Harmonic Mean</code>: Offers a sophisticated option for imputing missing values using the harmonic mean, ideal for data distributions where this approach is more representative.</p>
+<p><code>Geometric Mean</code>: Completes our enhanced range of imputation methods by allowing for the replacement of missing values with the geometric mean, suited for datasets where the product of values is of interest.</p>
+<p>These enhancements are designed to provide users with a comprehensive toolkit for data imputation, ensuring that <code><a href="../reference/fill_missing_values.html">fill_missing_values()</a></code> can be effectively tailored to meet the unique demands of diverse datasets and analysis requirements.</p>
+<ul><li>
+<strong>Package Website Launch:</strong> To better serve our users and provide detailed documentation, we have launched the official <code>bulkreadr</code> package website. The website offers comprehensive guides, function references, and examples to help users maximize the package’s potential. Visit us at <a href="https://gbganalyst.github.io/bulkreadr">https://gbganalyst.github.io/bulkreadr</a> for more information.</li>
+</ul><p>We believe these updates will significantly enhance your data analysis workflows and look forward to your feedback.</p>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="1.1.0" id="bulkreadr-110-2023-11-13">bulkreadr 1.1.0 (2023-11-13)<a class="anchor" aria-label="anchor" href="#bulkreadr-110-2023-11-13"></a></h2><p class="text-muted">CRAN release: 2023-11-16</p>
 <p>This update includes the following new features:</p>

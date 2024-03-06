@@ -35,7 +35,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">bulkreadr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.1.1</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,7 +55,7 @@
   <a class="nav-link" href="../reference/index.html">Functions</a>
 </li>
 <li class="active nav-item">
-  <a class="nav-link" href="../articles/index.html">Vignettes</a>
+  <a class="nav-link" href="../articles/index.html">Articles</a>
 </li>
 <li class="nav-item">
   <a class="nav-link" href="../news/index.html">News</a>
@@ -169,7 +169,7 @@ like <code>42370</code> into date value like
 <span><span class="co"># It can also convert date time object to date object </span></span>
 <span></span>
 <span><span class="fu"><a href="../reference/convert_to_date.html">convert_to_date</a></span><span class="op">(</span><span class="fu">lubridate</span><span class="fu">::</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/now.html" class="external-link">now</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "2024-02-26"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "2024-03-06"</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="inspect_na">inspect_na()<a class="anchor" aria-label="anchor" href="#inspect_na"></a>
@@ -210,15 +210,15 @@ missingness is summarized separately for each group.</p>
 <div class="section level2">
 <h2 id="fill_missing_values">fill_missing_values()<a class="anchor" aria-label="anchor" href="#fill_missing_values"></a>
 </h2>
-<p><code><a href="../reference/fill_missing_values.html">fill_missing_values()</a></code> in an efficient function that
-addresses missing values in a dataframe. It uses imputation by function,
-meaning it replaces missing data in numeric variables with either the
-mean or the median, and in non-numeric variables with the mode. The
-function takes a column-based imputation approach, ensuring that
-replacement values are derived from the respective columns, resulting in
-accurate and consistent data. This method enhances the integrity of the
-dataset and promotes sound decision-making and analysis in data
-processing workflows.</p>
+<p><code><a href="../reference/fill_missing_values.html">fill_missing_values()</a></code> is an efficient function that
+addresses missing values in a data frame. It uses imputation by
+function, also known as column-based imputation, to impute the missing
+values. It supports various imputation methods for continuous variables,
+including minimum, maximum, mean, median, harmonic mean, and geometric
+mean. For categorical variables, missing values are replaced with the
+mode of the column. This approach ensures accurate and consistent
+replacements derived from individual columns, resulting in a complete
+and reliable dataset for improved analysis and decision-making.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble</a></span><span class="op">(</span></span>
@@ -241,11 +241,19 @@ processing workflows.</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>         <span style="color: #BB0000;">NA</span>           3            1.4         0.2 setosa    </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span>          6.2         2.9         <span style="color: #BB0000;">NA</span>           1.3 <span style="color: #BB0000;">NA</span>        </span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 2 more rows</span></span></span></code></pre></div>
-<p><strong>Using mean to fill missing values for numeric
+<p><strong>Impute using the mean method for continuous
 variables</strong></p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
-<span><span class="va">result_df_mean</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/fill_missing_values.html">fill_missing_values</a></span><span class="op">(</span><span class="va">df</span>, use_mean <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="co">#' df &lt;- tibble::tibble(</span></span>
+<span><span class="co">#' Sepal_Length = c(5.2, 5, 5.7, NA, 6.2, 6.7, 5.5),</span></span>
+<span><span class="co">#' Petal_Length = c(1.5, 1.4, 4.2, 1.4, NA, 5.8, 3.7),</span></span>
+<span><span class="co">#' Petal_Width = c(NA, 0.2, 1.2, 0.2, 1.3, 1.8, NA),</span></span>
+<span><span class="co">#' Species = c("setosa", NA, "versicolor", "setosa",</span></span>
+<span><span class="co">#'            NA, "virginica", "setosa")</span></span>
+<span><span class="co">#' )</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">result_df_mean</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/fill_missing_values.html">fill_missing_values</a></span><span class="op">(</span><span class="va">df</span>, method <span class="op">=</span> <span class="st">"mean"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">result_df_mean</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 7 × 5</span></span></span>
@@ -257,20 +265,23 @@ variables</strong></p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>         5.72         3            1.4        0.2  setosa    </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span>         6.2          2.9          3          1.3  setosa    </span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 2 more rows</span></span></span></code></pre></div>
-<p><strong>Using median to fill missing values for numeric
-variables</strong></p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">result_df_median</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/fill_missing_values.html">fill_missing_values</a></span><span class="op">(</span><span class="va">df</span>, use_mean <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<p><strong>Impute using the geometric mean for continuous variables and
+specify variables <code>Petal_Length</code> and
+<code>Petal_Width</code></strong></p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="va">result_df_geomean</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/fill_missing_values.html">fill_missing_values</a></span><span class="op">(</span><span class="va">df</span>, selected_variables <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span></span>
+<span><span class="op">(</span><span class="st">"Petal_Length"</span>, <span class="st">"Petal_Width"</span><span class="op">)</span>, method <span class="op">=</span> <span class="st">"geometric"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">result_df_median</span></span>
+<span><span class="va">result_df_geomean</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 7 × 5</span></span></span>
 <span><span class="co">#&gt;   Sepal_Length Sepal.Width Petal_Length Petal_Width Species   </span></span>
 <span><span class="co">#&gt;          <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>          5.2         4.1          1.5         1.2 setosa    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>          5           3.6          1.4         0.2 setosa    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>          5.7         3            4.2         1.2 versicolor</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>          5.6         3            1.4         0.2 setosa    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span>          6.2         2.9          2.6         1.3 setosa    </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>          5.2         4.1         1.5        0.732 setosa    </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>          5           3.6         1.4        0.2   <span style="color: #BB0000;">NA</span>        </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>          5.7         3           4.2        1.2   versicolor</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>         <span style="color: #BB0000;">NA</span>           3           1.4        0.2   setosa    </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span>          6.2         2.9         2.22       1.3   <span style="color: #BB0000;">NA</span>        </span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 2 more rows</span></span></span></code></pre></div>
 <div class="section level3">
 <h3 id="impute-missing-values-nas-in-a-grouped-data-frame">Impute missing values (NAs) in a grouped data frame<a class="anchor" aria-label="anchor" href="#impute-missing-values-nas-in-a-grouped-data-frame"></a>
@@ -278,7 +289,7 @@ variables</strong></p>
 <p>You can use the <code><a href="../reference/fill_missing_values.html">fill_missing_values()</a></code> in a grouped data
 frame by using other grouping and map functions. Here is an example of
 how to do this:</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">sample_iris</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble</a></span><span class="op">(</span></span>
 <span>Sepal_Length <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">5.2</span>, <span class="fl">5</span>, <span class="fl">5.7</span>, <span class="cn">NA</span>, <span class="fl">6.2</span>, <span class="fl">6.7</span>, <span class="fl">5.5</span><span class="op">)</span>,</span>
 <span>Petal_Length <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1.5</span>, <span class="fl">1.4</span>, <span class="fl">4.2</span>, <span class="fl">1.4</span>, <span class="cn">NA</span>, <span class="fl">5.8</span>, <span class="fl">3.7</span><span class="op">)</span>,</span>
@@ -286,7 +297,7 @@ how to do this:</p>
 <span>Species <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"setosa"</span>, <span class="st">"setosa"</span>, <span class="st">"versicolor"</span>, <span class="st">"setosa"</span>,</span>
 <span>          <span class="st">"virginica"</span>, <span class="st">"virginica"</span>, <span class="st">"setosa"</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">sample_iris</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 7 × 4</span></span></span>
 <span><span class="co">#&gt;   Sepal_Length Petal_Length Petal_Width Species   </span></span>
@@ -297,19 +308,19 @@ how to do this:</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>         <span style="color: #BB0000;">NA</span>            1.4         0.2 setosa    </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span>          6.2         <span style="color: #BB0000;">NA</span>           1.3 virginica </span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 2 more rows</span></span></span></code></pre></div>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">sample_iris</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">Species</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_split.html" class="external-link">group_split</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://purrr.tidyverse.org/reference/map_dfr.html" class="external-link">map_df</a></span><span class="op">(</span><span class="va">fill_missing_values</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://purrr.tidyverse.org/reference/map_dfr.html" class="external-link">map_df</a></span><span class="op">(</span><span class="va">fill_missing_values</span>, method <span class="op">=</span> <span class="st">"median"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 7 × 4</span></span></span>
 <span><span class="co">#&gt;   Sepal_Length Petal_Length Petal_Width Species   </span></span>
 <span><span class="co">#&gt;          <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>         5.2           1.5       0.3   setosa    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>         5             1.4       0.2   setosa    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>         5.23          1.4       0.2   setosa    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>         5.5           3.7       0.233 setosa    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span>         5.7           4.2       1.2   versicolor</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>          5.2          1.5         0.3 setosa    </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>          5            1.4         0.2 setosa    </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>          5.2          1.4         0.2 setosa    </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>          5.5          3.7         0.2 setosa    </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span>          5.7          4.2         1.2 versicolor</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 2 more rows</span></span></span></code></pre></div>
 </div>
 </div>
