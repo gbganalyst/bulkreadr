@@ -71,7 +71,7 @@ navbar:
     - text: "Other Packages"
       menu:
         - text: "forstringr"
-          href: https://github.com/gbganalyst/forstringr
+          href: https://gbganalyst.github.io/forstringr
         - text: "ralger"
           href: https://github.com/feddelegrand7/ralger
   right:
