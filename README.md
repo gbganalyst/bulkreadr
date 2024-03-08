@@ -71,8 +71,8 @@ by using:
 library(bulkreadr)
 ```
 
-To get started with `bulkreadr`, see the
-[articles](https://gbganalyst.github.io/bulkreadr/articles/index.html).
+To get started with `bulkreadr`, read the
+[docs](https://gbganalyst.github.io/bulkreadr/articles/index.html).
 
 ## Context
 
