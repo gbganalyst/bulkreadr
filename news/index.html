@@ -37,7 +37,7 @@
 <li class="nav-item dropdown">
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-other-packages">Other Packages</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-other-packages">
-    <a class="external-link dropdown-item" href="https://github.com/gbganalyst/forstringr">forstringr</a>
+    <a class="external-link dropdown-item" href="https://gbganalyst.github.io/forstringr">forstringr</a>
     <a class="external-link dropdown-item" href="https://github.com/feddelegrand7/ralger">ralger</a>
   </div>
 </li>
@@ -77,16 +77,17 @@
 <h2 class="pkg-version" data-toc-text="1.1.1" id="bulkreadr-111-2024-03-01">bulkreadr 1.1.1 (2024-03-01)<a class="anchor" aria-label="anchor" href="#bulkreadr-111-2024-03-01"></a></h2>
 <p>We are pleased to announce the release of <code>bulkreadr</code> version 1.1.1. This version introduces significant enhancements and features aimed at improving the functionality and user experience of the package.</p>
 <ul><li>
-<strong>Enhanced <code><a href="../reference/fill_missing_values.html">fill_missing_values()</a></code> Functionality</strong>: The <code><a href="../reference/fill_missing_values.html">fill_missing_values()</a></code> function has been significantly improved to support various imputation methods, empowering users to handle missing data with greater precision and flexibility. In addition to the previously supported “mean” imputation method, the function now accommodates the following strategies:</li>
-</ul><p><code>Minimum Value (Min)</code>: Imputes missing entries with the minimum value observed within each respective column.</p>
+<strong>Enhanced <code><a href="../reference/fill_missing_values.html">fill_missing_values()</a></code> Functionality</strong>:</li>
+</ul><p>The <code><a href="../reference/fill_missing_values.html">fill_missing_values()</a></code> function has been significantly improved to support various imputation methods, empowering users to handle missing data with greater precision and flexibility. In addition to the previously supported “mean” imputation method, the function now accommodates the following strategies:</p>
+<p><code>Minimum Value (Min)</code>: Imputes missing entries with the minimum value observed within each respective column.</p>
 <p><code>Maximum Value (Max)</code>: Fills missing data points with the maximum value found in each column. Mean: Continues to offer the average value imputation, replacing missing values with the mean of the available data in each column.</p>
 <p><code>Median</code>: Imputes missing entries by employing the median value of each column, providing a robust alternative to mean imputation, especially in the presence of outliers.</p>
 <p><code>Harmonic Mean</code>: Offers a sophisticated option for imputing missing values using the harmonic mean, ideal for data distributions where this approach is more representative.</p>
 <p><code>Geometric Mean</code>: Completes our enhanced range of imputation methods by allowing for the replacement of missing values with the geometric mean, suited for datasets where the product of values is of interest.</p>
 <p>These enhancements are designed to provide users with a comprehensive toolkit for data imputation, ensuring that <code><a href="../reference/fill_missing_values.html">fill_missing_values()</a></code> can be effectively tailored to meet the unique demands of diverse datasets and analysis requirements.</p>
-<ul><li>
-<strong>Package Website Launch:</strong> To better serve our users and provide detailed documentation, we have launched the official <code>bulkreadr</code> package website. The website offers comprehensive guides, function references, and examples to help users maximize the package’s potential. Visit us at <a href="https://gbganalyst.github.io/bulkreadr">https://gbganalyst.github.io/bulkreadr</a> for more information.</li>
-</ul><p>We believe these updates will significantly enhance your data analysis workflows and look forward to your feedback.</p>
+<ul><li><strong>Package Website Launch:</strong></li>
+</ul><p>To better serve our users and provide detailed documentation, we have launched the official <code>bulkreadr</code> package website. The website offers comprehensive guides, function references, and examples to help users maximize the package’s potential. Visit us at <a href="https://gbganalyst.github.io/bulkreadr">https://gbganalyst.github.io/bulkreadr</a> for more information.</p>
+<p>We believe these updates will significantly enhance your data analysis workflows and look forward to your feedback.</p>
 </div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="1.1.0" id="bulkreadr-110-2023-11-13">bulkreadr 1.1.0 (2023-11-13)<a class="anchor" aria-label="anchor" href="#bulkreadr-110-2023-11-13"></a></h2><p class="text-muted">CRAN release: 2023-11-16</p>
@@ -100,6 +101,20 @@
 <p>This update includes the following new features and improvements:</p>
 <ul><li><p>Developed <code><a href="../reference/read_stata_data.html">read_stata_data()</a></code> to import Stata data file (<code>.dta</code>) into an R data frame, converting labeled variables into factors.</p></li>
 <li><p>Reduced dependency packages to optimize efficiency.</p></li>
+</ul></div>
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.2.0" id="bulkreadr-020-2023-09-11">bulkreadr 0.2.0 (2023-09-11)<a class="anchor" aria-label="anchor" href="#bulkreadr-020-2023-09-11"></a></h2><p class="text-muted">CRAN release: 2023-09-15</p>
+<p>This update includes the following new features and improvements:</p>
+<ul><li><p>Developed bulkreadr vignette</p></li>
+<li><p>Developed <code><a href="../reference/read_spss_data.html">read_spss_data()</a></code> to seamlessly import data from an SPSS data (<code>.sav</code> or <code>.zsav</code>) files and converting labelled variables into factors, a crucial step that enhances the ease of data manipulation and analysis within the R programming environment.</p></li>
+<li><p>Added more unit tests</p></li>
+</ul></div>
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.1.0" id="bulkreadr-010-2023-07-24">bulkreadr 0.1.0 (2023-07-24)<a class="anchor" aria-label="anchor" href="#bulkreadr-010-2023-07-24"></a></h2><p class="text-muted">CRAN release: 2023-08-15</p>
+<p>This update includes the following new features and improvements:</p>
+<ul><li><p>Improved error handling by adding meaningful error messages for all functions within <code>bulkreadr</code> package. This will make it easier for users to identify and troubleshoot issues that may arise during their use of the package.</p></li>
+<li><p>Added package-level documentation. The user can now use <code><a href="../reference/bulkreadr-package.html">?bulkreadr::bulkreadr</a></code> for basic package-level documentation.</p></li>
+<li><p>Added <code><a href="../reference/inspect_na.html">inspect_na()</a></code> to summarize missingness in data frame columns and <code><a href="../reference/fill_missing_values.html">fill_missing_values()</a></code> to impute missing values in a dataframe.</p></li>
 </ul></div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside></div>
