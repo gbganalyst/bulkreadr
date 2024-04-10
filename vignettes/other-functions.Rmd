@@ -94,7 +94,7 @@ airquality %>%
 
 ## fill_missing_values() 
 
-`fill_missing_values()` is an efficient function that addresses missing values in a data frame. It uses imputation by function, also known as column-based imputation, to impute the missing values. It supports various imputation methods for continuous variables, including minimum, maximum, mean, median, harmonic mean, and geometric mean. For categorical variables, missing values are replaced with the mode of the column. This approach ensures accurate and consistent replacements derived from individual columns, resulting in a complete and reliable dataset for improved analysis and decision-making.
+`fill_missing_values()` is an efficient function that addresses missing values in a data frame. It uses imputation by function, also known as column-based imputation, to impute the missing values. It supports various imputation methods for continuous variables, including `minimum`, `maximum`, `mean`, `median`, `harmonic mean`, and `geometric mean`. For categorical variables, missing values are replaced with the `mode` of the column. This approach ensures accurate and consistent replacements derived from individual columns, resulting in a complete and reliable dataset for improved analysis and decision-making.
 
 
 ```{r example 6}

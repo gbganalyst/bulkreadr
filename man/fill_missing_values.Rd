@@ -4,7 +4,11 @@
 \alias{fill_missing_values}
 \title{Fill missing values in a data frame}
 \usage{
-fill_missing_values(df, selected_variables = NULL, method = "mean")
+fill_missing_values(
+  df,
+  selected_variables = NULL,
+  method = c("mean", "min", "max", "median", "harmonic", "geometric")
+)
 }
 \arguments{
 \item{df}{A dataframe to process for missing value imputation.}
@@ -13,13 +17,14 @@ fill_missing_values(df, selected_variables = NULL, method = "mean")
 which missing values should be imputed. If \code{NULL} (default), imputation is
 applied to all variables in the data frame.}
 
-\item{method}{A character string specifying the imputation method for continuous
-variables. Supported methods are "min", "max", "mean", "median", "harmonic",
-and "geometric". The default method is "mean". For categorical variables, the
-mode is always used.}
+\item{method}{A character string specifying the imputation method for
+continuous variables. Supported methods are "min", "max", "mean", "median",
+"harmonic", and "geometric". The default method is "mean". For categorical
+variables, the mode is always used.}
 }
 \value{
-A data frame with missing values imputed according to the specified \code{method}.
+A data frame with missing values imputed according to the specified
+\code{method}.
 }
 \description{
 \code{fill_missing_values()} is an efficient function that addresses missing
