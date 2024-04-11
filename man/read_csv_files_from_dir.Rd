@@ -39,7 +39,7 @@ character represents one column:
 
 By default, reading a file without a column specification will print a
 message showing what \code{readr} guessed they were. To remove this message,
-set \code{show_col_types = FALSE} or set `options(readr.show_col_types = FALSE).}
+set \code{show_col_types = FALSE} or set \code{options(readr.show_col_types = FALSE)}.}
 
 \item{.id}{The name of a column in which to store the file path. This is
 useful when reading multiple input files and there is data in the file

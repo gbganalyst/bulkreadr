@@ -16,12 +16,13 @@
 #'   which missing values should be imputed. If `NULL` (default), imputation is
 #'   applied to all variables in the data frame.
 #'
-#' @param method A character string specifying the imputation method for continuous
-#'   variables. Supported methods are "min", "max", "mean", "median", "harmonic",
-#'   and "geometric". The default method is "mean". For categorical variables, the
-#'   mode is always used.
+#' @param method A character string specifying the imputation method for
+#' continuous variables. Supported methods are "min", "max", "mean", "median",
+#' "harmonic", and "geometric". The default method is "mean". For categorical
+#' variables, the mode is always used.
 #'
-#' @return  A data frame with missing values imputed according to the specified `method`.
+#' @return  A data frame with missing values imputed according to the specified
+#'  `method`.
 #'
 #' @export
 #'
@@ -71,17 +72,21 @@
 #' map_df(fill_missing_values, method = "median")
 #'
 #'
-fill_missing_values <- function(df, selected_variables = NULL, method = "mean") {
+fill_missing_values <- function(df, selected_variables = NULL, method = c("mean", "min", "max", "median", "harmonic", "geometric")) {
+
+  # Check if df is a dataframe
+
+  if (!is.data.frame(df)) {
+    stop("fill_missing_values() is designed to operate exclusively on objects of the class 'dataframe'")
+  }
 
   if (missing(df)) {
     stop("argument 'df' is missing, with no default")
   }
 
   # Validate method input for continuous variables
-  valid_methods <- c("min", "max", "mean", "median", "harmonic", "geometric")
-  if (!(method %in% valid_methods)) {
-    stop("Invalid method. Choose from 'min', 'max', 'mean', 'median', 'harmonic', 'geometric'")
-  }
+
+  method <- rlang::arg_match(method)
 
   # Calculate the replacement value based on the specified method
 
@@ -91,13 +96,13 @@ fill_missing_values <- function(df, selected_variables = NULL, method = "mean") 
     } # Skip non-numeric columns
 
     replacement_value <- switch(method,
-      min = min(x, na.rm = TRUE),
-      max = max(x, na.rm = TRUE),
-      mean = mean(x, na.rm = TRUE),
-      median = median(x, na.rm = TRUE),
-      harmonic = harmonic_mean(x),
-      geometric = geometric_mean(x),
-      x
+                                min = min(x, na.rm = TRUE),
+                                max = max(x, na.rm = TRUE),
+                                mean = mean(x, na.rm = TRUE),
+                                median = median(x, na.rm = TRUE),
+                                harmonic = harmonic_mean(x),
+                                geometric = geometric_mean(x),
+                                x
     ) # Default to return x as is
 
 
