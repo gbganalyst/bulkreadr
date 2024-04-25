@@ -1,11 +1,11 @@
 pandoc: 3.1.11
-pkgdown: 2.0.8
+pkgdown: 2.0.9
 pkgdown_sha: ~
 articles:
   bulkreadr: bulkreadr.html
   labelled-data: labelled-data.html
   other-functions: other-functions.html
-last_built: 2024-04-11T21:34Z
+last_built: 2024-04-25T08:33Z
 urls:
   reference: https://gbganalyst.github.io/bulkreadr/reference
   article: https://gbganalyst.github.io/bulkreadr/articles
