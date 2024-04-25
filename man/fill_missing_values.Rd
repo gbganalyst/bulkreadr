@@ -13,13 +13,14 @@ fill_missing_values(
 \arguments{
 \item{df}{A dataframe to process for missing value imputation.}
 
-\item{selected_variables}{An optional vector of variable names within \verb{df for which missing values should be imputed. If }NULL` (default), imputation
+\item{selected_variables}{An optional vector of variable names within \code{df}
+for which missing values should be imputed. If \code{NULL} (default), imputation
 is applied to all variables in the data frame. Variables must be quoted.}
 
 \item{method}{A character string specifying the imputation method for
-continuous variables. Supported methods are "min", "max", "mean", "median",
-"harmonic", and "geometric". The default method is "mean". For categorical
-variables, the mode is always used.}
+continuous variables. Supported methods are \code{"min"}, \code{"max"}, \code{"mean"},
+\code{"median"}, \code{"harmonic"}, and \code{"geometric"}. The default method is \code{"mean"}.
+For categorical variables, the \code{mode} is always used.}
 }
 \value{
 A data frame with missing values imputed according to the specified
