@@ -12,14 +12,14 @@
 #'
 #' @param df A dataframe to process for missing value imputation.
 #'
-#' @param selected_variables An optional vector of variable names within `df
+#' @param selected_variables An optional vector of variable names within `df`
 #' for which missing values should be imputed. If `NULL` (default), imputation
 #' is applied to all variables in the data frame. Variables must be quoted.
 #'
 #' @param method A character string specifying the imputation method for
-#' continuous variables. Supported methods are "min", "max", "mean", "median",
-#' "harmonic", and "geometric". The default method is "mean". For categorical
-#' variables, the mode is always used.
+#' continuous variables. Supported methods are `"min"`, `"max"`, `"mean"`,
+#' `"median"`, `"harmonic"`, and `"geometric"`. The default method is `"mean"`.
+#' For categorical variables, the `mode` is always used.
 #'
 #' @return  A data frame with missing values imputed according to the specified
 #'  `method`.
@@ -96,15 +96,14 @@ fill_missing_values <- function(df, selected_variables = NULL, method = c("mean"
     } # Skip non-numeric columns
 
     replacement_value <- switch(method,
-                                min = min(x, na.rm = TRUE),
-                                max = max(x, na.rm = TRUE),
-                                mean = mean(x, na.rm = TRUE),
-                                median = median(x, na.rm = TRUE),
-                                harmonic = harmonic_mean(x),
-                                geometric = geometric_mean(x),
-                                x
-    ) # Default to return x as is
-
+      min = min(x, na.rm = TRUE),
+      max = max(x, na.rm = TRUE),
+      mean = mean(x, na.rm = TRUE),
+      median = median(x, na.rm = TRUE),
+      harmonic = harmonic_mean(x),
+      geometric = geometric_mean(x),
+      x # Default to return x as is
+    )
 
     # Explicitly cast the replacement value to the same type as x
 
