@@ -22,7 +22,7 @@ These enhancements are designed to provide users with a comprehensive toolkit fo
 
 * **Package Website Launch:** 
 
-To better serve our users and provide detailed documentation, we have launched the official `bulkreadr` package website. The website offers comprehensive guides, function references, and examples to help users maximize the package's potential. Visit us at [https://gbganalyst.github.io/bulkreadr](https://gbganalyst.github.io/bulkreadr) for more information.
+To better serve our users and provide detailed documentation, we have launched the official `bulkreadr` package website. The website offers comprehensive guides, function references, and examples to help users maximize the package's potential. Visit us at <https://gbganalyst.github.io/bulkreadr/> for more information.
 
 We believe these updates will significantly enhance your data analysis workflows and look forward to your feedback.
 

@@ -13,9 +13,9 @@ fill_missing_values(
 \arguments{
 \item{df}{A dataframe to process for missing value imputation.}
 
-\item{selected_variables}{An optional vector of variable names within \code{df}
+\item{selected_variables}{An optional character vector of variable names within \code{df}
 for which missing values should be imputed. If \code{NULL} (default), imputation
-is applied to all variables in the data frame. Variables must be quoted.}
+is applied to all variables in the data frame.}
 
 \item{method}{A character string specifying the imputation method for
 continuous variables. Supported methods are \code{"min"}, \code{"max"}, \code{"mean"},
@@ -51,19 +51,28 @@ Species = c("setosa", NA, "versicolor", "setosa",
            NA, "virginica", "setosa")
 )
 
-# Impute using the mean method for continuous variables
+# If you do not specify `selected_variables` (i.e., leave it as `NULL`),
+# the function will impute missing values for all columns in the dataframe.
 
 result_df_mean <- fill_missing_values(df, method = "mean")
 
 result_df_mean
 
-# Impute using the geometric mean for continuous variables and specify
-# variables `Petal_Length` and `Petal_Width`.
+# If you specify column names, only those columns will be imputed. For
+# example, impute for variables `Petal_Length` and `Petal_Width` using
+# the geometric mean.
 
 result_df_geomean <- fill_missing_values(df, selected_variables = c
 ("Petal_Length", "Petal_Width"), method = "geometric")
 
 result_df_geomean
+
+# If you specify column positions, only the columns at those positions will #' # be imputed.
+
+result_df_max <- fill_missing_values(df, selected_variables = c
+(2, 3), method = "max")
+
+result_df_max
 
 # Impute missing values (NAs) in a grouped data frame
 

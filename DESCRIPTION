@@ -48,6 +48,7 @@ Imports:
     tidyr
 Suggests:
     knitr,
+    googledrive,
     rmarkdown,
     testthat (>= 3.0.0)
 VignetteBuilder: 
