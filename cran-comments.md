@@ -1,12 +1,9 @@
 ## New version
 
-This is a new version submission. In this version we developed two new functions namely:
+This is a new version submission. In this version we developed a new function namely:
 
-- `generate_dictionary()`: This function is designed to automatically create a comprehensive data dictionary from labelled datasets. The generated dictionary provides detailed insights into each variable, aiding in better data understanding and management.
-
-- `look_for()`: This enhances the capability to efficiently search within labelled datasets. It allows users to quickly find variable names and their descriptions by searching for specific keywords. This feature streamlines data exploration and analysis, particularly in large datasets with extensive variables.
+- `write_excel_sheets_to_csv()`: Reads all sheets of an Excel workbook and exports each sheet as a separate CSV file into a specified directory, automating multi‐sheet to CSV workflows for reproducible reporting.
 
 ## R CMD check results
 
 0 errors | 0 warnings | 0 notes
-
