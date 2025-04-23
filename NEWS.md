@@ -1,3 +1,5 @@
+# bulkreadr 1.2.0
+
 # bulkreadr 1.1.1 (2024-03-01)
 
 We are pleased to announce the release of `bulkreadr` version 1.1.1. This version introduces significant enhancements and features aimed at improving the functionality and user experience of the package.
