@@ -1,6 +1,6 @@
 test_that("write_excel_sheets_to_csv exports all sheets correctly", {
   # Create a temporary directory and file paths
-  tmp_dir <- tempdir()
+  tmp_dir <- test_path("csvfolder")
 
   # Create a workbook with two sheets and write data
   df1 <- read_xlsx(test_path("extdata", "Diamonds.xlsx"), 1)

@@ -19,11 +19,24 @@ coverage](https://codecov.io/gh/gbganalyst/bulkreadr/branch/main/graph/badge.svg
 
 ## About the package
 
-`bulkreadr` is a robust and user-friendly R package designed to optimize the process of importing and processing large datasets. It offers streamlined functionality for reading multiple sheets from Microsoft Excel or Google Sheets workbooks, as well as handling multiple CSV files from a directory with ease. 
+`bulkreadr` is an R package designed to simplify and streamline the
+process of reading and processing large volumes of data. With a
+collection of functions tailored for bulk data operations, the package
+allows users to efficiently read multiple sheets from Microsoft
+Excel/Google Sheets workbooks and multiple CSV files from a directory.
+It returns the data as organized data frames, making it convenient for
+further analysis and manipulation.
 
-In addition, `bulkreadr` provides seamless compatibility with labelled data from software such as `SPSS` and `Stata`, automatically converting coded values into their respective labels upon import. This significantly reduces manual effort, making it an invaluable resource for data analysts and researchers looking to save time and optimize their workflows. 
+Whether dealing with extensive data sets or batch processing tasks,
+“bulkreadr” empowers users to effortlessly handle data in bulk, saving
+time and effort in data preparation workflows.
 
-For a quick video tutorial, I gave a talk at the International Association of Statistical Computing webinar. The recorded session is available [here](https://isi-web.org/webinar/iasc-bulkreadr-ultimate-tool-reading-data-bulk) and the webinar resources
+Additionally, the package seamlessly works with labelled data from SPSS
+and Stata. For a quick video tutorial, I gave a talk at the
+International Association of Statistical Computing webinar. The recorded
+session is available
+[here](https://isi-web.org/webinar/iasc-bulkreadr-ultimate-tool-reading-data-bulk)
+and the webinar resources
 [here](https://github.com/gbganalyst/bulkreadr-webinar).
 
 ## The Concept Map

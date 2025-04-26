@@ -1,7 +1,8 @@
+url: https://gbganalyst.github.io/bulkreadr/
+
 development:
   mode: auto
 
-url: https://gbganalyst.github.io/bulkreadr/
 template:
   bootstrap: 5
 
@@ -9,10 +10,11 @@ reference:
 
 - title: Spreadsheets
   desc: >
-    Functions for reading bulk data in spreadsheets
+    Functions for importing and exporting bulk data in spreadsheets
   contents:
   - read_excel_workbook
   - read_excel_files_from_dir
+  - write_excel_sheets_to_csv
 
 - title: Google Sheets
   desc: >
@@ -80,8 +82,11 @@ navbar:
   right:
    - icon: fa-twitter
      href: https://twitter.com/gbganalyst
+     aria-label: Connect with me on X/twitter.
    - icon: fa-github
      href: https://github.com/gbganalyst/bulkreadr
+     aria-label: Connect with me on github
    - icon: fa-globe
      href: https://gbganalyst.github.io
+     aria-label: Connect with me on my website
 

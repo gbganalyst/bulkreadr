@@ -54,9 +54,8 @@ sheet_id <- "1rrjKAV05POre9lDVtHtZePTa8VROf1onVO47cHnhrTU"
 try(read_gsheets(ss = sheet_id)) # error, column types mismatch
 
 read_gsheets(ss = sheet_id, col_types = "c")
-
 \dontshow{\}) # examplesIf}
 }
 \seealso{
-\code{\link[=read_sheet]{read_sheet()}} which reads a Google (spread)Sheet into a data frame.
+\code{\link[googlesheets4:range_read]{googlesheets4::read_sheet()}} which reads a Google (spread)Sheet into a data frame.
 }

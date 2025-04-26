@@ -10,7 +10,7 @@
 #'
 #' @seealso
 
-#' [read_excel()], which reads a Sheet of an Excel file into a data frame, and [read_gsheets()], which imports data from multiple sheets in a Google Sheets.
+#' [readxl::read_excel()], which reads a Sheet of an Excel file into a data frame, and [read_gsheets()], which imports data from multiple sheets in a Google Sheets.
 #' @export
 #'
 #' @examples
@@ -21,13 +21,11 @@
 #'
 #'
 #' # Column types mismatch error --------------------------------------
-#'# If the `read_excel_workbook()` function complains about a data type mismatch,
-#'# then set the `col_types` argument to `"text"`.
-#'# This will make all the column types in the resulting DataFrame be characters.
+#' # If the `read_excel_workbook()` function complains about a data type mismatch,
+#' # then set the `col_types` argument to `"text"`.
+#' # This will make all the column types in the resulting DataFrame be characters.
 #'
-
 read_excel_workbook <- function(path, col_types = NULL, .id = NULL) {
-
   path <- check_file(path)
 
   path %>%
@@ -35,7 +33,3 @@ read_excel_workbook <- function(path, col_types = NULL, .id = NULL) {
     purrr::set_names() %>%
     purrr::map_df(read_xlsx, path = path, col_types = col_types, .id = .id)
 }
-
-
-
-
