@@ -20,8 +20,11 @@ This function reads an Excel file, converts each sheet into a data frame, and wr
 to a CSV file in the specified output directory.
 }
 \examples{
-\dontrun{
-# Export CSV files from an Excel file "Diamonds.xlsx" into the "exported/" directory
-write_excel_sheets_to_csv("inst/extdata/Diamonds.xlsx", "inst/exported")
-}
+# Path to the example Excel file shipped with the package
+excel_file <- system.file("extdata", "Diamonds.xlsx", package = "bulkreadr")
+
+# Export each sheet to its own CSV in a temporary directory
+output_dir <- tempdir()
+write_excel_sheets_to_csv(excel_file, output_dir)
+
 }

@@ -95,7 +95,7 @@ glimpse(combined_excel)
 
 With a single call to `write_excel_sheets_to_csv()`, you can convert every worksheet in an Excel file into a separate CSV file in a directory of your choice. The function reads each sheet from the Excel file and writes it out as individual CSVs:
 
-```{r}
+```{r, message=TRUE}
 # Excel file with multiple sheets
 excel_file <- system.file("extdata", "Diamonds.xlsx", package = "bulkreadr")
 
@@ -103,12 +103,10 @@ excel_file <- system.file("extdata", "Diamonds.xlsx", package = "bulkreadr")
 output_dir <- file.path(tempdir())
 
 # Export each sheet to its own CSV and capture the file paths
-csv_paths <- write_excel_sheets_to_csv(
+write_excel_sheets_to_csv(
   excel_path = excel_file,
   output_dir = output_dir
 )
-
-csv_paths
 ```
 
 This function ensures consistent file naming, automates the export process, and supports reproducible reporting workflows.

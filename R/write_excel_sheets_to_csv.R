@@ -15,10 +15,13 @@
 #' @importFrom readr write_csv
 #'
 #' @examples
-#' \dontrun{
-#' # Export CSV files from an Excel file "Diamonds.xlsx" into the "exported/" directory
-#' write_excel_sheets_to_csv("inst/extdata/Diamonds.xlsx", "inst/exported")
-#' }
+#' # Path to the example Excel file shipped with the package
+#' excel_file <- system.file("extdata", "Diamonds.xlsx", package = "bulkreadr")
+#'
+#' # Export each sheet to its own CSV in a temporary directory
+#' output_dir <- tempdir()
+#' write_excel_sheets_to_csv(excel_file, output_dir)
+#'
 write_excel_sheets_to_csv <- function(excel_path, output_dir = "data/") {
   # Create the output directory if it doesn't exist
   if (!dir.exists(output_dir)) {
