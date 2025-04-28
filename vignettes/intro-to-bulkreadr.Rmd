@@ -1,0 +1,150 @@
+---
+title: "Importing & exporting bulk data"
+output: rmarkdown::html_vignette
+description: >
+  This article is your quick-start guide to the core import/export functions  
+  in `bulkreadr`. You’ll learn how to bring in data from multi-sheet Excel workbooks  
+  (`read_excel_workbook()`, `read_excel_files_from_dir()`), Google Sheets (`read_gsheets()`),  
+  and directories of CSV files (`read_csv_files_from_dir()`). Then, you’ll see how  
+  to automate exporting every sheet of an Excel file to individual CSVs with  
+  `write_excel_sheets_to_csv()`.  
+author: "Ezekiel Ogundepo and Ernest Fokoué"
+vignette: >
+  %\VignetteIndexEntry{Importing & exporting bulk data}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse      = TRUE,
+  message       = FALSE,
+  warning       = FALSE,
+  comment       = "#>",
+  fig.path      = "man/figures/",
+  out.width     = "100%"
+)
+
+options(
+  tibble.print_min = 5,
+  tibble.print_max = 5,
+  rmarkdown.html_vignette.check_title = FALSE
+)
+```
+
+## Introduction
+
+Welcome to **bulkreadr**! This article demonstrates how to efficiently import and export large-scale tabular data:
+
+- **Excel workbooks**  
+  - `read_excel_workbook()` pulls in every sheet from a single `.xlsx` or `.xls` file and returns a combined data frame.  
+  - `read_excel_files_from_dir()` searches a directory for all Excel files, reads each one, and appends their contents into one data frame.  
+  - `write_excel_sheets_to_csv()` takes any Excel workbook and writes each sheet out as its own CSV file in a folder you specify.
+
+- **Google Sheets**  
+  - `read_gsheets()` retrieves one or more sheets from a Google Sheets document (by URL or sheet ID) and merges them into a single data frame.
+
+- **CSV files**  
+  - `read_csv_files_from_dir()` loads every `.csv` file in a given directory and binds them into one data frame, preserving the file order.
+
+By the end of this article, you’ll have a reproducible pipeline for moving data between Excel, Google Sheets, and CSV formats.
+
+## Note on Example Data
+
+> All examples below use sample files shipped with `bulkreadr` package (via `system.file()`). To apply these in your own project, just replace those paths with the paths to your local files or folders.
+
+```{r}
+library(bulkreadr)
+library(dplyr)
+```
+
+## `read_excel_workbook()`
+
+The `read_excel_workbook()` function reads **all sheets** from a single Excel workbook and combines them into one tidy data frame. This is ideal when you have multiple related sheets in one file and want to work with them as a single table.
+
+```{r}
+# Path to the Excel workbook bundled with the package
+path <- system.file("extdata", "Diamonds.xlsx", package = "bulkreadr")
+
+# Import every sheet into one data frame
+df_all_sheets <- read_excel_workbook(path = path)
+
+# View the result
+df_all_sheets
+```
+
+## `read_excel_files_from_dir()`
+
+`read_excel_files_from_dir()` scans a directory for all `.xlsx`/`.xls` files, reads each workbook, and appends their sheets into a single data frame. Great for batch-processing multiple files at once.
+
+```{r}
+# Directory containing multiple Excel workbooks
+directory <- system.file("xlsxfolder", package = "bulkreadr")
+
+# Read and combine all workbooks in that folder
+combined_excel <- read_excel_files_from_dir(dir_path = directory)
+
+# View the result
+glimpse(combined_excel)
+```
+
+## `write_excel_sheets_to_csv()`
+
+With a single call to `write_excel_sheets_to_csv()`, you can convert every worksheet in an Excel file into a separate CSV file in a directory of your choice. The function reads each sheet from the Excel file and writes it out as individual CSVs:
+
+```{r}
+# Excel file with multiple sheets
+excel_file <- system.file("extdata", "Diamonds.xlsx", package = "bulkreadr")
+
+# Specify an output directory (will be created if it doesn't exist)
+output_dir <- file.path(tempdir())
+
+# Export each sheet to its own CSV and capture the file paths
+csv_paths <- write_excel_sheets_to_csv(
+  excel_path = excel_file,
+  output_dir = output_dir
+)
+
+csv_paths
+```
+
+This function ensures consistent file naming, automates the export process, and supports reproducible reporting workflows.
+
+## `read_csv_files_from_dir()`
+
+`read_csv_files_from_dir()` reads every `.csv` in a specified directory and binds them row-wise into one data frame, following the directory’s file order.
+
+```{r}
+# Directory with CSV files
+directory <- system.file("csvfolder", package = "bulkreadr")
+
+# Import all CSVs at once
+all_csv_data <- read_csv_files_from_dir(dir_path = directory)
+
+# View the result
+all_csv_data
+```
+
+## `read_gsheets()`
+
+For Google Sheets data, `read_gsheets()` lets you pull data from one or more sheets in a spreadsheet and combines them into a single data frame.
+
+```{r}
+# De-authenticate since we're accessing a public or already-shared sheet
+googlesheets4::gs4_deauth()
+
+# Google Sheet ID (or full URL)
+sheet_id <- "1izO0mHu3L9AMySQUXGDn9GPs1n-VwGFSEoAKGhqVQh0"
+
+# Read and merge all sheets
+gsheet_data <- read_gsheets(ss = sheet_id)
+
+# Inspect the imported data
+glimpse(gsheet_data)
+```
+
+---
+With these functions in `bulkreadr`, you can effortlessly import and export bulk data, leaving you more time for analysis and insight.

@@ -1,9 +1,16 @@
+# bulkreadr 1.2.0 (2025-04-23)
+
+We are pleased to announce the release of `bulkreadr` version 1.1.2. This version introduces a powerful new utility to streamline multi-sheet Excel workflows:
+
+* `write_excel_sheets_to_csv()`:
+
+Reads every sheet from an Excel workbook and exports each as a separate CSV file into a specified directory. This automates the tedious task of manually saving multiple sheets, ensures consistent naming, and supports reproducible reporting pipelines.
+
 # bulkreadr 1.1.1 (2024-03-01)
 
 We are pleased to announce the release of `bulkreadr` version 1.1.1. This version introduces significant enhancements and features aimed at improving the functionality and user experience of the package.
 
 * **Enhanced `fill_missing_values()` Functionality**: 
-
 The `fill_missing_values()` function has been significantly improved to support various imputation methods, empowering users to handle missing data with greater precision and flexibility. In addition to the previously supported "mean" imputation method, the function now accommodates the following strategies:
 
 `Minimum Value (Min)`: Imputes missing entries with the minimum value observed within each respective column.
@@ -19,10 +26,9 @@ Mean: Continues to offer the average value imputation, replacing missing values 
 
 These enhancements are designed to provide users with a comprehensive toolkit for data imputation, ensuring that `fill_missing_values()` can be effectively tailored to meet the unique demands of diverse datasets and analysis requirements.
 
-
 * **Package Website Launch:** 
 
-To better serve our users and provide detailed documentation, we have launched the official `bulkreadr` package website. The website offers comprehensive guides, function references, and examples to help users maximize the package's potential. Visit us at [https://gbganalyst.github.io/bulkreadr](https://gbganalyst.github.io/bulkreadr) for more information.
+To better serve our users and provide detailed documentation, we have launched the official `bulkreadr` package website. The website offers comprehensive guides, function references, and examples to help users maximize the package's potential. Visit us at [https://gbganalyst.github.io/bulkreadr](https://gbganalyst.github.io/bulkreadr/) for more information.
 
 We believe these updates will significantly enhance your data analysis workflows and look forward to your feedback.
 
