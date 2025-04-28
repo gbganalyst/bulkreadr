@@ -14,8 +14,8 @@
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="apple-touch-icon-60x60.png">
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.4.2/css/all.min.css" rel="stylesheet">
-<link href="deps/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet">
+<script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="The Ultimate Tool for Reading Data in Bulk">
 <meta name="description" content="Designed to simplify and streamline the process of reading and processing large volumes of data in R, this package offers a collection of functions tailored for bulk data operations. It enables users to efficiently read multiple sheets from Microsoft Excel and Google Sheets workbooks, as well as various CSV files from a directory. The data is returned as organized data frames, facilitating further analysis and manipulation. Ideal for handling extensive data sets or batch processing tasks, bulkreadr empowers users to manage data in bulk effortlessly, saving time and effort in data preparation workflows. Additionally, the package seamlessly works with labelled data from SPSS and Stata.">
 <meta property="og:description" content="Designed to simplify and streamline the process of reading and processing large volumes of data in R, this package offers a collection of functions tailored for bulk data operations. It enables users to efficiently read multiple sheets from Microsoft Excel and Google Sheets workbooks, as well as various CSV files from a directory. The data is returned as organized data frames, facilitating further analysis and manipulation. Ideal for handling extensive data sets or batch processing tasks, bulkreadr empowers users to manage data in bulk effortlessly, saving time and effort in data preparation workflows. Additionally, the package seamlessly works with labelled data from SPSS and Stata.">
@@ -29,7 +29,7 @@
 
     <a class="navbar-brand me-2" href="index.html">bulkreadr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.1.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">1.2.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,9 +51,9 @@
 </li>
       </ul>
 <ul class="navbar-nav">
-<li class="nav-item"><a class="external-link nav-link" href="https://twitter.com/gbganalyst"><span class="fa fa-twitter"></span></a></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/gbganalyst/bulkreadr"><span class="fa fa-github"></span></a></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://gbganalyst.github.io"><span class="fa fa-globe"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://twitter.com/gbganalyst" aria-label="Connect with me on X/twitter."><span class="fa fa-twitter"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/gbganalyst/bulkreadr" aria-label="Connect with me on github"><span class="fa fa-github"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://gbganalyst.github.io" aria-label="Connect with me on my website"><span class="fa fa-globe"></span></a></li>
       </ul>
 </div>
 
@@ -75,9 +75,9 @@
 <div class="section level2">
 <h2 id="about-the-package">About the package<a class="anchor" aria-label="anchor" href="#about-the-package"></a>
 </h2>
-<p><code>bulkreadr</code> is a robust and user-friendly R package designed to optimize the process of importing and processing large datasets. It offers streamlined functionality for reading multiple sheets from Microsoft Excel or Google Sheets workbooks, as well as handling multiple CSV files from a directory with ease.</p>
-<p>In addition, <code>bulkreadr</code> provides seamless compatibility with labelled data from software such as <code>SPSS</code> and <code>Stata</code>, automatically converting coded values into their respective labels upon import. This significantly reduces manual effort, making it an invaluable resource for data analysts and researchers looking to save time and optimize their workflows.</p>
-<p>For a quick video tutorial, I gave a talk at the International Association of Statistical Computing webinar. The recorded session is available <a href="https://isi-web.org/webinar/iasc-bulkreadr-ultimate-tool-reading-data-bulk" class="external-link">here</a> and the webinar resources <a href="https://github.com/gbganalyst/bulkreadr-webinar" class="external-link">here</a>.</p>
+<p><code>bulkreadr</code> is an R package designed to simplify and streamline the process of reading and processing large volumes of data. With a collection of functions tailored for bulk data operations, the package allows users to efficiently read multiple sheets from Microsoft Excel/Google Sheets workbooks and multiple CSV files from a directory. It returns the data as organized data frames, making it convenient for further analysis and manipulation.</p>
+<p>Whether dealing with extensive data sets or batch processing tasks, “bulkreadr” empowers users to effortlessly handle data in bulk, saving time and effort in data preparation workflows.</p>
+<p>Additionally, the package seamlessly works with labelled data from SPSS and Stata. For a quick video tutorial, I gave a talk at the International Association of Statistical Computing webinar. The recorded session is available <a href="https://isi-web.org/webinar/iasc-bulkreadr-ultimate-tool-reading-data-bulk" class="external-link">here</a> and the webinar resources <a href="https://github.com/gbganalyst/bulkreadr-webinar" class="external-link">here</a>.</p>
 </div>
 <div class="section level2">
 <h2 id="the-concept-map">The Concept Map<a class="anchor" aria-label="anchor" href="#the-concept-map"></a>
@@ -150,16 +150,7 @@
 </ul>
 </div>
 
-<div class="dev-status">
-<h2 data-toc-skip>Dev status</h2>
-<ul class="list-unstyled">
-<li><a href="https://github.com/gbganalyst/bulkreadr/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/gbganalyst/bulkreadr/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
-<li><a href="https://cran.r-project.org/package=bulkreadr" class="external-link"><img src="https://www.r-pkg.org/badges/version/bulkreadr" alt="CRAN_Status_Badge"></a></li>
-<li><a href="https://cran.r-project.org/package=bulkreadr" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/bulkreadr" alt="metacran downloads"></a></li>
-<li><a href="https://cran.r-project.org/package=bulkreadr" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/grand-total/bulkreadr" alt="metacran downloads"></a></li>
-<li><a href="https://app.codecov.io/gh/gbganalyst/bulkreadr?branch=main" class="external-link"><img src="https://codecov.io/gh/gbganalyst/bulkreadr/branch/main/graph/badge.svg" alt="Codecov test coverage"></a></li>
-</ul>
-</div>
+
 
   </aside>
 </div>
@@ -170,7 +161,7 @@
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.</p>
 </div>
 
     </footer>

@@ -2,8 +2,8 @@
 <url><loc>https://gbganalyst.github.io/bulkreadr/404.html</loc></url>
 <url><loc>https://gbganalyst.github.io/bulkreadr/LICENSE-text.html</loc></url>
 <url><loc>https://gbganalyst.github.io/bulkreadr/LICENSE.html</loc></url>
-<url><loc>https://gbganalyst.github.io/bulkreadr/articles/bulkreadr.html</loc></url>
 <url><loc>https://gbganalyst.github.io/bulkreadr/articles/index.html</loc></url>
+<url><loc>https://gbganalyst.github.io/bulkreadr/articles/intro-to-bulkreadr.html</loc></url>
 <url><loc>https://gbganalyst.github.io/bulkreadr/articles/labelled-data.html</loc></url>
 <url><loc>https://gbganalyst.github.io/bulkreadr/articles/other-functions.html</loc></url>
 <url><loc>https://gbganalyst.github.io/bulkreadr/authors.html</loc></url>
@@ -24,5 +24,6 @@
 <url><loc>https://gbganalyst.github.io/bulkreadr/reference/read_gsheets.html</loc></url>
 <url><loc>https://gbganalyst.github.io/bulkreadr/reference/read_spss_data.html</loc></url>
 <url><loc>https://gbganalyst.github.io/bulkreadr/reference/read_stata_data.html</loc></url>
+<url><loc>https://gbganalyst.github.io/bulkreadr/reference/write_excel_sheets_to_csv.html</loc></url>
 </urlset>
 
