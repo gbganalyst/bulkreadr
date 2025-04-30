@@ -1,3 +1,5 @@
+# bulkreadr (development version)
+
 # bulkreadr 1.2.0 (2025-04-23)
 
 We are pleased to announce the release of `bulkreadr` version 1.1.2. This version introduces a powerful new utility to streamline multi-sheet Excel workflows:

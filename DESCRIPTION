@@ -1,6 +1,6 @@
 Package: bulkreadr
 Title: The Ultimate Tool for Reading Data in Bulk
-Version: 1.2.0
+Version: 1.2.0.9000
 Authors@R: c(
     person("Ezekiel", "Ogundepo", , "gbganalyst@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0003-3974-2733")),
