@@ -1,8 +1,6 @@
 ## New version
 
-This is a new version submission. In this version we developed a new function namely:
-
-- `write_excel_sheets_to_csv()`: Reads all sheets of an Excel workbook and exports each sheet as a separate CSV file into a specified directory, automating multi‐sheet to CSV workflows for reproducible reporting.
+Introduced a new `na` parameter (defaulting to `""`) so that any `NA` values in the data frames are written out as blank cells in the CSV files instead of the literal string `"NA"`
 
 ## R CMD check results
 
