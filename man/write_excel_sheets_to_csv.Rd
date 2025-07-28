@@ -4,19 +4,22 @@
 \alias{write_excel_sheets_to_csv}
 \title{Export Excel Sheets to CSV Files}
 \usage{
-write_excel_sheets_to_csv(excel_path, output_dir = "data/")
+write_excel_sheets_to_csv(excel_path, output_dir = "data/", na = "")
 }
 \arguments{
 \item{excel_path}{A character string specifying the path to the Excel file.}
 
 \item{output_dir}{A character string specifying the directory where CSV files will be saved.
 Defaults to "data/".}
+
+\item{na}{A character string to use for missing values in the CSV.
+Defaults to \code{""} (blank cells).}
 }
 \value{
 A list of file paths corresponding to the exported CSV files.
 }
 \description{
-This function reads an Excel file, converts each sheet into a data frame, and writes each sheet
+This function reads an Excel workbook, converts each sheet into a data frame, and writes each sheet
 to a CSV file in the specified output directory.
 }
 \examples{
