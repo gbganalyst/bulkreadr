@@ -30,7 +30,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">bulkreadr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">1.2.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.2.2</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,7 +52,7 @@
 </li>
       </ul>
 <ul class="navbar-nav">
-<li class="nav-item"><a class="external-link nav-link" href="https://twitter.com/gbganalyst" aria-label="Connect with me on X/twitter."><span class="fa fa-twitter"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://x.com/gbganalyst" aria-label="Connect with me on X."><span class="fa fa-twitter"></span></a></li>
 <li class="nav-item"><a class="external-link nav-link" href="https://github.com/gbganalyst/bulkreadr" aria-label="Connect with me on github"><span class="fa fa-github"></span></a></li>
 <li class="nav-item"><a class="external-link nav-link" href="https://gbganalyst.github.io" aria-label="Connect with me on my website"><span class="fa fa-globe"></span></a></li>
       </ul>
@@ -133,7 +133,7 @@ like <code>42370</code> into date value like
 <span><span class="co"># It can also convert date time object to date object </span></span>
 <span></span>
 <span><span class="fu"><a href="../reference/convert_to_date.html">convert_to_date</a></span><span class="op">(</span><span class="fu">lubridate</span><span class="fu">::</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/now.html" class="external-link">now</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "2025-07-28"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "2026-03-20"</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="inspect_na">inspect_na()<a class="anchor" aria-label="anchor" href="#inspect_na"></a>
@@ -142,8 +142,7 @@ like <code>42370</code> into date value like
 column of a data frame. For a grouped data frame, the rate of
 missingness is summarized separately for each group.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span></span>
-<span><span class="co"># dataframe summary</span></span>
+<code class="sourceCode R"><span><span class="co"># dataframe summary</span></span>
 <span></span>
 <span><span class="fu"><a href="../reference/inspect_na.html">inspect_na</a></span><span class="op">(</span><span class="va">airquality</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 3</span></span></span>
@@ -161,7 +160,6 @@ missingness is summarized separately for each group.</p>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">Month</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="../reference/inspect_na.html">inspect_na</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 25 × 4</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># Groups:   Month [5]</span></span></span>
 <span><span class="co">#&gt;   Month col_name   cnt  pcnt</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>     5 Ozone        5  16.1</span></span>
@@ -301,7 +299,7 @@ how to do this:</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
 </div>
 
     </footer>

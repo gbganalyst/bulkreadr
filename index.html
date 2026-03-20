@@ -28,7 +28,7 @@
 
     <a class="navbar-brand me-2" href="index.html">bulkreadr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">1.2.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.2.2</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,7 +50,7 @@
 </li>
       </ul>
 <ul class="navbar-nav">
-<li class="nav-item"><a class="external-link nav-link" href="https://twitter.com/gbganalyst" aria-label="Connect with me on X/twitter."><span class="fa fa-twitter"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://x.com/gbganalyst" aria-label="Connect with me on X."><span class="fa fa-twitter"></span></a></li>
 <li class="nav-item"><a class="external-link nav-link" href="https://github.com/gbganalyst/bulkreadr" aria-label="Connect with me on github"><span class="fa fa-github"></span></a></li>
 <li class="nav-item"><a class="external-link nav-link" href="https://gbganalyst.github.io" aria-label="Connect with me on my website"><span class="fa fa-globe"></span></a></li>
       </ul>
@@ -81,7 +81,7 @@
 <div class="section level2">
 <h2 id="the-concept-map">The Concept Map<a class="anchor" aria-label="anchor" href="#the-concept-map"></a>
 </h2>
-<p><img src="reference/figures/concept-map.png"></p>
+<p><img src="reference/figures/concept-map.png" alt="Concept map of the bulkreadr package showing three data categories and related functions. Under Spreadsheets, Excel links to read_excel_workbook() and read_excel_files_from_dir(), and Google Sheets links to read_gsheets(). Under Flat files, CSV links to read_csv_files_from_dir(). Under Labelled data, SPSS and Stata link to read_spss_data() and read_stata_data(), which connect to generate_dictionary() and look_for(). The map also lists other bulkreadr functions: pull_out(), convert_to_date(), fill_missing_values(), and inspect_na()." width="100%"></p>
 </div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
@@ -149,7 +149,16 @@
 </ul>
 </div>
 
-
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/gbganalyst/bulkreadr/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/gbganalyst/bulkreadr/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://cran.r-project.org/package=bulkreadr" class="external-link"><img src="https://www.r-pkg.org/badges/version/bulkreadr" alt="CRAN_Status_Badge"></a></li>
+<li><a href="https://cran.r-project.org/package=bulkreadr" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/bulkreadr" alt="metacran downloads"></a></li>
+<li><a href="https://cran.r-project.org/package=bulkreadr" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/grand-total/bulkreadr" alt="metacran downloads"></a></li>
+<li><a href="https://app.codecov.io/gh/gbganalyst/bulkreadr?branch=main" class="external-link"><img src="https://codecov.io/gh/gbganalyst/bulkreadr/branch/main/graph/badge.svg" alt="Codecov test coverage"></a></li>
+</ul>
+</div>
 
   </aside>
 </div>
@@ -160,7 +169,7 @@
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
 </div>
 
     </footer>

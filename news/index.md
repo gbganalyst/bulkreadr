@@ -1,0 +1,167 @@
+# Changelog
+
+## bulkreadr 1.2.2 (2026-03-20)
+
+- **inspect_na()**
+
+  - Rewrote
+    [`inspect_na()`](https://gbganalyst.github.io/bulkreadr/reference/inspect_na.md)
+    as an internal function and removed the dependency on the
+    `inspectdf` package for missingness summaries, helping to streamline
+    the package and reduce external dependencies.
+
+## bulkreadr 1.2.1 (2025-07-28)
+
+CRAN release: 2025-07-28
+
+- **write_excel_sheets_to_csv()**
+
+  - Introduced a new `na` parameter (defaulting to `""`) so that any
+    `NA` values in your data frames are written out as blank cells in
+    the CSV files instead of the literal string `"NA"`.
+
+## bulkreadr 1.2.0 (2025-04-23)
+
+CRAN release: 2025-04-28
+
+We are pleased to announce the release of `bulkreadr` version 1.1.2.
+This version introduces a powerful new utility to streamline multi-sheet
+Excel workflows:
+
+- [`write_excel_sheets_to_csv()`](https://gbganalyst.github.io/bulkreadr/reference/write_excel_sheets_to_csv.md):
+
+Reads every sheet from an Excel workbook and exports each as a separate
+CSV file into a specified directory. This automates the tedious task of
+manually saving multiple sheets, ensures consistent naming, and supports
+reproducible reporting pipelines.
+
+## bulkreadr 1.1.1 (2024-03-01)
+
+CRAN release: 2024-05-26
+
+We are pleased to announce the release of `bulkreadr` version 1.1.1.
+This version introduces significant enhancements and features aimed at
+improving the functionality and user experience of the package.
+
+- **Enhanced
+  [`fill_missing_values()`](https://gbganalyst.github.io/bulkreadr/reference/fill_missing_values.md)
+  Functionality**: The
+  [`fill_missing_values()`](https://gbganalyst.github.io/bulkreadr/reference/fill_missing_values.md)
+  function has been significantly improved to support various imputation
+  methods, empowering users to handle missing data with greater
+  precision and flexibility. In addition to the previously supported
+  “mean” imputation method, the function now accommodates the following
+  strategies:
+
+`Minimum Value (Min)`: Imputes missing entries with the minimum value
+observed within each respective column.
+
+`Maximum Value (Max)`: Fills missing data points with the maximum value
+found in each column. Mean: Continues to offer the average value
+imputation, replacing missing values with the mean of the available data
+in each column.
+
+`Median`: Imputes missing entries by employing the median value of each
+column, providing a robust alternative to mean imputation, especially in
+the presence of outliers.
+
+`Harmonic Mean`: Offers a sophisticated option for imputing missing
+values using the harmonic mean, ideal for data distributions where this
+approach is more representative.
+
+`Geometric Mean`: Completes our enhanced range of imputation methods by
+allowing for the replacement of missing values with the geometric mean,
+suited for datasets where the product of values is of interest.
+
+These enhancements are designed to provide users with a comprehensive
+toolkit for data imputation, ensuring that
+[`fill_missing_values()`](https://gbganalyst.github.io/bulkreadr/reference/fill_missing_values.md)
+can be effectively tailored to meet the unique demands of diverse
+datasets and analysis requirements.
+
+- **Package Website Launch:**
+
+To better serve our users and provide detailed documentation, we have
+launched the official `bulkreadr` package website. The website offers
+comprehensive guides, function references, and examples to help users
+maximize the package’s potential. Visit us at
+[https://gbganalyst.github.io/bulkreadr](https://gbganalyst.github.io/bulkreadr/)
+for more information.
+
+We believe these updates will significantly enhance your data analysis
+workflows and look forward to your feedback.
+
+## bulkreadr 1.1.0 (2023-11-13)
+
+CRAN release: 2023-11-16
+
+This update includes the following new features:
+
+- [`generate_dictionary()`](https://gbganalyst.github.io/bulkreadr/reference/generate_dictionary.md):
+  This function is designed to automatically create a comprehensive data
+  dictionary from labelled datasets. The generated dictionary provides
+  detailed insights into each variable, aiding in better data
+  understanding and management.
+
+- [`look_for()`](https://gbganalyst.github.io/bulkreadr/reference/look_for.md):
+  This enhances the capability to efficiently search within labelled
+  datasets. It allows users to quickly find variable names and their
+  descriptions by searching for specific keywords. This feature
+  streamlines data exploration and analysis, particularly in large
+  datasets with extensive variables.
+
+These enhancements aim to improve the user experience in data management
+and exploration within `bulkreadr`. We hope these new features will
+assist our users in more effectively navigating and understanding their
+labelled datasets.
+
+## bulkreadr 1.0.0 (2023-09-20)
+
+CRAN release: 2023-09-26
+
+This update includes the following new features and improvements:
+
+- Developed
+  [`read_stata_data()`](https://gbganalyst.github.io/bulkreadr/reference/read_stata_data.md)
+  to import Stata data file (`.dta`) into an R data frame, converting
+  labeled variables into factors.
+
+- Reduced dependency packages to optimize efficiency.
+
+## bulkreadr 0.2.0 (2023-09-11)
+
+CRAN release: 2023-09-15
+
+This update includes the following new features and improvements:
+
+- Developed bulkreadr vignette
+
+- Developed
+  [`read_spss_data()`](https://gbganalyst.github.io/bulkreadr/reference/read_spss_data.md)
+  to seamlessly import data from an SPSS data (`.sav` or `.zsav`) files
+  and converting labelled variables into factors, a crucial step that
+  enhances the ease of data manipulation and analysis within the R
+  programming environment.
+
+- Added more unit tests
+
+## bulkreadr 0.1.0 (2023-07-24)
+
+CRAN release: 2023-08-15
+
+This update includes the following new features and improvements:
+
+- Improved error handling by adding meaningful error messages for all
+  functions within `bulkreadr` package. This will make it easier for
+  users to identify and troubleshoot issues that may arise during their
+  use of the package.
+
+- Added package-level documentation. The user can now use
+  [`?bulkreadr::bulkreadr`](https://gbganalyst.github.io/bulkreadr/reference/bulkreadr-package.md)
+  for basic package-level documentation.
+
+- Added
+  [`inspect_na()`](https://gbganalyst.github.io/bulkreadr/reference/inspect_na.md)
+  to summarize missingness in data frame columns and
+  [`fill_missing_values()`](https://gbganalyst.github.io/bulkreadr/reference/fill_missing_values.md)
+  to impute missing values in a dataframe.
