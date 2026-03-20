@@ -9,7 +9,6 @@
 #' @importFrom fs dir_ls
 #' @importFrom googlesheets4 gs4_has_token read_sheet sheet_names
 #' @importFrom haven read_sav read_dta as_factor is.labelled
-#' @importFrom inspectdf inspect_na
 #' @importFrom labelled generate_dictionary lookfor
 #' @importFrom lubridate as_date is.Date parse_date_time
 #' @importFrom magrittr %>%
@@ -26,4 +25,3 @@
 #' @importFrom tidyr replace_na
 ## usethis namespace: end
 NULL
-

@@ -1,6 +1,6 @@
 ## New version
 
-Introduced a new `na` parameter (defaulting to `""`) so that any `NA` values in the data frames are written out as blank cells in the CSV files instead of the literal string `"NA"`
+Rewrote `inspect_na()` as an internal function and removed the dependency on the `inspectdf` package for missingness summaries.
 
 ## R CMD check results
 
