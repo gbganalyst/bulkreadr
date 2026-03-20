@@ -7,34 +7,33 @@
 inspect_na(df)
 }
 \arguments{
-\item{df}{A data frame}
+\item{df}{A data frame or grouped data frame.}
 }
 \value{
-A tibble summarizing the count and percentage of columnwise missingness for a data frame.
+A tibble.
 }
 \description{
-\code{inspect_na()} summarizes the rate of missingness in each column of a data frame. For a grouped data frame, the rate of missingness is summarized separately for each group.
+\code{inspect_na()} summarizes the rate of missingness in each column of a data
+frame. For a grouped data frame, the rate of missingness is summarized
+separately for each group.
 }
 \details{
 The tibble returned contains the columns:
 \itemize{
-\item \strong{col_name}, a character vector containing column names of df1.
-\item \strong{cnt}, an integer vector containing the number of missing values by column.
-\item \strong{pcnt}, the percentage of records in each columns that is missing.
+\item \strong{col_name}: column names of \code{df}.
+\item \strong{cnt}: number of \code{NA} values per column.
+\item \strong{pcnt}: percentage of records that are \code{NA}.
 }
+
+For grouped data frames the group key columns appear first, followed by
+\code{col_name}, \code{cnt}, and \code{pcnt}. Rows are sorted by group keys (ascending)
+then by \code{cnt} (descending) within each group.
 }
 \examples{
-
-library(dplyr)
-
-# dataframe summary
-
 inspect_na(airquality)
-
-# grouped dataframe summary
-
-airquality \%>\%
-group_by(Month) \%>\%
- inspect_na()
+# Grouped dataframe summary
+airquality |>
+  dplyr::group_by(Month) |>
+  inspect_na()
 
 }

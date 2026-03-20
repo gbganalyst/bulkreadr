@@ -1,8 +1,5 @@
 url: https://gbganalyst.github.io/bulkreadr/
 
-development:
-  mode: auto
-
 template:
   bootstrap: 5
 
@@ -81,8 +78,8 @@ navbar:
           href: https://feddelegrand7.github.io/ralger
   right:
    - icon: fa-twitter
-     href: https://twitter.com/gbganalyst
-     aria-label: Connect with me on X/twitter.
+     href: https://x.com/gbganalyst
+     aria-label: Connect with me on X.
    - icon: fa-github
      href: https://github.com/gbganalyst/bulkreadr
      aria-label: Connect with me on github

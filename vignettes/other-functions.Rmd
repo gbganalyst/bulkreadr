@@ -78,7 +78,6 @@ convert_to_date(lubridate::now())
 `inspect_na()` summarizes the rate of missingness in each column of a data frame. For a grouped data frame, the rate of missingness is summarized separately for each group.
 
 ```{r example 6a}
-
 # dataframe summary
 
 inspect_na(airquality)

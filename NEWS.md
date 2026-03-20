@@ -1,3 +1,10 @@
+# bulkreadr 1.2.2 (2026-03-20)
+
+* **inspect_na()** 
+
+  - Rewrote `inspect_na()` as an internal function and removed the dependency on the `inspectdf` package for missingness summaries, helping to streamline the package and reduce external dependencies.
+  
+
 # bulkreadr 1.2.1 (2025-07-28)
 
 * **write_excel_sheets_to_csv()** 

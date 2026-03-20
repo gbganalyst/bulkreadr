@@ -7,7 +7,7 @@ vignette: >
   %\VignetteEncoding{UTF-8}
   %\VignetteEngine{knitr::rmarkdown}
 description: >
-  The R ecosystem, through packages like `foreign` and `haven`,      facilitates the importation of labelled data from software like    SPSS and Stata, ensuring a smooth transition into R. This vignette introduces you to other functions in bulkreadr, such as `read_spss_data()`, which extends this functionality by leveraging `haven` to streamline the process further.
+  The R ecosystem, through packages like `foreign` and `haven`, facilitates the importation of labelled data from software like SPSS and Stata, ensuring a smooth transition into R. This vignette introduces you to other functions in bulkreadr, such as `read_spss_data()`, which extends this functionality by leveraging `haven` to streamline the process further.
 editor_options: 
   chunk_output_type: console
 ---

@@ -41,7 +41,7 @@ and the webinar resources
 
 ## The Concept Map
 
-![](man/figures/concept-map.png)
+<img src="man/figures/concept-map.png" alt="Concept map of the bulkreadr package showing three data categories and related functions. Under Spreadsheets, Excel links to read_excel_workbook() and read_excel_files_from_dir(), and Google Sheets links to read_gsheets(). Under Flat files, CSV links to read_csv_files_from_dir(). Under Labelled data, SPSS and Stata link to read_spss_data() and read_stata_data(), which connect to generate_dictionary() and look_for(). The map also lists other bulkreadr functions: pull_out(), convert_to_date(), fill_missing_values(), and inspect_na()." width="100%" />
 
 ## Installation
 
