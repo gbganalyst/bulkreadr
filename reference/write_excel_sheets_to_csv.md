@@ -40,9 +40,9 @@ excel_file <- system.file("extdata", "Diamonds.xlsx", package = "bulkreadr")
 output_dir <- tempdir()
 write_excel_sheets_to_csv(excel_file, output_dir)
 #> Exported CSV file paths are:
-#>   /tmp/RtmpRCK0K2/Fair.csv
-#>   /tmp/RtmpRCK0K2/Good.csv
-#>   /tmp/RtmpRCK0K2/Very Good.csv
-#>   /tmp/RtmpRCK0K2/Premium.csv
-#>   /tmp/RtmpRCK0K2/Ideal.csv
+#>   /tmp/RtmpnBZ09s/Fair.csv
+#>   /tmp/RtmpnBZ09s/Good.csv
+#>   /tmp/RtmpnBZ09s/Very Good.csv
+#>   /tmp/RtmpnBZ09s/Premium.csv
+#>   /tmp/RtmpnBZ09s/Ideal.csv
 ```

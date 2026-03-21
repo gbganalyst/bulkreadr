@@ -2,6 +2,8 @@
 
 ## bulkreadr 1.2.2 (2026-03-20)
 
+CRAN release: 2026-03-20
+
 - **inspect_na()**
 
   - Rewrote

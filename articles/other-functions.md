@@ -61,7 +61,7 @@ convert_to_date(dates)
 # It can also convert date time object to date object 
 
 convert_to_date(lubridate::now())
-#> [1] "2026-03-20"
+#> [1] "2026-03-21"
 ```
 
 ## inspect_na()
