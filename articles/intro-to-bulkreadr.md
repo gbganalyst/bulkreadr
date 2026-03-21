@@ -118,11 +118,11 @@ write_excel_sheets_to_csv(
   output_dir = output_dir
 )
 #> Exported CSV file paths are:
-#>   /tmp/RtmpXpv4Ok/Fair.csv
-#>   /tmp/RtmpXpv4Ok/Good.csv
-#>   /tmp/RtmpXpv4Ok/Very Good.csv
-#>   /tmp/RtmpXpv4Ok/Premium.csv
-#>   /tmp/RtmpXpv4Ok/Ideal.csv
+#>   /tmp/Rtmp9kqQvv/Fair.csv
+#>   /tmp/Rtmp9kqQvv/Good.csv
+#>   /tmp/Rtmp9kqQvv/Very Good.csv
+#>   /tmp/Rtmp9kqQvv/Premium.csv
+#>   /tmp/Rtmp9kqQvv/Ideal.csv
 ```
 
 This function ensures consistent file naming, automates the export

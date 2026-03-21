@@ -17,7 +17,7 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/gbganalyst/bulkreadr/blob/main/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/gbganalyst/bulkreadr/blob/v1.2.2/DESCRIPTION)
 
 Ogundepo E (2026). *bulkreadr: The Ultimate Tool for Reading Data in
 Bulk*. R package version 1.2.2,
