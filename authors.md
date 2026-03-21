@@ -17,16 +17,16 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/gbganalyst/bulkreadr/blob/v1.2.2/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/gbganalyst/bulkreadr/blob/main/DESCRIPTION)
 
 Ogundepo E (2026). *bulkreadr: The Ultimate Tool for Reading Data in
-Bulk*. R package version 1.2.2,
+Bulk*. R package version 1.2.2.9000,
 <https://github.com/gbganalyst/bulkreadr>.
 
     @Manual{,
       title = {bulkreadr: The Ultimate Tool for Reading Data in Bulk},
       author = {Ezekiel Ogundepo},
       year = {2026},
-      note = {R package version 1.2.2},
+      note = {R package version 1.2.2.9000},
       url = {https://github.com/gbganalyst/bulkreadr},
     }
