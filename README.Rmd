@@ -9,8 +9,8 @@ editor_options:
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  message=FALSE, 
-  warning=FALSE,
+  message = FALSE, 
+  warning = FALSE,
   comment = "#>",
   fig.path = "man/figures/README-",
   out.width = "100%")
