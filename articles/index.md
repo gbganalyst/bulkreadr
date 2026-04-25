@@ -29,7 +29,7 @@
   which extends this functionality by leveraging `haven` to streamline
   the process further.
 
-- [Other functions in
+- [Other Utility Functions in
   bulkreadr](https://gbganalyst.github.io/bulkreadr/articles/other-functions.md):
 
   The `bulkreadr` package includes specialized functions beyond bulk

@@ -1,8 +1,8 @@
-# Other functions in bulkreadr
+# Other Utility Functions in bulkreadr
 
-The `bulkreadr` package in R includes specialized functions beyond bulk
-data reading, aimed at enhancing data analysis efficiency. These
-functions are designed to operate on individual vectors, except for
+The `bulkreadr` package includes specialized functions beyond bulk data
+reading, aimed at enhancing data analysis efficiency. These functions
+are designed to operate on individual vectors, except for
 [`inspect_na()`](https://gbganalyst.github.io/bulkreadr/reference/inspect_na.md)
 and
 [`fill_missing_values()`](https://gbganalyst.github.io/bulkreadr/reference/fill_missing_values.md),
@@ -11,24 +11,22 @@ which work on data frames.
 ## pull_out()
 
 [`pull_out()`](https://gbganalyst.github.io/bulkreadr/reference/aliases.md)
-is similar to \[. It acts on vectors, matrices, arrays and lists to
-extract or replace parts. It is pleasant to use with the magrittr
-(`⁠%>%`⁠) and base(`|>`) operators.
+extracts or replaces parts of vectors, matrices, arrays, or lists. It
+works seamlessly with magrittr (`%>%`) or base (`|>`) operators.
 
 ``` r
-
 library(bulkreadr)
 library(dplyr)
 
 top_10_richest_nig <- c("Aliko Dangote", "Mike Adenuga", "Femi Otedola", "Arthur Eze", "Abdulsamad Rabiu", "Cletus Ibeto", "Orji Uzor Kalu", "ABC Orjiakor", "Jimoh Ibrahim", "Tony Elumelu")
 
-top_10_richest_nig %>% 
+# Extract specific elements from the list
+top_10_richest_nig |> 
   pull_out(c(1, 5, 2))
 #> [1] "Aliko Dangote"    "Abdulsamad Rabiu" "Mike Adenuga"
-```
 
-``` r
-top_10_richest_nig %>% 
+# Exclude specific elements from the list
+top_10_richest_nig |>  
   pull_out(-c(1, 5, 2))
 #> [1] "Femi Otedola"   "Arthur Eze"     "Cletus Ibeto"   "Orji Uzor Kalu"
 #> [5] "ABC Orjiakor"   "Jimoh Ibrahim"  "Tony Elumelu"
@@ -37,14 +35,11 @@ top_10_richest_nig %>%
 ## convert_to_date()
 
 [`convert_to_date()`](https://gbganalyst.github.io/bulkreadr/reference/convert_to_date.md)
-parses an input vector into POSIXct date-time object. It is also
-powerful to convert from excel date number like `42370` into date value
-like `2016-01-01`.
+efficiently parses dates from various formats into `POSIXct` date
+objects, enabling smooth date handling and analysis.
 
 ``` r
-
-## ** heterogeneous dates **
-
+# heterogeneous dates 
 dates <- c(
   44869, "22.09.2022", NA, "02/27/92", "01-19-2022",
   "13-01-  2022", "2023", "2023-2", 41750.2, 41751.99,
@@ -52,28 +47,26 @@ dates <- c(
   )
 
 # Convert to POSIXct or Date object
-
 convert_to_date(dates)
 #>  [1] "2022-11-04" "2022-09-22" NA           "1992-02-27" "2022-01-19"
 #>  [6] "2022-01-13" "2023-01-01" "2023-02-01" "2014-04-21" "2014-04-22"
 #> [11] "2023-07-11" "2023-04-01"
 
-# It can also convert date time object to date object 
-
+# Convert date-time object to date object
 convert_to_date(lubridate::now())
-#> [1] "2026-03-21"
+#> [1] "2026-04-25"
 ```
 
-## inspect_na()
+## Handling Missing Values with `inspect_na()` and `fill_missing_values()`
 
-[`inspect_na()`](https://gbganalyst.github.io/bulkreadr/reference/inspect_na.md)
-summarizes the rate of missingness in each column of a data frame. For a
-grouped data frame, the rate of missingness is summarized separately for
-each group.
+- [`inspect_na()`](https://gbganalyst.github.io/bulkreadr/reference/inspect_na.md):
+  Quickly checks for missing data across a dataframe.
+
+- [`fill_missing_values()`](https://gbganalyst.github.io/bulkreadr/reference/fill_missing_values.md):
+  Offers multiple imputation strategies for filling missing values.
 
 ``` r
-# dataframe summary
-
+# Inspect missing data in the 'airquality' dataset
 inspect_na(airquality)
 #> # A tibble: 6 × 3
 #>   col_name   cnt  pcnt
@@ -86,7 +79,10 @@ inspect_na(airquality)
 #> # ℹ 1 more row
 ```
 
-**Grouped dataframe summary**
+[`inspect_na()`](https://gbganalyst.github.io/bulkreadr/reference/inspect_na.md)
+also works with grouped data frames, allowing you to inspect missing
+values within each group. For example, to check for missing values in
+the `airquality` dataset grouped by `Month`, you can use:
 
 ``` r
 airquality %>% 
@@ -103,33 +99,29 @@ airquality %>%
 #> # ℹ 20 more rows
 ```
 
-## fill_missing_values()
+**Imputing Missing Values**
 
 [`fill_missing_values()`](https://gbganalyst.github.io/bulkreadr/reference/fill_missing_values.md)
-is an efficient function that addresses missing values in a data frame.
-It uses imputation by function, also known as column-based imputation,
-to impute the missing values. It supports various imputation methods for
-continuous variables, including `minimum`, `maximum`, `mean`, `median`,
-`harmonic mean`, and `geometric mean`. For categorical variables,
-missing values are replaced with the `mode` of the column. This approach
-ensures accurate and consistent replacements derived from individual
-columns, resulting in a complete and reliable dataset for improved
-analysis and decision-making.
+addresses missing values in a data frame. It uses imputation by
+function, also known as column-based imputation, to impute the missing
+values. It supports various imputation methods for continuous variables,
+including `minimum`, `maximum`, `mean`, `median`, `harmonic mean`, and
+`geometric mean`. For categorical variables, missing values are replaced
+with the `mode` of the column. This approach ensures accurate and
+consistent replacements derived from individual columns, resulting in a
+complete and reliable dataset for improved analysis and decision-making.
 
 ``` r
-
 df <- tibble::tibble(
   Sepal_Length = c(5.2, 5, 5.7, NA, 6.2, 6.7, 5.5),
   Sepal.Width = c(4.1, 3.6, 3, 3, 2.9, 2.5, 2.4),
   Petal_Length = c(1.5, 1.4, 4.2, 1.4, NA, 5.8, 3.7),
   Petal_Width = c(NA, 0.2, 1.2, 0.2, 1.3, 1.8, NA),
-  Species = c("setosa", NA, "versicolor", "setosa",
+  Species = c(
+    "setosa", NA, "versicolor", "setosa",
     NA, "virginica", "setosa"
   )
 )
-```
-
-``` r
 df
 #> # A tibble: 7 × 5
 #>   Sepal_Length Sepal.Width Petal_Length Petal_Width Species   
@@ -143,17 +135,6 @@ df
 ```
 
 **Impute using the mean method for continuous variables**
-
-``` r
-
-#' df <- tibble::tibble(
-#' Sepal_Length = c(5.2, 5, 5.7, NA, 6.2, 6.7, 5.5),
-#' Petal_Length = c(1.5, 1.4, 4.2, 1.4, NA, 5.8, 3.7),
-#' Petal_Width = c(NA, 0.2, 1.2, 0.2, 1.3, 1.8, NA),
-#' Species = c("setosa", NA, "versicolor", "setosa",
-#'            NA, "virginica", "setosa")
-#' )
-```
 
 ``` r
 result_df_mean <- fill_missing_values(df, method = "mean")
@@ -174,7 +155,6 @@ result_df_mean
 variables `Petal_Length` and `Petal_Width`**
 
 ``` r
-
 result_df_geomean <- fill_missing_values(df, selected_variables = c
 ("Petal_Length", "Petal_Width"), method = "geometric")
 
@@ -190,7 +170,7 @@ result_df_geomean
 #> # ℹ 2 more rows
 ```
 
-### Impute missing values (NAs) in a grouped data frame
+**Impute missing values (NAs) in a grouped data frame**
 
 You can use the
 [`fill_missing_values()`](https://gbganalyst.github.io/bulkreadr/reference/fill_missing_values.md)
@@ -205,9 +185,6 @@ Petal_Width = c(0.3, 0.2, 1.2, 0.2, 1.3, 1.8, NA),
 Species = c("setosa", "setosa", "versicolor", "setosa",
           "virginica", "virginica", "setosa")
 )
-```
-
-``` r
 sample_iris
 #> # A tibble: 7 × 4
 #>   Sepal_Length Petal_Length Petal_Width Species   

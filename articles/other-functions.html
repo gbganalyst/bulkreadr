@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Other functions in bulkreadr • bulkreadr</title>
+<title>Other Utility Functions in bulkreadr • bulkreadr</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
 <link rel="icon" type="”image/svg+xml”" href="../favicon.svg">
 <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
@@ -15,7 +15,7 @@
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Other functions in bulkreadr">
+<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Other Utility Functions in bulkreadr">
 <meta name="description" content="The `bulkreadr` package includes specialized functions beyond bulk data reading, aimed at enhancing data analysis efficiency. These functions are designed to operate on individual vectors, except for `inspect_na()` and `fill_missing_values()`, which work   on data frames.
 ">
 <meta property="og:description" content="The `bulkreadr` package includes specialized functions beyond bulk data reading, aimed at enhancing data analysis efficiency. These functions are designed to operate on individual vectors, except for `inspect_na()` and `fill_missing_values()`, which work   on data frames.
@@ -67,7 +67,7 @@
 
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
-      <img src="../logo.png" class="logo" alt=""><h1>Other functions in bulkreadr</h1>
+      <img src="../logo.png" class="logo" alt=""><h1>Other Utility Functions in bulkreadr</h1>
                         <h4 data-toc-skip class="author">Ezekiel
 Ogundepo and Ernest Fokoué</h4>
             
@@ -78,30 +78,30 @@ Ogundepo and Ernest Fokoué</h4>
 
     
     
-<p>The <code>bulkreadr</code> package in R includes specialized
-functions beyond bulk data reading, aimed at enhancing data analysis
-efficiency. These functions are designed to operate on individual
-vectors, except for <code><a href="../reference/inspect_na.html">inspect_na()</a></code> and
-<code><a href="../reference/fill_missing_values.html">fill_missing_values()</a></code>, which work on data frames.</p>
+<p>The <code>bulkreadr</code> package includes specialized functions
+beyond bulk data reading, aimed at enhancing data analysis efficiency.
+These functions are designed to operate on individual vectors, except
+for <code><a href="../reference/inspect_na.html">inspect_na()</a></code> and <code><a href="../reference/fill_missing_values.html">fill_missing_values()</a></code>,
+which work on data frames.</p>
 <div class="section level2">
 <h2 id="pull_out">pull_out()<a class="anchor" aria-label="anchor" href="#pull_out"></a>
 </h2>
-<p><code><a href="../reference/aliases.html">pull_out()</a></code> is similar to [. It acts on vectors,
-matrices, arrays and lists to extract or replace parts. It is pleasant
-to use with the magrittr (<code>⁠%&gt;%</code>⁠) and
-base(<code>|&gt;</code>) operators.</p>
+<p><code><a href="../reference/aliases.html">pull_out()</a></code> extracts or replaces parts of vectors,
+matrices, arrays, or lists. It works seamlessly with magrittr
+(<code>%&gt;%</code>) or base (<code>|&gt;</code>) operators.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/gbganalyst/bulkreadr" class="external-link">bulkreadr</a></span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/gbganalyst/bulkreadr" class="external-link">bulkreadr</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">top_10_richest_nig</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Aliko Dangote"</span>, <span class="st">"Mike Adenuga"</span>, <span class="st">"Femi Otedola"</span>, <span class="st">"Arthur Eze"</span>, <span class="st">"Abdulsamad Rabiu"</span>, <span class="st">"Cletus Ibeto"</span>, <span class="st">"Orji Uzor Kalu"</span>, <span class="st">"ABC Orjiakor"</span>, <span class="st">"Jimoh Ibrahim"</span>, <span class="st">"Tony Elumelu"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">top_10_richest_nig</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> </span>
+<span><span class="co"># Extract specific elements from the list</span></span>
+<span><span class="va">top_10_richest_nig</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="../reference/aliases.html">pull_out</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">5</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "Aliko Dangote"    "Abdulsamad Rabiu" "Mike Adenuga"</span></span></code></pre></div>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">top_10_richest_nig</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> </span>
+<span><span class="co">#&gt; [1] "Aliko Dangote"    "Abdulsamad Rabiu" "Mike Adenuga"</span></span>
+<span></span>
+<span><span class="co"># Exclude specific elements from the list</span></span>
+<span><span class="va">top_10_richest_nig</span> <span class="op">|&gt;</span>  </span>
 <span>  <span class="fu"><a href="../reference/aliases.html">pull_out</a></span><span class="op">(</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">5</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "Femi Otedola"   "Arthur Eze"     "Cletus Ibeto"   "Orji Uzor Kalu"</span></span>
 <span><span class="co">#&gt; [5] "ABC Orjiakor"   "Jimoh Ibrahim"  "Tony Elumelu"</span></span></code></pre></div>
@@ -109,14 +109,11 @@ base(<code>|&gt;</code>) operators.</p>
 <div class="section level2">
 <h2 id="convert_to_date">convert_to_date()<a class="anchor" aria-label="anchor" href="#convert_to_date"></a>
 </h2>
-<p><code><a href="../reference/convert_to_date.html">convert_to_date()</a></code> parses an input vector into POSIXct
-date-time object. It is also powerful to convert from excel date number
-like <code>42370</code> into date value like
-<code>2016-01-01</code>.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span></span>
-<span><span class="co">## ** heterogeneous dates **</span></span>
-<span></span>
+<p><code><a href="../reference/convert_to_date.html">convert_to_date()</a></code> efficiently parses dates from various
+formats into <code>POSIXct</code> date objects, enabling smooth date
+handling and analysis.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># heterogeneous dates </span></span>
 <span><span class="va">dates</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
 <span>  <span class="fl">44869</span>, <span class="st">"22.09.2022"</span>, <span class="cn">NA</span>, <span class="st">"02/27/92"</span>, <span class="st">"01-19-2022"</span>,</span>
 <span>  <span class="st">"13-01-  2022"</span>, <span class="st">"2023"</span>, <span class="st">"2023-2"</span>, <span class="fl">41750.2</span>, <span class="fl">41751.99</span>,</span>
@@ -124,26 +121,27 @@ like <code>42370</code> into date value like
 <span>  <span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Convert to POSIXct or Date object</span></span>
-<span></span>
 <span><span class="fu"><a href="../reference/convert_to_date.html">convert_to_date</a></span><span class="op">(</span><span class="va">dates</span><span class="op">)</span></span>
 <span><span class="co">#&gt;  [1] "2022-11-04" "2022-09-22" NA           "1992-02-27" "2022-01-19"</span></span>
 <span><span class="co">#&gt;  [6] "2022-01-13" "2023-01-01" "2023-02-01" "2014-04-21" "2014-04-22"</span></span>
 <span><span class="co">#&gt; [11] "2023-07-11" "2023-04-01"</span></span>
 <span></span>
-<span><span class="co"># It can also convert date time object to date object </span></span>
-<span></span>
+<span><span class="co"># Convert date-time object to date object</span></span>
 <span><span class="fu"><a href="../reference/convert_to_date.html">convert_to_date</a></span><span class="op">(</span><span class="fu">lubridate</span><span class="fu">::</span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/now.html" class="external-link">now</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "2026-03-21"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "2026-04-25"</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="inspect_na">inspect_na()<a class="anchor" aria-label="anchor" href="#inspect_na"></a>
+<h2 id="handling-missing-values-with-inspect_na-and-fill_missing_values">Handling Missing Values with <code>inspect_na()</code> and
+<code>fill_missing_values()</code><a class="anchor" aria-label="anchor" href="#handling-missing-values-with-inspect_na-and-fill_missing_values"></a>
 </h2>
-<p><code><a href="../reference/inspect_na.html">inspect_na()</a></code> summarizes the rate of missingness in each
-column of a data frame. For a grouped data frame, the rate of
-missingness is summarized separately for each group.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># dataframe summary</span></span>
-<span></span>
+<ul>
+<li><p><code><a href="../reference/inspect_na.html">inspect_na()</a></code>: Quickly checks for missing data across
+a dataframe.</p></li>
+<li><p><code><a href="../reference/fill_missing_values.html">fill_missing_values()</a></code>: Offers multiple imputation
+strategies for filling missing values.</p></li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Inspect missing data in the 'airquality' dataset</span></span>
 <span><span class="fu"><a href="../reference/inspect_na.html">inspect_na</a></span><span class="op">(</span><span class="va">airquality</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 3</span></span></span>
 <span><span class="co">#&gt;   col_name   cnt  pcnt</span></span>
@@ -154,8 +152,11 @@ missingness is summarized separately for each group.</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Temp         0  0   </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Month        0  0   </span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 1 more row</span></span></span></code></pre></div>
-<p><strong>Grouped dataframe summary</strong></p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<p><code><a href="../reference/inspect_na.html">inspect_na()</a></code> also works with grouped data frames,
+allowing you to inspect missing values within each group. For example,
+to check for missing values in the <code>airquality</code> dataset
+grouped by <code>Month</code>, you can use:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">airquality</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">Month</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="../reference/inspect_na.html">inspect_na</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -168,34 +169,30 @@ missingness is summarized separately for each group.</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>     5 Temp         0   0  </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span>     5 Day          0   0  </span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 20 more rows</span></span></span></code></pre></div>
-</div>
-<div class="section level2">
-<h2 id="fill_missing_values">fill_missing_values()<a class="anchor" aria-label="anchor" href="#fill_missing_values"></a>
-</h2>
-<p><code><a href="../reference/fill_missing_values.html">fill_missing_values()</a></code> is an efficient function that
-addresses missing values in a data frame. It uses imputation by
-function, also known as column-based imputation, to impute the missing
-values. It supports various imputation methods for continuous variables,
-including <code>minimum</code>, <code>maximum</code>, <code>mean</code>,
-<code>median</code>, <code>harmonic mean</code>, and
-<code>geometric mean</code>. For categorical variables, missing values
-are replaced with the <code>mode</code> of the column. This approach
-ensures accurate and consistent replacements derived from individual
-columns, resulting in a complete and reliable dataset for improved
-analysis and decision-making.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span></span>
-<span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble</a></span><span class="op">(</span></span>
+<p><strong>Imputing Missing Values</strong></p>
+<p><code><a href="../reference/fill_missing_values.html">fill_missing_values()</a></code> addresses missing values in a data
+frame. It uses imputation by function, also known as column-based
+imputation, to impute the missing values. It supports various imputation
+methods for continuous variables, including <code>minimum</code>,
+<code>maximum</code>, <code>mean</code>, <code>median</code>,
+<code>harmonic mean</code>, and <code>geometric mean</code>. For
+categorical variables, missing values are replaced with the
+<code>mode</code> of the column. This approach ensures accurate and
+consistent replacements derived from individual columns, resulting in a
+complete and reliable dataset for improved analysis and
+decision-making.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble</a></span><span class="op">(</span></span>
 <span>  Sepal_Length <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">5.2</span>, <span class="fl">5</span>, <span class="fl">5.7</span>, <span class="cn">NA</span>, <span class="fl">6.2</span>, <span class="fl">6.7</span>, <span class="fl">5.5</span><span class="op">)</span>,</span>
 <span>  Sepal.Width <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">4.1</span>, <span class="fl">3.6</span>, <span class="fl">3</span>, <span class="fl">3</span>, <span class="fl">2.9</span>, <span class="fl">2.5</span>, <span class="fl">2.4</span><span class="op">)</span>,</span>
 <span>  Petal_Length <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1.5</span>, <span class="fl">1.4</span>, <span class="fl">4.2</span>, <span class="fl">1.4</span>, <span class="cn">NA</span>, <span class="fl">5.8</span>, <span class="fl">3.7</span><span class="op">)</span>,</span>
 <span>  Petal_Width <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="fl">0.2</span>, <span class="fl">1.2</span>, <span class="fl">0.2</span>, <span class="fl">1.3</span>, <span class="fl">1.8</span>, <span class="cn">NA</span><span class="op">)</span>,</span>
-<span>  Species <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"setosa"</span>, <span class="cn">NA</span>, <span class="st">"versicolor"</span>, <span class="st">"setosa"</span>,</span>
+<span>  Species <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
+<span>    <span class="st">"setosa"</span>, <span class="cn">NA</span>, <span class="st">"versicolor"</span>, <span class="st">"setosa"</span>,</span>
 <span>    <span class="cn">NA</span>, <span class="st">"virginica"</span>, <span class="st">"setosa"</span></span>
 <span>  <span class="op">)</span></span>
-<span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">df</span></span>
+<span><span class="op">)</span></span>
+<span><span class="va">df</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 7 × 5</span></span></span>
 <span><span class="co">#&gt;   Sepal_Length Sepal.Width Petal_Length Petal_Width Species   </span></span>
 <span><span class="co">#&gt;          <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span></span>
@@ -207,16 +204,7 @@ analysis and decision-making.</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 2 more rows</span></span></span></code></pre></div>
 <p><strong>Impute using the mean method for continuous
 variables</strong></p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span></span>
-<span><span class="co">#' df &lt;- tibble::tibble(</span></span>
-<span><span class="co">#' Sepal_Length = c(5.2, 5, 5.7, NA, 6.2, 6.7, 5.5),</span></span>
-<span><span class="co">#' Petal_Length = c(1.5, 1.4, 4.2, 1.4, NA, 5.8, 3.7),</span></span>
-<span><span class="co">#' Petal_Width = c(NA, 0.2, 1.2, 0.2, 1.3, 1.8, NA),</span></span>
-<span><span class="co">#' Species = c("setosa", NA, "versicolor", "setosa",</span></span>
-<span><span class="co">#'            NA, "virginica", "setosa")</span></span>
-<span><span class="co">#' )</span></span></code></pre></div>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">result_df_mean</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/fill_missing_values.html">fill_missing_values</a></span><span class="op">(</span><span class="va">df</span>, method <span class="op">=</span> <span class="st">"mean"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">result_df_mean</span></span>
@@ -232,9 +220,8 @@ variables</strong></p>
 <p><strong>Impute using the geometric mean for continuous variables and
 specify variables <code>Petal_Length</code> and
 <code>Petal_Width</code></strong></p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span></span>
-<span><span class="va">result_df_geomean</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/fill_missing_values.html">fill_missing_values</a></span><span class="op">(</span><span class="va">df</span>, selected_variables <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span></span>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">result_df_geomean</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/fill_missing_values.html">fill_missing_values</a></span><span class="op">(</span><span class="va">df</span>, selected_variables <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span></span>
 <span><span class="op">(</span><span class="st">"Petal_Length"</span>, <span class="st">"Petal_Width"</span><span class="op">)</span>, method <span class="op">=</span> <span class="st">"geometric"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">result_df_geomean</span></span>
@@ -247,22 +234,20 @@ specify variables <code>Petal_Length</code> and
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>         <span style="color: #BB0000;">NA</span>           3           1.4        0.2   setosa    </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span>          6.2         2.9         2.22       1.3   <span style="color: #BB0000;">NA</span>        </span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 2 more rows</span></span></span></code></pre></div>
-<div class="section level3">
-<h3 id="impute-missing-values-nas-in-a-grouped-data-frame">Impute missing values (NAs) in a grouped data frame<a class="anchor" aria-label="anchor" href="#impute-missing-values-nas-in-a-grouped-data-frame"></a>
-</h3>
+<p><strong>Impute missing values (NAs) in a grouped data
+frame</strong></p>
 <p>You can use the <code><a href="../reference/fill_missing_values.html">fill_missing_values()</a></code> in a grouped data
 frame by using other grouping and map functions. Here is an example of
 how to do this:</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">sample_iris</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble</a></span><span class="op">(</span></span>
 <span>Sepal_Length <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">5.2</span>, <span class="fl">5</span>, <span class="fl">5.7</span>, <span class="cn">NA</span>, <span class="fl">6.2</span>, <span class="fl">6.7</span>, <span class="fl">5.5</span><span class="op">)</span>,</span>
 <span>Petal_Length <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1.5</span>, <span class="fl">1.4</span>, <span class="fl">4.2</span>, <span class="fl">1.4</span>, <span class="cn">NA</span>, <span class="fl">5.8</span>, <span class="fl">3.7</span><span class="op">)</span>,</span>
 <span>Petal_Width <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.3</span>, <span class="fl">0.2</span>, <span class="fl">1.2</span>, <span class="fl">0.2</span>, <span class="fl">1.3</span>, <span class="fl">1.8</span>, <span class="cn">NA</span><span class="op">)</span>,</span>
 <span>Species <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"setosa"</span>, <span class="st">"setosa"</span>, <span class="st">"versicolor"</span>, <span class="st">"setosa"</span>,</span>
 <span>          <span class="st">"virginica"</span>, <span class="st">"virginica"</span>, <span class="st">"setosa"</span><span class="op">)</span></span>
-<span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">sample_iris</span></span>
+<span><span class="op">)</span></span>
+<span><span class="va">sample_iris</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 7 × 4</span></span></span>
 <span><span class="co">#&gt;   Sepal_Length Petal_Length Petal_Width Species   </span></span>
 <span><span class="co">#&gt;          <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span></span>
@@ -272,7 +257,7 @@ how to do this:</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>         <span style="color: #BB0000;">NA</span>            1.4         0.2 setosa    </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span>          6.2         <span style="color: #BB0000;">NA</span>           1.3 virginica </span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 2 more rows</span></span></span></code></pre></div>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">sample_iris</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">Species</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_split.html" class="external-link">group_split</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
@@ -286,7 +271,6 @@ how to do this:</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>          5.5          3.7         0.2 setosa    </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span>          5.7          4.2         1.2 versicolor</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 2 more rows</span></span></span></code></pre></div>
-</div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
